@@ -207,6 +207,15 @@
           <div class="flex flex-wrap items-center gap-2 shrink-0">
             <button
               type="button"
+              id="openQuickAddBtn"
+              class="btn-ui px-4 py-2.5 bg-white hover:bg-brand-50 text-brand-900 font-extrabold text-xs sm:text-sm shadow transition flex items-center gap-1.5"
+            >
+              <span aria-hidden="true">+</span>
+              <span id="quickAddLabel">إضافة منتج أو عطر جاهز بصورة</span>
+            </button>
+
+            <button
+              type="button"
               id="quickMatchBtn"
               class="btn-ui px-4 py-2.5 bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs sm:text-sm shadow transition flex items-center gap-1.5"
             >
@@ -360,6 +369,26 @@
         <!-- Products Grid -->
         <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
+        <!-- Numbered Master Catalog Table (1..6+): Company, Products, How to Use & Visual -->
+        <div class="card-ui bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-sm overflow-hidden">
+          <div class="px-4 py-3 bg-stone-100/80 dark:bg-stone-800/70 border-b border-stone-200 dark:border-stone-700 flex flex-wrap items-center justify-between gap-2">
+            <h4 id="masterCatalogTableTitle" class="font-extrabold text-sm sm:text-base text-stone-900 dark:text-white">
+              فهرس الشركات والمنتجات المرقم (1، 2، 3، 4، 5، 6...) وطريقة الاستخدام
+            </h4>
+            <span id="masterCatalogBadge" class="text-xs px-2.5 py-0.5 rounded-full bg-brand-100 dark:bg-brand-900/50 text-brand-800 dark:text-brand-200 font-bold">
+              فهرس مرقم متكامل
+            </span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-start border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr id="masterCatalogHead" class="bg-stone-50 dark:bg-stone-800/40 text-stone-600 dark:text-stone-300 border-b border-stone-200 dark:border-stone-800"></tr>
+              </thead>
+              <tbody id="masterCatalogBody" class="divide-y divide-stone-100 dark:divide-stone-800"></tbody>
+            </table>
+          </div>
+        </div>
+
         <!-- Brands Directory Strip -->
         <div class="card-ui bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 sm:p-5 shadow-sm space-y-3">
           <div class="flex items-center justify-between">
@@ -426,78 +455,78 @@
             <span id="smartTag" class="text-xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-400">القسم السادس • أفكار ذكية وفحص السلامة</span>
             <h3 id="smartTitle" class="text-xl sm:text-2xl font-extrabold text-stone-900 dark:text-white">أدوات ذكية لفحص الملاءمة والحمل وتعارض المكونات</h3>
           </div>
-          <p id="smartSubtitle" class="text-xs sm:text-sm text-stone-500 dark:text-stone-400">
-            أدوات عملية تساعدك قبل الشراء أو الاستخدام اليومي
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <!-- Interactive Match & Safety Advisor -->
-          <div id="advisorToolCard" class="card-ui bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 sm:p-5 shadow-sm space-y-4"></div>
-
-          <!-- Smart Ideas & Local Market Tips -->
-          <div id="smartIdeasCard" class="card-ui bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 sm:p-5 shadow-sm space-y-3"></div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer with Required Creator Credit -->
-    <footer class="bg-white dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800 mt-10">
-      <div class="max-w-7xl mx-auto px-3 sm:px-6 py-6 space-y-3">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-start">
-          <div>
-            <p id="footerCredit" class="font-extrabold text-sm sm:text-base text-brand-800 dark:text-brand-300">
-              صنع من قبل إبراهيم إسماعيل • #made_by_Ibrahim_Ismail
-            </p>
-            <p id="footerDisclaimer" class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
-              إرشادات توعوية مبنية على معايير العناية التجميلية والسلامة العامة — يُنصح باستشارة الطبيب أو الصيدلي أثناء الحمل أو الحالات الجلدية الخاصة.
-            </p>
-          </div>
-          <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
-            <span id="footerFreeBadge" class="px-3 py-1 rounded-full bg-brand-50 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 font-semibold">
-              100% مجاني • جاهز للمتصفح و iOS
-            </span>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <!-- Product Detail Modal -->
-  <div id="productModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-5" role="dialog" aria-modal="true">
-    <div id="productModalBox" class="modal-ui animate-modal bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-      <div id="productModalContent" class="p-4 sm:p-6 space-y-4"></div>
-    </div>
-  </div>
-
-  <!-- Appearance & Font Customizer Modal -->
-  <div id="customizeModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-5" role="dialog" aria-modal="true">
-    <div class="modal-ui animate-modal bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 max-w-md w-full shadow-2xl p-5 space-y-4">
+  <!-- Quick Add Item Modal -->
+  <div id="quickAddModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-xs p-3 sm:p-5" role="dialog" aria-modal="true">
+    <div class="modal-ui animate-modal bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl p-5 space-y-4">
       <div class="flex items-center justify-between border-b border-stone-200 dark:border-stone-800 pb-3">
-        <h4 id="customizeTitle" class="font-extrabold text-base sm:text-lg">تخصيص الواجهة والخط</h4>
-        <button type="button" id="closeCustomizeBtn" class="p-1.5 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">✕</button>
+        <h4 id="quickAddModalTitle" class="font-extrabold text-base sm:text-lg text-stone-900 dark:text-white">
+          إضافة منتج أو عطر أو شامبو جاهز مع صورة تلقائية
+        </h4>
+        <button type="button" id="closeQuickAddBtn" class="p-1.5 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">✕</button>
       </div>
 
-      <div class="space-y-3 text-sm">
+      <div class="space-y-3 text-xs sm:text-sm">
         <div>
-          <label id="fontChoiceLabel" class="block font-bold mb-1.5">نوع الخط (Font)</label>
-          <div class="grid grid-cols-3 gap-2">
-            <button type="button" data-font="font-cairo" class="font-opt py-2 px-2 rounded-xl border text-xs font-bold">Cairo</button>
-            <button type="button" data-font="font-naskh" class="font-opt py-2 px-2 rounded-xl border text-xs font-bold">Naskh</button>
-            <button type="button" data-font="font-inter" class="font-opt py-2 px-2 rounded-xl border text-xs font-bold">Inter</button>
+          <label id="quickPresetLabel" class="block font-bold mb-1">اختر من القوالب الجاهزة (1، 2، 3، 4، 5، 6...) أو اكتب منتجك:</label>
+          <select id="quickPresetSelect" class="w-full px-3 py-2.5 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700"></select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label id="quickNameLabel" class="block font-bold mb-1">اسم المنتج / العطر / الشامبو</label>
+            <input type="text" id="quickItemName" class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700" />
+          </div>
+          <div>
+            <label id="quickBrandLabel" class="block font-bold mb-1">الشركة / الماركة</label>
+            <input type="text" id="quickItemBrand" class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label id="quickCategoryLabel" class="block font-bold mb-1">القسم</label>
+            <select id="quickItemCategory" class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+              <option value="shampoo">شامبو (Shampoo)</option>
+              <option value="cleanser">غسول / ميسيلار (Cleanser)</option>
+              <option value="moisturizer">مرطب (Moisturizer)</option>
+              <option value="exfoliant">مقشر / سيروم (Exfoliant)</option>
+              <option value="makeup">مكياج / مسكارا (Makeup)</option>
+              <option value="body">عناية بالجسم / صابون (Body / Soap)</option>
+              <option value="perfume">عطور زيتية / كحولية (Perfume)</option>
+            </select>
+          </div>
+          <div>
+            <label id="quickSafetyLabel" class="block font-bold mb-1">معيار الحمل والسلامة</label>
+            <select id="quickItemSafety" class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+              <option value="safe">آمن للحمل غالباً</option>
+              <option value="caution">يُستشار طبيب للحمل</option>
+              <option value="avoid">تجنبيه أثناء الحمل</option>
+            </select>
           </div>
         </div>
 
         <div>
-          <label id="shapeChoiceLabel" class="block font-bold mb-1.5">شكل الحواف (Corners)</label>
-          <div class="grid grid-cols-2 gap-2">
-            <button type="button" data-shape="shape-rounded" class="shape-opt py-2 px-3 rounded-xl border text-xs font-bold">عصري (Rounded)</button>
-            <button type="button" data-shape="shape-soft" class="shape-opt py-2 px-3 rounded-xl border text-xs font-bold">ناعم جداً (Soft)</button>
+          <label id="quickIngredientsLabel" class="block font-bold mb-1">المكونات الأساسية</label>
+          <input type="text" id="quickItemIngredients" class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700" />
+        </div>
+
+        <div>
+          <label id="quickHowToUseLabel" class="block font-bold mb-1">طريقة الاستخدام</label>
+          <textarea id="quickItemHowToUse" rows="2" class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700"></textarea>
+        </div>
+
+        <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/70 border border-stone-200 dark:border-stone-700 flex items-center gap-3">
+          <div id="quickSvgPreview"></div>
+          <div class="text-xs text-stone-600 dark:text-stone-300">
+            <div class="font-bold text-stone-900 dark:text-white" id="quickPreviewTitle">معاينة الصورة الجاهزة المدمجة للمنتج</div>
+            <div id="quickPreviewNote">تُعرض مباشرة تحت/بجانب اسم المنتج بدون روابط خارجية.</div>
           </div>
         </div>
 
-        <div class="pt-2 border-t border-stone-200 dark:border-stone-800 text-xs text-stone-500 dark:text-stone-400 text-center font-bold">
-          صنع من قبل إبراهيم إسماعيل • #made_by_Ibrahim_Ismail
+        <div class="pt-1 flex justify-end gap-2">
+          <button type="button" id="saveQuickItemBtn" class="btn-ui px-5 py-2.5 bg-brand-700 hover:bg-brand-800 text-white font-bold text-xs sm:text-sm">
+            حفظ وإضافة للتطبيق
+          </button>
         </div>
       </div>
     </div>
@@ -558,15 +587,15 @@
         heroHeading: 'اعرف نوع بشرتك وشعرك، واختر المنتجات والروتينات بمعايير السلامة والحمل العالمية',
         heroDesc: 'يجمع التطبيق أبرز الماركات العالمية والمحلية في العراق والمنطقة مع شرح المكونات، طريقة الاستخدام، تنبيهات الحمل والرضاعة والبشرة الحساسة، ومعايير التغذية.',
         quickMatchLabel: 'فحص الملاءمة السريع',
+        quickAddLabel: 'إضافة منتج أو عطر جاهز بصورة',
         installTipLabel: 'إضافة للشاشة الرئيسية (iOS / متصفح)',
-        navAll: 'الكل',
-        navSkin: 'أنواع البشرة',
-        navHair: 'العناية بالشعر',
-        navCosmetics: 'الكوزمتيك والشركات',
-        navPerfumes: 'العطور',
-        navRoutines: 'الروتينات والتغذية',
-        navSmart: 'أفكار وفحص السلامة',
-        skinTag: 'القسم الأول • جدول ومصفوفة البشرة',
+        masterCatalogTableTitle: 'فهرس الشركات والمنتجات المرقم (1، 2، 3، 4، 5، 6...) وطريقة الاستخدام',
+        masterCatalogBadge: 'فهرس مرقم متكامل',
+        colIndexNum: 'الرقم',
+        colCompanyName: 'الشركة',
+        colProductAndImage: 'المنتج والصورة الجاهزة',
+        colCompanyMaterials: 'مواد الشركة والمنتج',
+        colUsageMethod: 'طريقة الاستخدام',
         skinTitle: 'أنواع البشرة وخصائصها والمواد المناسبة والممنوعة',
         skinSubtitle: 'اضغط على أي نوع بشرة لتصفية المنتجات المناسبة له مباشرة',
         skinTableHeading: 'جدول مقارنة جميع أنواع البشرة',
@@ -627,15 +656,15 @@
         heroHeading: 'جۆری پێست و قژت بناسە و بەرهەم و ڕۆتینەکان بە ستانداردی سەلامەتی و دووگیانی هەڵبژێرە',
         heroDesc: 'ئەم ئەپە باشترین مارکە جیهانی و ناوخۆییەکانی عێراق و ناوچەکە کۆدەکاتەوە لەگەڵ پێکهاتەکان، شێوازی بەکارهێنان، هۆشداری دووگیانی و پێستی هەستیار، و ستانداردی خۆراک.',
         quickMatchLabel: 'پشکنینی خێرای گونجاندن',
+        quickAddLabel: 'زیادکردنی بەرهەم یان بۆن بە وێنەی ئامادە',
         installTipLabel: 'زیادکردن بۆ سکرینی سەرەکی (iOS / وێب)',
-        navAll: 'هەمووی',
-        navSkin: 'جۆرەکانی پێست',
-        navHair: 'گرنگیپێدانی قژ',
-        navCosmetics: 'کۆزمەتیک و کۆمپانیاکان',
-        navPerfumes: 'بۆنەکان',
-        navRoutines: 'ڕۆتین و خۆراک',
-        navSmart: 'بیرۆکە و سەلامەتی',
-        skinTag: 'بەشی یەکەم • خشتەی جۆرەکانی پێست',
+        masterCatalogTableTitle: 'پێڕستی ژمارەدراوی کۆمپانیا و بەرهەمەکان (1، 2، 3، 4، 5، 6...) و شێوازی بەکارهێنان',
+        masterCatalogBadge: 'پێڕستی ژمارەدراو',
+        colIndexNum: 'ژمارە',
+        colCompanyName: 'کۆمپانیا',
+        colProductAndImage: 'بەرهەم و وێنەی ئامادە',
+        colCompanyMaterials: 'پێکهاتە و بەرهەمەکانی کۆمپانیا',
+        colUsageMethod: 'شێوازی بەکارهێنان',
         skinTitle: 'جۆرەکانی پێست، تایبەتمەندی و پێکهاتە گونجاو و قەدەغەکراوەکان',
         skinSubtitle: 'کرتە لەسەر هەر جۆرە پێستێک بکە بۆ فلتەرکردنی بەرهەمە گونجاوەکان',
         skinTableHeading: 'خشتەی بەراوردکاری هەموو جۆرەکانی پێست',
@@ -696,15 +725,15 @@
         heroHeading: 'Deri we saç görnüşiňizi kesgitläň, howpsuzlyk we göwrelilik standartlaryna görä saýlaň',
         heroDesc: 'Bu programma dünýä we Yrak/sebit bazarlaryndaky meşhur markalary, düzümlerini, ulanylyş usullaryny, göwrelilik duýduryşlaryny we iýmit standartlaryny jemleýär.',
         quickMatchLabel: 'Çalt Laýyklyk Barlagy',
+        quickAddLabel: '+ Suratly Taýyn Önüm ýa-da Atır Goş',
         installTipLabel: 'Baş Ekrana Goşmak (iOS / Brauzer)',
-        navAll: 'Ählisi',
-        navSkin: 'Deri Görnüşleri',
-        navHair: 'Saç Idegi',
-        navCosmetics: 'Kosmetika we Markalar',
-        navPerfumes: 'Atırlar',
-        navRoutines: 'Günlük Tertip we Iýmit',
-        navSmart: 'Akylly Gurallar',
-        skinTag: '1-nji Bölüm • Deri Görnüşleriniň Matrisasy',
+        masterCatalogTableTitle: 'Kompaniýalaryň we Önümleriň Belgili Katalogy (1, 2, 3, 4, 5, 6...) we Ulanylyşy',
+        masterCatalogBadge: 'Belgili Katalog',
+        colIndexNum: '№',
+        colCompanyName: 'Kompaniýa',
+        colProductAndImage: 'Önüm we Taýyn Surat',
+        colCompanyMaterials: 'Kompaniýanyň Önümleri we Düzümi',
+        colUsageMethod: 'Ulanylyş Usuly',
         skinTitle: 'Deri Görnüşleri, Häsiýetleri, Peýdaly we Gaça Durulmaly Maddalar',
         skinSubtitle: 'Degişli önümleri süzmek üçin islendik deri görnüşine basyň',
         skinTableHeading: 'Ähli Deri Görnüşleriniň Deňeşdirme Tablisasy',
@@ -765,15 +794,15 @@
         heroHeading: 'Identify your skin & hair type and choose products with global safety & pregnancy standards',
         heroDesc: 'Combines leading global and local brands across Iraq and the region with ingredient breakdowns, step-by-step usage, pregnancy/sensitive skin guidance, and nutrition standards.',
         quickMatchLabel: 'Quick Match & Safety Check',
+        quickAddLabel: '+ Add Ready Item with Visual',
         installTipLabel: 'Add to Home Screen (iOS / Web)',
-        navAll: 'All Sections',
-        navSkin: 'Skin Types',
-        navHair: 'Hair Care',
-        navCosmetics: 'Cosmetics & Brands',
-        navPerfumes: 'Perfumes',
-        navRoutines: 'Routines & Nutrition',
-        navSmart: 'Smart Tools',
-        skinTag: 'Section 1 • Skin Types Matrix',
+        masterCatalogTableTitle: 'Numbered Companies & Products Catalog (1, 2, 3, 4, 5, 6...) & How to Use',
+        masterCatalogBadge: 'Numbered Catalog',
+        colIndexNum: '#',
+        colCompanyName: 'Company',
+        colProductAndImage: 'Product & Ready Visual',
+        colCompanyMaterials: 'Company Items & Ingredients',
+        colUsageMethod: 'How to Use',
         skinTitle: 'Skin Types, Characteristics, Recommended & Avoided Ingredients',
         skinSubtitle: 'Tap any skin type to filter matching products immediately',
         skinTableHeading: 'Comparative Matrix of All Skin Types',
@@ -831,9 +860,8 @@
 
     /**
      * Inline SVG Illustration Generator for every product & section
-     * Guarantees zero broken external image links on mobile/offline/Glitch environments.
-     */
-    function getProductSvg(themeType, primaryHex = '#0f766e', secondaryHex = '#ccfbf1') {
+    function getProductSvg(themeType, primaryHex = '#0f766e', secondaryHex = '#ccfbf1', labelText = 'CARE') {
+      const safeLabel = String(labelText || 'CARE').replace(/[<>&"]/g, '').slice(0, 10);
       const icons = {
         cleanser: `<path d="M9 4h6v3H9zM8 7h8l1 13H7L8 7z" fill="${secondaryHex}" stroke="${primaryHex}" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 12h4M10 15h3" stroke="${primaryHex}" stroke-width="1.6" stroke-linecap="round"/>`,
         moisturizer: `<rect x="6" y="9" width="12" height="11" rx="3" fill="${secondaryHex}" stroke="${primaryHex}" stroke-width="1.8"/><path d="M8 9V7a4 4 0 018 0v2" stroke="${primaryHex}" stroke-width="1.8"/><circle cx="12" cy="14.5" r="2" fill="${primaryHex}"/>`,
@@ -847,8 +875,9 @@
 
       const inner = icons[themeType] || icons.moisturizer;
       return `
-        <div class="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 border border-stone-200/80 dark:border-stone-700/80" style="background: linear-gradient(135deg, ${secondaryHex}55, transparent);">
+        <div class="w-20 h-20 rounded-2xl flex flex-col items-center justify-center shrink-0 border border-stone-200/90 dark:border-stone-700/90 p-1" style="background: linear-gradient(145deg, ${secondaryHex}88, rgba(255,255,255,0.65));">
           <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none">${inner}</svg>
+          <span class="mt-0.5 text-[9px] font-extrabold tracking-tight truncate max-w-full px-1 rounded" style="color: ${primaryHex};">${safeLabel}</span>
         </div>
       `;
     }
@@ -1947,9 +1976,10 @@
       // Translate static UI labels
       const ids = [
         'headerTitle', 'headerSubtitle', 'heroBadge', 'heroHeading', 'heroDesc',
-        'quickMatchLabel', 'installTipLabel', 'skinTag', 'skinTitle', 'skinSubtitle',
+        'quickAddLabel', 'quickMatchLabel', 'installTipLabel', 'skinTag', 'skinTitle', 'skinSubtitle',
         'skinTableHeading', 'skinTableBadge', 'hairTag', 'hairTitle', 'hairSubtitle',
         'hairProductsHeading', 'cosTag', 'cosTitle', 'cosSubtitle', 'resetFiltersBtn',
+        'masterCatalogTableTitle', 'masterCatalogBadge',
         'brandsDirectoryTitle', 'perfumeTag', 'perfumeTitle', 'perfumeSubtitle',
         'routineTag', 'routineTitle', 'routineSubtitle', 'nutritionHeading',
         'smartTag', 'smartTitle', 'smartSubtitle', 'footerDisclaimer', 'footerFreeBadge',
@@ -1969,6 +1999,7 @@
       renderHairSection();
       renderCosmeticsFilters();
       renderProductsGrid();
+      renderMasterCatalogTable();
       renderBrandsDirectory();
       renderPerfumesSection();
       renderRoutinesAndNutrition();
@@ -2257,18 +2288,7 @@
             p.name.en,
             p.ingredients.ar,
             p.ingredients.en,
-            p.suitableLabel.ar,
-            p.suitableLabel.en
-          ]
-            .join(' ')
-            .toLowerCase();
-          if (!haystack.includes(q)) return false;
-        }
-        return true;
-      });
-    }
-
-    function createProductCardHtml(prod) {
+    function createProductCardHtml(prod, idx = 0) {
       const lang = APP_STATE.lang;
       const isSafe = prod.pregnancyStatus === 'safe';
       const isAvoid = prod.pregnancyStatus === 'avoid';
@@ -2282,7 +2302,17 @@
         : isSafe
         ? t('pregSafeOption')
         : t('pregCautionOption');
-              ${getProductSvg(prod.svgTheme, prod.primaryHex, prod.secondaryHex)}
+
+      const itemNumber = idx + 1;
+
+      return `
+        <article class="card-ui bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-4 shadow-sm flex flex-col justify-between space-y-3">
+          <div class="space-y-2.5">
+            <div class="flex items-start gap-3">
+              <div class="flex flex-col items-center gap-1 shrink-0">
+                <span class="w-6 h-6 rounded-full bg-brand-700 text-white text-xs font-extrabold flex items-center justify-center">${itemNumber}</span>
+                ${getProductSvg(prod.svgTheme, prod.primaryHex, prod.secondaryHex, prod.brand)}
+              </div>
               <div class="min-w-0 flex-1">
                 <div class="flex flex-wrap items-center gap-1.5 mb-1">
                   <span class="text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-brand-50 dark:bg-brand-900/50 text-brand-800 dark:text-brand-200 border border-brand-200/60 dark:border-brand-700/50">
@@ -2301,6 +2331,7 @@
             <div class="text-xs text-stone-600 dark:text-stone-300 space-y-1.5">
               <p><strong class="text-stone-800 dark:text-stone-100">${t('suitableForLabel')}</strong> ${prod.suitableLabel[lang]}</p>
               <p class="line-clamp-2"><strong class="text-stone-800 dark:text-stone-100">${t('ingredientsLabel')}:</strong> ${prod.ingredients[lang]}</p>
+              <p class="line-clamp-2"><strong class="text-stone-800 dark:text-stone-100">${t('howToUseLabel')}:</strong> ${prod.howToUse[lang]}</p>
             </div>
           </div>
 
@@ -2315,13 +2346,41 @@
         </article>
       `;
     }
+      grid.innerHTML = filtered.map((p, i) => createProductCardHtml(p, i)).join('');
+      bindProductCardEvents(grid);
+      renderMasterCatalogTable(filtered);
+    }
 
-    function bindProductCardEvents(containerEl) {
-      containerEl.querySelectorAll('[data-open-product]').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          openProductModal(btn.dataset.openProduct);
-        });
-      });
+    function renderMasterCatalogTable(listOverride = null) {
+      const lang = APP_STATE.lang;
+      const rows = Array.isArray(listOverride) ? listOverride : PRODUCTS_DATA;
+
+      document.getElementById('masterCatalogHead').innerHTML = `
+        <th class="py-3 px-3 font-bold">${t('colIndexNum')}</th>
+        <th class="py-3 px-3 font-bold">${t('colCompanyName')}</th>
+        <th class="py-3 px-3 font-bold">${t('colProductAndImage')}</th>
+        <th class="py-3 px-3 font-bold">${t('colCompanyMaterials')}</th>
+        <th class="py-3 px-3 font-bold">${t('colUsageMethod')}</th>
+      `;
+
+      document.getElementById('masterCatalogBody').innerHTML = rows
+        .map(
+          (prod, idx) => `
+          <tr class="hover:bg-stone-50/80 dark:hover:bg-stone-800/30 align-top">
+            <td class="py-3 px-3 font-extrabold text-brand-700 dark:text-brand-300 whitespace-nowrap">${idx + 1}</td>
+            <td class="py-3 px-3 font-bold text-stone-900 dark:text-white whitespace-nowrap">${prod.brand}</td>
+            <td class="py-3 px-3 min-w-[200px]">
+              <div class="flex items-center gap-2.5">
+                ${getProductSvg(prod.svgTheme, prod.primaryHex, prod.secondaryHex, prod.brand)}
+                <span class="font-bold text-stone-800 dark:text-stone-100">${prod.name[lang]}</span>
+              </div>
+            </td>
+            <td class="py-3 px-3 text-stone-600 dark:text-stone-300 min-w-[200px]">${prod.ingredients[lang]}</td>
+            <td class="py-3 px-3 text-stone-700 dark:text-stone-200 min-w-[220px]">${prod.howToUse[lang]}</td>
+          </tr>
+        `
+        )
+        .join('');
     }
 
     function renderProductsGrid() {
@@ -2543,180 +2602,180 @@
               : lang === 'ckb'
               ? 'لە کاتی دووگیانی یان شیرپێدان، شێدارکەرەوەی نەرم و بێ بۆن هەڵبژێرە و پێش بەکارهێنانی ترشەکان یان پێکهاتە چالاکەکان پرسیار بە پزیشک بکە.'
               : 'أثناء الحمل أو الرضاعة، ركزي على المرطبات والغسولات اللطيفة الخالية من العطور وراجعي الطبيب قبل استخدام المقشرات الحمضية أو المكونات النشطة القوية.';
-        } else if (cId === 'sensitive') {
-          condNote =
-            lang === 'en'
-              ? 'Keep routines minimal, avoid added fragrance and harsh scrubs, and do a 24-hour patch test on a small skin area.'
-              : lang === 'tk'
-              ? 'Tertibi ýönekeý saklaň, atyrdan we gödek skrabdan gaça duruň, kiçi bölekde synap görüň.'
-              : lang === 'ckb' ? 'ڕۆتینەکە سادە بهێڵەرەوە و دووربکەوە لە بۆن و سکرابی زبر و تاقیکردنەوەی بچووک بکە.' : 'اجعلي الروتين بسيطاً وتجنبي العطور والمقشرات القاسية مع إجراء اختبار تحسس بسيط قبل الاستعمال.';
-        } else {
-          condNote =
-            lang === 'en'
-              ? 'Consistent gentle cleansing, targeted hydration, and daily SPF form the strongest foundation.'
-              : lang === 'tk'
-              ? 'Yzygiderli ýumşak arassalamak, çyglandyrmak we gündelik gün goragy iň gowy esasdyr.'
-              : lang === 'ckb'
-              ? 'پاککردنەوەی نەرم، شێدارکردنەوە و دژەخۆری ڕۆژانە باشترین بنەمایە بۆ پێست.'
-              : 'الاستمرارية على غسول لطيف ومرطب مناسب وواقي شمس صباحي هي الأساس الأنجح لصحة البشرة.';
-        }
+    const QUICK_PRESETS = [
+      {
+        label: '1 — شامبو طبي وتنقية الفروة (CeraVe / Medical Shampoo)',
+        brand: 'CeraVe',
+        category: 'shampoo',
+        svgTheme: 'shampoo',
+        primaryHex: '#0f766e',
+        secondaryHex: '#ccfbf1',
+        safety: 'safe',
+        name: 'شامبو لطيف وموازن لفروة الرأس والشعر',
+        ingredients: 'مواد منظفة لطيفة، بانثينول (B5)، وسيراميد لدعم حاجز الفروة.',
+        howToUse: 'يُدلك بلطف على فروة الرأس المبللة لمدة دقيقة ثم يُشطف بالماء الفاتر ويُوضع بلسم على الأطراف.'
+      },
+      {
+        label: '2 — عطر زيتي فاخر (دهن عود ومسك وعنبر)',
+        brand: 'Local & Oud Artisans',
+        category: 'perfume',
+        svgTheme: 'perfume',
+        primaryHex: '#b45309',
+        secondaryHex: '#fef3c7',
+        safety: 'caution',
+        name: 'عطر زيتي مركز (عود + مسك أبيض + عنبر)',
+        ingredients: 'زيوت عطرية مركزة خالية من الكحول بنوتات خشبية وعنبرية دافئة.',
+        howToUse: 'تُوضع نقطة صغيرة على الملابس أو نقاط النبض بعد تجربة التحسس المحدودة.'
+      },
+      {
+        label: '3 — عطر كحولي يومي (Eau de Parfum)',
+        brand: 'L\'Oreal Paris',
+        category: 'perfume',
+        svgTheme: 'perfume',
+        primaryHex: '#7c3aed',
+        secondaryHex: '#ede9fe',
+        safety: 'caution',
+        name: 'عطر كحولي زهري حمضي منعش',
+        ingredients: 'زيوت عطرية مذابة في كحول تجميلي بنوتات البرغموت والورد والخشب.',
+        howToUse: 'يُرش من مسافة 15–20 سم على الملابس أو المعصم دون فرك العطر بقوة.'
+      },
+      {
+        label: '4 — مرطب طبي يومي للبشرة (Bioderma / CeraVe)',
+        brand: 'Bioderma',
+        category: 'moisturizer',
+        svgTheme: 'moisturizer',
+        primaryHex: '#0284c7',
+        secondaryHex: '#e0f2fe',
+        safety: 'safe',
+        name: 'كريم ترطيب وتهدئة البشرة الحساسة والجافة',
+        ingredients: 'مرطبات داعمة للحاجز الجلدي، جليسرين، ومكونات مهدئة خالية من العطور.',
+        howToUse: 'يُوضع صباحاً ومساءً على بشرة نظيفة بعد الغسول أو الميسيلار.'
+      }
+    ];
 
-        box.innerHTML = `
-          <div class="font-extrabold text-brand-900 dark:text-brand-200">${skinObj.name[lang]}</div>
-          <p class="text-stone-700 dark:text-stone-200"><strong>${t('colRecommended')}:</strong> ${skinObj.recommended[lang]}</p>
-          <p class="text-amber-900 dark:text-amber-200 font-medium pt-1">${condNote}</p>
-        `;
+    function setupQuickAddModal() {
+      const modal = document.getElementById('quickAddModal');
+      const openBtn = document.getElementById('openQuickAddBtn');
+      const closeBtn = document.getElementById('closeQuickAddBtn');
+      const presetSel = document.getElementById('quickPresetSelect');
+      const nameInp = document.getElementById('quickItemName');
+      const brandInp = document.getElementById('quickItemBrand');
+      const catSel = document.getElementById('quickItemCategory');
+      const safeSel = document.getElementById('quickItemSafety');
+      const ingInp = document.getElementById('quickItemIngredients');
+      const useTxt = document.getElementById('quickItemHowToUse');
+      const previewBox = document.getElementById('quickSvgPreview');
+      const saveBtn = document.getElementById('saveQuickItemBtn');
+
+      const themeByCat = {
+        shampoo: 'shampoo',
+        cleanser: 'cleanser',
+        moisturizer: 'moisturizer',
+        exfoliant: 'exfoliant',
+        makeup: 'makeup',
+        body: 'body',
+        perfume: 'perfume'
       };
 
-      document.getElementById('advisorSkinSelect').addEventListener('change', updateAdvisor);
-      document.getElementById('advisorCondSelect').addEventListener('change', updateAdvisor);
-      updateAdvisor();
+      presetSel.innerHTML = QUICK_PRESETS.map((q, i) => `<option value="${i}">${q.label}</option>`).join('');
 
-      const ideasList = [
-        {
-          ar: 'قاعدة الـ 60 ثانية للغسول: تدليك الغسول بلطف لمدة كافية يمنح المواد المنظفة وقتاً للعمل دون فرك عنيف.',
-          ckb: 'یاسای ٦٠ چرکە بۆ غەسوول: مەساجی نەرم بۆ ماوەیەکی گونجاو یارمەتی پاککردنەوە دەدات بەبێ خوراندنی توند.',
-          tk: '60 sekunt düzgüni: ýumşak owkalap ýuwmak arassalaýjy maddalaryň netijeli işlemegine kömek edýär.',
-          en: '60-Second Gentle Cleanse Rule: gentle massaging gives cleansers time to work without harsh scrubbing.'
-        },
-        {
-          ar: 'تجنب شراء منتجات أصلية بأسعار مشكوك فيها جداً في الأسواق، واختر موزعين أو صيدليات موثوقة في العراق والمنطقة.',
-          ckb: 'لە بازاڕەکاندا لە بەرهەمی گوماناوی دووربکەوە و دەرمانخانە یان فرۆشگای باوەڕپێکراو هەڵبژێرە.',
-          tk: 'Şübheli arzan önümlerden seresap boluň, Yrakda we sebitde ynamdar dermanhanalary saýlaň.',
-          en: 'Avoid suspiciously cheap knockoffs in open markets; buy from trusted pharmacies or authorized retailers.'
-        },
-        {
-          ar: 'تدوين ملاحظة لكل منتج جديد لمدة أسبوعين يوضح مدى ملاءمته لبشرتك أو شعرك أو رائحة العطر.',
-          ckb: 'تێبینی بنووسە بۆ هەر بەرهەمێکی نوێ بۆ ماوەی دوو هەفتە تا بزانیت چەند گونجاوە بۆت.',
-          tk: 'Täze önümiň deräňize ýa-da saçyňyza nähili täsir edýändigini iki hepde belläň.',
-          en: 'Track how each new product feels over two weeks to spot subtle irritation or real benefits.'
-        }
-      ];
+      const applyPreset = (idx) => {
+        const p = QUICK_PRESETS[idx] || QUICK_PRESETS[0];
+        nameInp.value = p.name;
+        brandInp.value = p.brand;
+        catSel.value = p.category;
+        safeSel.value = p.safety;
+        ingInp.value = p.ingredients;
+        useTxt.value = p.howToUse;
+        refreshPreview();
+      };
 
-      ideasCard.innerHTML = `
-        <h4 class="font-extrabold text-base sm:text-lg text-stone-900 dark:text-white">
-          ${lang === 'en' ? 'Smart Care & Local Market Ideas' : lang === 'tk' ? 'Akylly Ideg we Bazar Maslahatlary' : lang === 'ckb' ? 'بیرۆکەی زیرەک بۆ گرنگیپێدان و بازاڕ' : 'أفكار ذكية للعناية والسوق المحلي'}
-        </h4>
-        <ul class="space-y-2.5 text-xs sm:text-sm text-stone-600 dark:text-stone-300">
-          ${ideasList
-            .map(
-              (item) => `
-            <li class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/70 dark:border-stone-700/70 leading-relaxed">
-              • ${item[lang]}
-            </li>
-          `
-            )
-            .join('')}
-        </ul>
-      `;
-    }
+      const refreshPreview = () => {
+        const th = themeByCat[catSel.value] || 'moisturizer';
+        previewBox.innerHTML = getProductSvg(th, '#0f766e', '#ccfbf1', brandInp.value || 'CARE');
+      };
 
-    /**
-     * =========================================================================
-     * MODALS (PRODUCT DETAILS, APPEARANCE CUSTOMIZER, iOS / INFO MODAL)
-     * =========================================================================
-     */
-    function openProductModal(productId) {
-      const prod = PRODUCTS_DATA.find((p) => p.id === productId);
-      if (!prod) return;
-      const lang = APP_STATE.lang;
+      openBtn.addEventListener('click', () => {
+        applyPreset(0);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
 
-      const isSafe = prod.pregnancyStatus === 'safe';
-      const isAvoid = prod.pregnancyStatus === 'avoid';
-      const safetyBoxStyle = isAvoid
-        ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-200 dark:border-rose-800 text-rose-950 dark:text-rose-100'
-        : isSafe
-        ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800 text-emerald-950 dark:text-emerald-100'
-        : 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800 text-amber-950 dark:text-amber-100';
-
-      document.getElementById('productModalContent').innerHTML = `
-        <div class="flex items-start justify-between gap-3 border-b border-stone-200 dark:border-stone-800 pb-3">
-          <div class="flex items-center gap-3">
-            ${getProductSvg(prod.svgTheme, prod.primaryHex, prod.secondaryHex)}
-            <div>
-              <div class="flex flex-wrap items-center gap-1.5">
-                <span class="text-xs font-extrabold px-2.5 py-0.5 rounded-full bg-brand-100 dark:bg-brand-900/50 text-brand-800 dark:text-brand-200">${prod.brand}</span>
-                <span class="text-xs font-bold px-2.5 py-0.5 rounded-full ${safetyBoxStyle}">${isAvoid ? t('pregAvoidOption') : isSafe ? t('pregSafeOption') : t('pregCautionOption')}</span>
-              </div>
-              <h4 class="font-extrabold text-base sm:text-lg text-stone-900 dark:text-white mt-1">${prod.name[lang]}</h4>
-            </div>
-          </div>
-          <button type="button" id="closeProductModalBtn" class="p-1.5 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-600 dark:text-stone-300">✕</button>
-        </div>
-
-        <div class="space-y-3 text-xs sm:text-sm">
-          <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/60">
-            <div class="font-bold text-stone-900 dark:text-white mb-0.5">${t('suitableForLabel')}</div>
-            <p class="text-stone-700 dark:text-stone-200">${prod.suitableLabel[lang]}</p>
-          </div>
-
-          <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/60">
-            <div class="font-bold text-stone-900 dark:text-white mb-0.5">${t('ingredientsLabel')}</div>
-            <p class="text-stone-700 dark:text-stone-200 leading-relaxed">${prod.ingredients[lang]}</p>
-          </div>
-
-          <div class="p-3 rounded-xl bg-brand-50/70 dark:bg-brand-950/30 border border-brand-200/70 dark:border-brand-800/50">
-            <div class="font-bold text-brand-900 dark:text-brand-200 mb-0.5">${t('howToUseLabel')}</div>
-            <p class="text-stone-800 dark:text-stone-100 leading-relaxed">${prod.howToUse[lang]}</p>
-          </div>
-
-          <div class="p-3 rounded-xl border ${safetyBoxStyle}">
-            <div class="font-extrabold mb-0.5">${t('safetyStandardLabel')}</div>
-            <p class="leading-relaxed">${prod.safetyStandard[lang]}</p>
-          </div>
-
-          <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/60">
-            <div class="font-bold text-stone-900 dark:text-white mb-0.5">${t('marketAvailabilityLabel')}</div>
-            <p class="text-stone-700 dark:text-stone-200">${prod.marketAvailability[lang]}</p>
-          </div>
-        </div>
-
-        <div class="pt-2 flex justify-end">
-          <button type="button" id="doneProductModalBtn" class="btn-ui px-5 py-2 bg-brand-700 hover:bg-brand-800 text-white text-xs sm:text-sm font-bold">
-            ${APP_STATE.lang === 'en' ? 'Close' : APP_STATE.lang === 'tk' ? 'Ýapmak' : APP_STATE.lang === 'ckb' ? 'داخستن' : 'إغلاق'}
-          </button>
-        </div>
-      `;
-
-      const modal = document.getElementById('productModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-
-      const closeFn = () => {
+      closeBtn.addEventListener('click', () => {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
-      };
-      document.getElementById('closeProductModalBtn').addEventListener('click', closeFn);
-      document.getElementById('doneProductModalBtn').addEventListener('click', closeFn);
+      });
+
       modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeFn();
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      });
+
+      presetSel.addEventListener('change', (e) => applyPreset(Number(e.target.value)));
+      catSel.addEventListener('change', refreshPreview);
+      brandInp.addEventListener('input', refreshPreview);
+
+      saveBtn.addEventListener('click', () => {
+        const titleVal = (nameInp.value || '').trim();
+        const brandVal = (brandInp.value || 'Inaya').trim();
+        const catVal = catSel.value;
+        const safeVal = safeSel.value;
+        const ingVal = (ingInp.value || '').trim() || 'تركيبة عناية متوازنة';
+        const useVal = (useTxt.value || '').trim() || 'يُستخدم حسب الإرشادات الموضحة.';
+
+        if (!titleVal) {
+          openInfoModal(
+            APP_STATE.lang === 'en' ? 'Missing Item Name' : 'يرجى كتابة اسم المنتج',
+            [APP_STATE.lang === 'en' ? 'Please enter a name or pick a preset first.' : 'يرجى إدخال اسم المنتج أو اختيار قالب جاهز أولاً.']
+          );
+          return;
+        }
+
+        const newItem = {
+          id: 'custom-' + Date.now(),
+          brand: brandVal,
+          category: catVal,
+          svgTheme: themeByCat[catVal] || 'moisturizer',
+          primaryHex: '#0f766e',
+          secondaryHex: '#ccfbf1',
+          hairTypes: catVal === 'shampoo' ? ['oily', 'dry', 'combination', 'colored', 'virgin'] : [],
+          skinTypes: ['normal', 'combination', 'dry', 'sensitive'],
+          pregnancyStatus: safeVal,
+          name: { ar: titleVal, ckb: titleVal, tk: titleVal, en: titleVal },
+          suitableLabel: {
+            ar: 'مناسب حسب الفئة المختارة والاختبار المبدئي',
+            ckb: 'گونجاوە بەپێی بەشی هەڵبژێردراو',
+            tk: 'Saýlanan bölüme görä laýyk',
+            en: 'Matched to selected category & patch tolerance'
+          },
+          ingredients: { ar: ingVal, ckb: ingVal, tk: ingVal, en: ingVal },
+          howToUse: { ar: useVal, ckb: useVal, tk: useVal, en: useVal },
+          safetyStandard: {
+            ar: 'يُرجى مراجعة الطبيب أو الصيدلي في حال الحمل أو الرضاعة أو الحساسية الخاصة.',
+            ckb: 'لە کاتی دووگیانی یان هەستیاری ڕاوێژ بە پزیشک بکە.',
+            tk: 'Göwrelilikde ýa-da duýgurlykda lukman bilen maslahatlaşyň.',
+            en: 'Consult a healthcare professional during pregnancy, lactation, or personal sensitivities.'
+          },
+          marketAvailability: {
+            ar: 'مضاف في قائمتك المباشرة داخل التطبيق.',
+            ckb: 'لە لیستی ناو ئەپەکە زیاد کرا.',
+            tk: 'Programmanyň sanawyna goşuldy.',
+            en: 'Added directly to your active catalog inside the app.'
+          }
+        };
+
+        PRODUCTS_DATA.unshift(newItem);
+        renderProductsGrid();
+        renderHairSection();
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
       });
     }
 
-    function openInfoModal(title, paragraphs) {
-      document.getElementById('infoModalTitle').textContent = title;
-      document.getElementById('infoModalBody').innerHTML = paragraphs.map((p) => `<p>${p}</p>`).join('');
-      const modal = document.getElementById('infoModal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-
-      const closeFn = () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      };
-      document.getElementById('closeInfoModalBtn').onclick = closeFn;
-      document.getElementById('okInfoModalBtn').onclick = closeFn;
-      modal.onclick = (e) => {
-        if (e.target === modal) closeFn();
-      };
-    }
-
-    /**
-     * =========================================================================
-     * EVENT LISTENERS & INITIALIZATION
-     * =========================================================================
-     */
     function bindGlobalEvents() {
+      setupQuickAddModal();
       // Language buttons
       document.querySelectorAll('.lang-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
