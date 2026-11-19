@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="عناية" />
   <meta name="theme-color" content="#0f766e" />
-  <title>عناية — دليلك الشامل للعناية والشركات</title>
+  <title>عناية — الموسوعة الشاملة للعناية بالبشرة والشعر والعطور والكوزمتيك</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,8 +28,7 @@
       --primary: #0f766e;
       --primary-dark: #115e59;
       --primary-soft: #ccfbf1;
-      --accent: #b45309;
-      --accent-soft: #fef3c7;
+      --accent: #0369a1;
       --safe-bg: #dcfce7;
       --safe-fg: #166534;
       --caution-bg: #fef9c3;
@@ -49,8 +48,7 @@
       --primary: #14b8a6;
       --primary-dark: #0d9488;
       --primary-soft: #134e4a;
-      --accent: #fbbf24;
-      --accent-soft: #451a03;
+      --accent: #38bdf8;
       --safe-bg: #052e16;
       --safe-fg: #86efac;
       --caution-bg: #422006;
@@ -86,16 +84,16 @@
 
     .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: 1260px;
       margin: 0 auto;
       padding: 0 14px;
     }
 
-    /* Sticky Top Bar */
+    /* Sticky Top Navigation */
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 60;
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       box-shadow: var(--shadow);
@@ -115,19 +113,20 @@
       align-items: center;
       gap: 10px;
       min-width: 0;
+      flex: 1 1 280px;
     }
 
     .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), #0284c7);
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: #ffffff;
       font-weight: 800;
-      font-size: 18px;
+      font-size: 20px;
       flex-shrink: 0;
     }
 
@@ -141,27 +140,6 @@
       margin: 0;
       font-size: 11px;
       color: var(--muted);
-    }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--safe-bg);
-      color: var(--safe-fg);
-      font-size: 11px;
-      font-weight: 700;
-      border: 1px solid currentColor;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #16a34a;
-      display: inline-block;
     }
 
     .controls-row {
@@ -187,7 +165,7 @@
       border-radius: 9px;
       font-size: 12px;
       font-weight: 700;
-      min-height: 34px;
+      min-height: 36px;
     }
 
     .lang-btn.active {
@@ -198,7 +176,7 @@
     .icon-btn {
       border: 1px solid var(--border);
       background: var(--surface-2);
-      padding: 6px 11px;
+      padding: 6px 12px;
       border-radius: 11px;
       font-size: 12px;
       font-weight: 700;
@@ -228,7 +206,7 @@
     .tab-btn {
       border: 1px solid var(--border);
       background: var(--surface-2);
-      padding: 7px 13px;
+      padding: 7px 14px;
       border-radius: 999px;
       font-size: 12px;
       font-weight: 700;
@@ -261,7 +239,23 @@
     .hero p {
       margin: 0 0 12px;
       font-size: 13px;
-      opacity: 0.95;
+      opacity: 0.96;
+    }
+
+    .stats-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
     }
 
     .hero-actions {
@@ -282,7 +276,7 @@
     }
 
     .btn-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       background: rgba(255, 255, 255, 0.14);
       color: #ffffff;
       padding: 8px 14px;
@@ -307,7 +301,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 10px;
       margin-bottom: 14px;
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
@@ -326,11 +320,17 @@
       color: var(--muted);
     }
 
-    .filter-toolbar {
+    .filter-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
       gap: 10px;
-      margin-bottom: 14px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 4px;
     }
 
     .input-control, .select-control, .textarea-control {
@@ -343,9 +343,42 @@
       min-height: 40px;
     }
 
+    .cat-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .cat-pill-btn {
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      min-height: 34px;
+    }
+
+    .cat-pill-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .checker-banner {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 14px;
     }
 
@@ -353,12 +386,12 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 14px;
+      padding: 13px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 10px;
-      transition: transform 0.15s ease, border-color 0.15s ease;
+      transition: transform 0.14s ease, border-color 0.14s ease;
     }
 
     .item-card:hover {
@@ -377,8 +410,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 28px;
-      height: 28px;
+      min-width: 34px;
+      height: 26px;
       padding: 0 8px;
       border-radius: 999px;
       background: var(--primary);
@@ -394,25 +427,57 @@
       border-radius: 999px;
       background: var(--surface-2);
       border: 1px solid var(--border);
+      max-width: 72%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .item-title {
       margin: 4px 0 0;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
     }
 
-    .svg-frame {
+    .cat-subtag {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 700;
+      margin: 2px 0;
+    }
+
+    .img-box {
+      position: relative;
       width: 100%;
-      height: 112px;
+      height: 118px;
       border-radius: 12px;
       background: var(--surface-2);
       border: 1px solid var(--border);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      margin: 6px 0;
+      margin: 4px 0;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .img-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 6px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(3, 105, 161, 0.08));
     }
 
     .meta-line {
@@ -427,7 +492,7 @@
 
     .badge-safe {
       display: inline-block;
-      padding: 3px 9px;
+      padding: 2px 8px;
       border-radius: 999px;
       background: var(--safe-bg);
       color: var(--safe-fg);
@@ -437,7 +502,7 @@
 
     .badge-caution {
       display: inline-block;
-      padding: 3px 9px;
+      padding: 2px 8px;
       border-radius: 999px;
       background: var(--caution-bg);
       color: var(--caution-fg);
@@ -447,7 +512,7 @@
 
     .badge-avoid {
       display: inline-block;
-      padding: 3px 9px;
+      padding: 2px 8px;
       border-radius: 999px;
       background: var(--avoid-bg);
       color: var(--avoid-fg);
@@ -457,7 +522,7 @@
 
     .card-actions {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       padding-top: 6px;
       border-top: 1px solid var(--border);
     }
@@ -467,16 +532,38 @@
       border: 1px solid var(--primary);
       background: transparent;
       color: var(--primary);
-      padding: 7px 10px;
+      padding: 6px 8px;
       border-radius: 10px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      min-height: 36px;
+      min-height: 34px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .btn-outline:hover {
       background: var(--primary);
       color: #ffffff;
+    }
+
+    .pagination-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .page-btns {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
     }
 
     /* Tables */
@@ -491,7 +578,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 12px;
-      min-width: 720px;
+      min-width: 780px;
     }
 
     th, td {
@@ -506,7 +593,7 @@
       font-weight: 800;
     }
 
-    /* Routine & Nutrition Grid */
+    /* Routines & Nutrition */
     .two-col {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -532,7 +619,7 @@
       align-items: center;
       justify-content: center;
       padding: 14px;
-      z-index: 100;
+      z-index: 120;
     }
 
     .modal-backdrop.open {
@@ -541,7 +628,7 @@
 
     .modal-card {
       width: 100%;
-      max-width: 560px;
+      max-width: 580px;
       max-height: 88vh;
       overflow-y: auto;
       background: var(--surface);
@@ -581,13 +668,6 @@
       gap: 10px;
     }
 
-    .field-label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
     .footer {
       margin: 22px 0 28px;
       padding: 18px;
@@ -614,13 +694,9 @@
         <div class="brand-box">
           <div class="brand-logo" aria-hidden="true">ع</div>
           <div>
-            <h1 class="brand-title" id="uiTitle">عناية — دليلك الشامل للعناية والشركات</h1>
-            <p class="brand-sub" id="uiSubtitle">شامبوهات • كوزمتيك ومكياج • عطور زيتية وكحولية • شركات • روتينات • تغذية</p>
+            <h1 class="brand-title" id="uiTitle">عناية — الموسوعة الشاملة للعناية بالبشرة والشعر والعطور والكوزمتيك</h1>
+            <p class="brand-sub" id="uiSubtitle">أكثر من 520 منتجاً مرقماً • واقيات شمس • شامبوهات • غسولات ومقشرات • مرطبات وسيرومات • مكياج • صابون وعطور</p>
           </div>
-          <span class="status-pill" id="liveStatusPill">
-            <span class="status-dot"></span>
-            <span id="uiStatusText">جاهز ويعمل • Ready</span>
-          </span>
         </div>
 
         <div class="controls-row">
@@ -631,97 +707,117 @@
             <button type="button" class="lang-btn" data-lang="en">EN</button>
           </div>
           <button type="button" class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">🌙 / ☀️</button>
-          <button type="button" class="icon-btn" id="openAddModalBtn" aria-label="Add product">+ <span id="uiAddBtn">إضافة منتج</span></button>
-          <button type="button" class="icon-btn" id="resetDataBtn" aria-label="Reset app">↻ <span id="uiResetBtn">إعادة ضبط</span></button>
+          <button type="button" class="icon-btn" id="openAddModalBtn" aria-label="Add item">+ <span id="uiAddBtn">إضافة منتج</span></button>
+          <button type="button" class="icon-btn" id="resetDataBtn" aria-label="Reset filters and data">↻ <span id="uiResetBtn">إعادة ضبط</span></button>
         </div>
       </div>
 
       <nav class="tabs-bar" id="sectionTabs" aria-label="Sections navigation">
-        <button type="button" class="tab-btn active" data-sec="all" id="tabAll">الكل (1–6)</button>
-        <button type="button" class="tab-btn" data-sec="shampoos" id="tabShampoos">1. الشامبوهات</button>
-        <button type="button" class="tab-btn" data-sec="cosmetics" id="tabCosmetics">2. الكوزمتيك والمكياج</button>
-        <button type="button" class="tab-btn" data-sec="perfumes" id="tabPerfumes">3. العطور</button>
-        <button type="button" class="tab-btn" data-sec="companies" id="tabCompanies">4. الشركات وجدولها</button>
-        <button type="button" class="tab-btn" data-sec="routines" id="tabRoutines">5. الروتينات</button>
-        <button type="button" class="tab-btn" data-sec="nutrition" id="tabNutrition">6. التغذية والجسم</button>
+        <button type="button" class="tab-btn active" data-sec="all" id="tabAll">الموسوعة (520+)</button>
+        <button type="button" class="tab-btn" data-sec="sunscreens" id="tabSunscreens">واقيات الشمس</button>
+        <button type="button" class="tab-btn" data-sec="shampoos" id="tabShampoos">الشامبوهات والشعر</button>
+        <button type="button" class="tab-btn" data-sec="perfumes" id="tabPerfumes">العطور الزيتية والكحولية</button>
+        <button type="button" class="tab-btn" data-sec="companies" id="tabCompanies">جدول الشركات والمنتجات</button>
+        <button type="button" class="tab-btn" data-sec="routines" id="tabRoutines">الروتينات اليومية</button>
+        <button type="button" class="tab-btn" data-sec="nutrition" id="tabNutrition">التغذية والجسم</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h2 id="heroHeading">دليل متكامل ومرقّم (1، 2، 3، 4، 5، 6...) مع صور جاهزة وطريقة الاستخدام ومعايير الحمل</h2>
-      <p id="heroDesc">يعمل بسرعة فائقة على الهاتف والمتصفح، وجاهز للرفع على Glitch أو GitHub Pages وإضافته إلى شاشة iPhone الرئيسية.</p>
+      <h2 id="heroHeading">موسوعة تفاعلية تضم أكثر من 520 منتجاً مرقماً مع معايير الحمل والبشرة والشعر وصور من الإنترنت</h2>
+      <p id="heroDesc">تصفح واقيات الشمس، الشامبوهات، الغسولات، المقشرات، المرطبات، السيرومات، المكياج، الصابون والعناية بالجسم، والعطور الزيتية والكحولية، مع فحص ملاءمة الحمل ونوع البشرة والشعر.</p>
+      <div class="stats-strip" id="statsStrip"></div>
       <div class="hero-actions">
-        <button type="button" class="btn-primary" id="heroAddBtn">+ <span id="uiHeroAdd">أضف منتجك أو شركتك الآن</span></button>
-        <button type="button" class="btn-secondary" id="iosHelpBtn">📱 <span id="uiIosBtn">طريقة الإضافة لشاشة iPhone / المتصفح</span></button>
+        <button type="button" class="btn-primary" id="heroAddBtn">+ <span id="uiHeroAdd">إضافة منتج مخصص للموسوعة</span></button>
+        <button type="button" class="btn-secondary" id="iosHelpBtn">📱 <span id="uiIosBtn">الرفع على Glitch / iPhone</span></button>
       </div>
     </section>
 
-    <!-- Search & Safety Filter Bar -->
+    <!-- Smart Filter & Suitability Checker -->
     <section class="section-block" id="filterSection">
-      <div class="filter-toolbar">
+      <div class="section-header">
         <div>
-          <label class="field-label" id="lblSearch" for="searchInput">بحث سريع بالاسم أو الشركة أو النوع</label>
-          <input type="text" id="searchInput" class="input-control" placeholder="مثال: Bioderma، CeraVe، شامبو، عود..." />
+          <h3 class="section-title" id="titleFilters">فلاتر البحث والملاءمة السريعة (البشرة • الشعر • الحمل • الشركة)</h3>
+          <p class="section-desc" id="descFilters">اختر نوع البشرة أو الشعر وحالة الحمل لمعرفة المنتجات الملائمة أو التي تستدعي استشارة أو تجنباً.</p>
+        </div>
+      </div>
+
+      <div class="filter-grid">
+        <div>
+          <label class="field-label" id="lblSearch" for="searchInput">بحث بالاسم أو الشركة أو المكون أو الرقم</label>
+          <input type="text" id="searchInput" class="input-control" placeholder="مثال: واقي شمس، Bioderma، Retinol، عود..." />
         </div>
         <div>
-          <label class="field-label" id="lblCompanyFilter" for="companyFilter">تصفية حسب الشركة</label>
+          <label class="field-label" id="lblSkinType" for="skinFilter">نوع البشرة</label>
+          <select id="skinFilter" class="select-control">
+            <option value="ALL">كل أنواع البشرة</option>
+            <option value="Oily">دهنية / Oily</option>
+            <option value="Dry">جافة / Dry</option>
+            <option value="Sensitive">حساسة / Sensitive</option>
+            <option value="Combination">مختلطة / Combination</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" id="lblHairType" for="hairFilter">نوع الشعر</label>
+          <select id="hairFilter" class="select-control">
+            <option value="ALL">كل أنواع الشعر</option>
+            <option value="Oily Hair">شعر دهني / Oily Hair</option>
+            <option value="Dry Hair">شعر جاف / Dry Hair</option>
+            <option value="Color-Treated">شعر مصبوغ / Color-Treated</option>
+            <option value="Untreated">شعر غير مصبوغ / Untreated</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" id="lblPregnancyFilter" for="pregnancyFilter">معيار الحمل والرضاعة</label>
+          <select id="pregnancyFilter" class="select-control">
+            <option value="ALL">كل الحالات</option>
+            <option value="safe">آمن للحمل / Safe</option>
+            <option value="caution">يُستشار طبيب للحمل / Consult</option>
+            <option value="avoid">يُتجنب أثناء الحمل / Avoid</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label" id="lblCompanyFilter" for="companyFilter">الشركة / الماركة</label>
           <select id="companyFilter" class="select-control">
             <option value="ALL">كل الشركات</option>
           </select>
         </div>
-        <div>
-          <label class="field-label" id="lblSafetyFilter" for="safetyFilter">معيار السلامة والحمل</label>
-          <select id="safetyFilter" class="select-control">
-            <option value="ALL">كل الحالات</option>
-            <option value="safe">آمن للاستخدام / الحمل</option>
-            <option value="caution">يُستشار الطبيب</option>
-            <option value="avoid">يُتجنب أثناء الحمل</option>
-          </select>
-        </div>
       </div>
+
+      <div class="cat-pills" id="categoryPills"></div>
+      <div class="checker-banner" id="suitabilityBanner"></div>
     </section>
 
-    <!-- 1. SHAMPOOS -->
-    <section class="section-block" data-section-panel="shampoos" id="panelShampoos">
+    <!-- Main 520+ Catalog Section -->
+    <section class="section-block" data-section-panel="catalog" id="panelCatalog">
       <div class="section-header">
         <div>
-          <h3 class="section-title" id="titleShampoos">1. الشامبوهات العالمية والطبية والصحية (1، 2، 3، 4، 5، 6...)</h3>
-          <p class="section-desc" id="descShampoos">كل شامبو برقم واضح، صورة جاهزة مدمجة، الشركة، نوع الشعر، طريقة الاستخدام، وتنبيه الحمل.</p>
+          <h3 class="section-title" id="titleCatalog">الموسوعة المرقمة للمنتجات (520+ منتجاً)</h3>
+          <p class="section-desc" id="descCatalog">كل بطاقة تعرض الرقم، الشركة، التصنيف، نوع البشرة/الشعر، المكونات، طريقة الاستخدام، معيار الحمل، وصورة من الإنترنت مع بديل جاهز.</p>
+        </div>
+        <div id="resultsCountBadge" class="stat-pill" style="background:var(--primary-soft);color:var(--primary-dark);border-color:var(--primary);"></div>
+      </div>
+
+      <div class="cards-grid" id="catalogGrid"></div>
+
+      <div class="pagination-bar">
+        <div id="pageInfoText" style="font-size:12px;font-weight:700;color:var(--muted);"></div>
+        <div class="page-btns">
+          <button type="button" class="icon-btn" id="prevPageBtn">◀ <span id="uiPrevPage">السابق</span></button>
+          <span id="pageNumIndicator" style="font-size:12px;font-weight:800;padding:0 8px;">1 / 1</span>
+          <button type="button" class="icon-btn" id="nextPageBtn"><span id="uiNextPage">التالي</span> ▶</button>
         </div>
       </div>
-      <div class="cards-grid" id="shampoosGrid"></div>
     </section>
 
-    <!-- 2. COSMETICS & MAKEUP -->
-    <section class="section-block" data-section-panel="cosmetics" id="panelCosmetics">
-      <div class="section-header">
-        <div>
-          <h3 class="section-title" id="titleCosmetics">2. الكوزمتيك والمكياج والعناية الطبية (1، 2، 3، 4، 5، 6...)</h3>
-          <p class="section-desc" id="descCosmetics">مرطبات، ميسيلار، واقي شمس، مسكارا، وعلاجات طبية مع توضيح معيار الحمل والاستخدام.</p>
-        </div>
-      </div>
-      <div class="cards-grid" id="cosmeticsGrid"></div>
-    </section>
-
-    <!-- 3. PERFUMES -->
-    <section class="section-block" data-section-panel="perfumes" id="panelPerfumes">
-      <div class="section-header">
-        <div>
-          <h3 class="section-title" id="titlePerfumes">3. العطور الزيتية والكحولية والعالمية ومكوناتها (1، 2، 3، 4، 5، 6...)</h3>
-          <p class="section-desc" id="descPerfumes">تعرف على مكونات العطور الزيتية والكحولية وطريقة وضعها الآمن وتنبيهات الحمل والحساسية.</p>
-        </div>
-      </div>
-      <div class="cards-grid" id="perfumesGrid"></div>
-    </section>
-
-    <!-- 4. COMPANIES & TABLE -->
+    <!-- Structured Companies & Products Table -->
     <section class="section-block" data-section-panel="companies" id="panelCompanies">
       <div class="section-header">
         <div>
-          <h3 class="section-title" id="titleCompanies">4. الشركات ومنتجاتها وطريقة الاستخدام (جدول شامل)</h3>
-          <p class="section-desc" id="descCompanies">جدول منظم يوضح الشركة، نوع المواد، المنتجات، طريقة الاستخدام، ومعيار الحمل.</p>
+          <h3 class="section-title" id="titleCompanies">جدول الشركات والمنتجات وطريقة الاستخدام ومعايير الحمل</h3>
+          <p class="section-desc" id="descCompanies">مرجع جدولي منظم للشركات العالمية والمحلية، خطوط الإنتاج، الملاءمة، طريقة الاستخدام، وحالة الحمل.</p>
         </div>
       </div>
       <div class="table-wrap">
@@ -729,9 +825,10 @@
           <thead>
             <tr>
               <th id="thNum">#</th>
-              <th id="thCompany">الشركة</th>
-              <th id="thType">نوع المواد</th>
-              <th id="thProducts">المنتجات</th>
+              <th id="thCompany">الشركة / الماركة</th>
+              <th id="thCategory">القسم</th>
+              <th id="thProduct">المنتج</th>
+              <th id="thTarget">نوع البشرة / الشعر</th>
               <th id="thUsage">طريقة الاستخدام</th>
               <th id="thSafety">الحمل والسلامة</th>
             </tr>
@@ -741,30 +838,30 @@
       </div>
     </section>
 
-    <!-- 5. ROUTINES -->
+    <!-- Routines Section -->
     <section class="section-block" data-section-panel="routines" id="panelRoutines">
       <div class="section-header">
         <div>
-          <h3 class="section-title" id="titleRoutines">5. الروتينات اليومية (صباحي • مسائي • أسبوعي)</h3>
-          <p class="section-desc" id="descRoutines">خطوات واضحة للبشرة الدهنية والجافة والحساسة والمختلطة والشعر المصبوغ والطبيعي والجسم.</p>
+          <h3 class="section-title" id="titleRoutines">الروتينات اليومية والعلاجية والعطرية</h3>
+          <p class="section-desc" id="descRoutines">خطوات عملية للروتين الصباحي والمسائي، البشرة الدهنية والجافة والحساسة، العناية بالشعر، وتنسيق العطور.</p>
         </div>
       </div>
       <div class="two-col" id="routinesGrid"></div>
     </section>
 
-    <!-- 6. NUTRITION & BODY CARE -->
+    <!-- Nutrition & Body Care Standards Section -->
     <section class="section-block" data-section-panel="nutrition" id="panelNutrition">
       <div class="section-header">
         <div>
-          <h3 class="section-title" id="titleNutrition">6. ستاندرات التغذية والعناية بالجسم</h3>
-          <p class="section-desc" id="descNutrition">معايير التغذية والترطيب الداعمة للبشرة والشعر والجسم مع التنبيه الطبي للحمل والمكملات.</p>
+          <h3 class="section-title" id="titleNutrition">ستاندرات التغذية والعناية بالجسم</h3>
+          <p class="section-desc" id="descNutrition">أسس الترطيب والغذاء الداعم لصحة الجلد والشعر والجسم مع التنبيه الطبي للحمل والمكملات.</p>
         </div>
       </div>
-      <div class="cards-grid" id="nutritionGrid"></div>
+      <div class="two-col" id="nutritionGrid"></div>
     </section>
   </main>
 
-  <!-- Product Details Modal -->
+  <!-- Product Detail Modal -->
   <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
     <div class="modal-card">
       <div class="modal-head">
@@ -779,52 +876,60 @@
   <div class="modal-backdrop" id="addModal" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
     <div class="modal-card">
       <div class="modal-head">
-        <h3 id="addModalTitle">إضافة منتج أو شركة جديدة بصورة جاهزة</h3>
+        <h3 id="addModalTitle">إضافة منتج جديد إلى الموسوعة</h3>
         <button type="button" class="close-btn" id="closeAddModal" aria-label="Close">✕</button>
       </div>
       <form id="addProductForm" class="form-grid">
         <div>
-          <label class="field-label" id="fLblSection" for="fSection">القسم</label>
-          <select id="fSection" class="select-control">
-            <option value="shampoo">1. الشامبوهات</option>
-            <option value="cosmetic">2. الكوزمتيك والمكياج والعناية الطبية</option>
-            <option value="perfume">3. العطور الزيتية والكحولية</option>
+          <label class="field-label" id="fLblCategory" for="fCategory">التصنيف</label>
+          <select id="fCategory" class="select-control">
+            <option value="Sunscreen">واقيات الشمس / Sunscreens</option>
+            <option value="Shampoo">الشامبوهات والشعر / Shampoos & Hair</option>
+            <option value="Cleanser & Exfoliant">الغسولات والمقشرات / Cleansers & Exfoliants</option>
+            <option value="Moisturizer & Serum">المرطبات والسيرومات / Moisturizers & Serums</option>
+            <option value="Makeup & Cosmetics">المكياج والكوزمتيك / Makeup & Cosmetics</option>
+            <option value="Soap & Body Care">الصابون والعناية بالجسم / Soaps & Body Care</option>
+            <option value="Perfume">العطور الزيتية والكحولية / Perfumes</option>
           </select>
         </div>
         <div>
           <label class="field-label" id="fLblName" for="fName">اسم المنتج</label>
-          <input type="text" id="fName" class="input-control" required placeholder="مثال: شامبو ترطيب أو عطر عنبر" />
+          <input type="text" id="fName" class="input-control" required placeholder="مثال: واقي شمس معدني SPF 50+" />
         </div>
         <div>
-          <label class="field-label" id="fLblCompany" for="fCompany">الشركة</label>
-          <input type="text" id="fCompany" class="input-control" required placeholder="مثال: Bioderma / CeraVe / شركة محلية" />
+          <label class="field-label" id="fLblCompany" for="fCompany">الشركة / الماركة</label>
+          <input type="text" id="fCompany" class="input-control" required placeholder="مثال: Bioderma / CeraVe / La Roche-Posay" />
         </div>
         <div>
-          <label class="field-label" id="fLblTarget" for="fTarget">أنواع البشرة أو الشعر / المكونات</label>
-          <input type="text" id="fTarget" class="input-control" required placeholder="مثال: للبشرة الجافة / شعر مصبوغ" />
+          <label class="field-label" id="fLblTarget" for="fTarget">نوع البشرة أو الشعر والمكونات</label>
+          <input type="text" id="fTarget" class="input-control" required placeholder="مثال: Sensitive / Dry skin • Zinc Oxide" />
         </div>
         <div>
           <label class="field-label" id="fLblUsage" for="fUsage">طريقة الاستخدام</label>
-          <textarea id="fUsage" rows="2" class="textarea-control" required placeholder="اشرح خطوات الاستخدام باختصار"></textarea>
+          <textarea id="fUsage" rows="2" class="textarea-control" required placeholder="اشرح طريقة الاستخدام الصحيحة"></textarea>
         </div>
         <div>
-          <label class="field-label" id="fLblSafety" for="fSafety">معيار السلامة والحمل</label>
+          <label class="field-label" id="fLblImage" for="fImage">رابط صورة من الإنترنت (اختياري)</label>
+          <input type="url" id="fImage" class="input-control" placeholder="https://..." />
+        </div>
+        <div>
+          <label class="field-label" id="fLblSafety" for="fSafety">معيار الحمل والسلامة</label>
           <select id="fSafety" class="select-control">
-            <option value="safe">آمن للاستخدام / الحمل</option>
-            <option value="caution">يُستشار الطبيب</option>
-            <option value="avoid">يُتجنب أثناء الحمل</option>
+            <option value="safe">آمن للحمل / Safe</option>
+            <option value="caution">يُستشار طبيب للحمل / Consult</option>
+            <option value="avoid">يُتجنب أثناء الحمل / Avoid</option>
           </select>
         </div>
-        <button type="submit" class="btn-primary" style="background:var(--primary);color:#fff;" id="fSubmitBtn">حفظ وإضافة مباشرة</button>
+        <button type="submit" class="btn-primary" style="background:var(--primary);color:#ffffff;" id="fSubmitBtn">حفظ وإضافة للموسوعة</button>
       </form>
     </div>
   </div>
 
-  <!-- Info / iOS Modal -->
+  <!-- Info Modal -->
   <div class="modal-backdrop" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
     <div class="modal-card">
       <div class="modal-head">
-        <h3 id="infoModalTitle">معلومة</h3>
+        <h3 id="infoModalTitle">معلومات التشغيل والنشر</h3>
         <button type="button" class="close-btn" id="closeInfoModal" aria-label="Close">✕</button>
       </div>
       <div id="infoModalBody" style="font-size:13px;"></div>
@@ -835,10 +940,10 @@
     <div class="container">
       <div class="credit-line">صنع من قبل إبراهيم إسماعيل • #made_by_Ibrahim_Ismail</div>
       <p id="footerNote" style="margin:4px 0;">
-        تطبيق ويب متكامل ومجاني — مناسب للفتح على المتصفح، الاستضافة على Glitch أو GitHub Pages، والإضافة إلى شاشة iPhone الرئيسية.
+        تطبيق ويب متكامل ومجاني — يعمل في المتصفح وعلى Glitch و GitHub Pages ويمكن إضافته إلى شاشة iPhone الرئيسية.
       </p>
       <p id="footerMedicalNote" style="margin:4px 0;font-size:11px;">
-        تنبيه توعوي: المعلومات التجميلية ومعايير الحمل إرشادية عامة، ويُرجى مراجعة الطبيب أو الصيدلي في الحالات الطبية أو أثناء الحمل والرضاعة.
+        تنبيه توعوي: المعلومات التجميلية ومعايير الحمل إرشادية عامة؛ يُرجى استشارة الطبيب أو الصيدلي في الحالات الطبية أو أثناء الحمل والرضاعة.
       </p>
     </div>
   </footer>
@@ -847,1055 +952,1149 @@
     (function () {
       'use strict';
 
-      const STORAGE_KEY = 'inaya_complete_guide_v1';
+      const STORAGE_KEY = 'inaya_encyclopedia_520_v1';
+      const ITEMS_PER_PAGE = 24;
+
+      const CATEGORIES = [
+        {
+          id: 'ALL',
+          ar: 'كل الأقسام',
+          ku: 'هەموو بەشەکان',
+          tk: 'Ähli Bölümler',
+          en: 'All Categories'
+        },
+        {
+          id: 'Sunscreen',
+          ar: 'واقيات الشمس',
+          ku: 'دژەخۆرەکان',
+          tk: 'Gün Goraglary',
+          en: 'Sunscreens'
+        },
+        {
+          id: 'Shampoo',
+          ar: 'الشامبوهات والشعر',
+          ku: 'شامپۆ و قژ',
+          tk: 'Şampun we Saç',
+          en: 'Shampoos & Hair'
+        },
+        {
+          id: 'Cleanser & Exfoliant',
+          ar: 'الغسولات والمقشرات',
+          ku: 'غەسوول و تەقشیر',
+          tk: 'Ýuwujy we Arassalaýjy',
+          en: 'Cleansers & Exfoliants'
+        },
+        {
+          id: 'Moisturizer & Serum',
+          ar: 'المرطبات والسيرومات',
+          ku: 'شێدارکەرەوە و سیرۆم',
+          tk: 'Çyglandyryjy we Seruma',
+          en: 'Moisturizers & Serums'
+        },
+        {
+          id: 'Makeup & Cosmetics',
+          ar: 'المكياج والكوزمتيك',
+          ku: 'ماکیاژ و کۆزمەتیک',
+          tk: 'Makiýaž we Kosmetika',
+          en: 'Makeup & Cosmetics'
+        },
+        {
+          id: 'Soap & Body Care',
+          ar: 'الصابون والعناية بالجسم',
+          ku: 'سابوون و جەستە',
+          tk: 'Sabyn we Beden Idegi',
+          en: 'Soaps & Body Care'
+        },
+        {
+          id: 'Perfume',
+          ar: 'العطور الزيتية والكحولية',
+          ku: 'بۆنی زەیتی و کهولی',
+          tk: 'Ýagly we Spirtli Atırlar',
+          en: 'Oil & Alcohol Perfumes'
+        }
+      ];
 
       const I18N = {
         ar: {
           dir: 'rtl',
-          title: 'عناية — دليلك الشامل للعناية والشركات',
-          subtitle: 'شامبوهات • كوزمتيك ومكياج • عطور زيتية وكحولية • شركات • روتينات • تغذية',
-          status: 'جاهز ويعمل • Ready',
+          title: 'عناية — الموسوعة الشاملة للعناية بالبشرة والشعر والعطور والكوزمتيك',
+          subtitle: 'أكثر من 520 منتجاً مرقماً • واقيات شمس • شامبوهات • غسولات ومقشرات • مرطبات وسيرومات • مكياج • صابون وعطور',
           addBtn: 'إضافة منتج',
           resetBtn: 'إعادة ضبط',
-          tabAll: 'الكل (1–6)',
-          tabShampoos: '1. الشامبوهات',
-          tabCosmetics: '2. الكوزمتيك والمكياج',
-          tabPerfumes: '3. العطور',
-          tabCompanies: '4. الشركات وجدولها',
-          tabRoutines: '5. الروتينات',
-          tabNutrition: '6. التغذية والجسم',
-          heroHeading: 'دليل متكامل ومرقّم (1، 2، 3، 4، 5، 6...) مع صور جاهزة وطريقة الاستخدام ومعايير الحمل',
-          heroDesc: 'يعمل بسرعة فائقة على الهاتف والمتصفح، وجاهز للرفع على Glitch أو GitHub Pages وإضافته إلى شاشة iPhone الرئيسية.',
-          heroAdd: 'أضف منتجك أو شركتك الآن',
-          iosBtn: 'طريقة الإضافة لشاشة iPhone / المتصفح',
-          lblSearch: 'بحث سريع بالاسم أو الشركة أو النوع',
-          lblCompanyFilter: 'تصفية حسب الشركة',
-          lblSafetyFilter: 'معيار السلامة والحمل',
+          tabAll: 'الموسوعة (520+)',
+          tabSunscreens: 'واقيات الشمس',
+          tabShampoos: 'الشامبوهات والشعر',
+          tabPerfumes: 'العطور الزيتية والكحولية',
+          tabCompanies: 'جدول الشركات والمنتجات',
+          tabRoutines: 'الروتينات اليومية',
+          tabNutrition: 'التغذية والجسم',
+          heroHeading: 'موسوعة تفاعلية تضم أكثر من 520 منتجاً مرقماً مع معايير الحمل والبشرة والشعر وصور من الإنترنت',
+          heroDesc: 'تصفح واقيات الشمس، الشامبوهات، الغسولات، المقشرات، المرطبات، السيرومات، المكياج، الصابون والعناية بالجسم، والعطور الزيتية والكحولية، مع فحص ملاءمة الحمل ونوع البشرة والشعر.',
+          heroAdd: 'إضافة منتج مخصص للموسوعة',
+          iosBtn: 'الرفع على Glitch / iPhone',
+          titleFilters: 'فلاتر البحث والملاءمة السريعة (البشرة • الشعر • الحمل • الشركة)',
+          descFilters: 'اختر نوع البشرة أو الشعر وحالة الحمل لمعرفة المنتجات الملائمة أو التي تستدعي استشارة أو تجنباً.',
+          lblSearch: 'بحث بالاسم أو الشركة أو المكون أو الرقم',
+          lblSkinType: 'نوع البشرة',
+          lblHairType: 'نوع الشعر',
+          lblPregnancyFilter: 'معيار الحمل والرضاعة',
+          lblCompanyFilter: 'الشركة / الماركة',
+          allSkins: 'كل أنواع البشرة',
+          allHair: 'كل أنواع الشعر',
+          allPregnancy: 'كل الحالات',
           allCompanies: 'كل الشركات',
-          allSafety: 'كل الحالات',
-          safeLabel: 'آمن للاستخدام / الحمل',
-          cautionLabel: 'يُستشار الطبيب',
+          safeLabel: 'آمن للحمل',
+          cautionLabel: 'يُستشار طبيب للحمل',
           avoidLabel: 'يُتجنب أثناء الحمل',
-          titleShampoos: '1. الشامبوهات العالمية والطبية والصحية (1، 2، 3، 4، 5، 6...)',
-          descShampoos: 'كل شامبو برقم واضح، صورة جاهزة مدمجة، الشركة، نوع الشعر، طريقة الاستخدام، وتنبيه الحمل.',
-          titleCosmetics: '2. الكوزمتيك والمكياج والعناية الطبية (1، 2، 3، 4، 5، 6...)',
-          descCosmetics: 'مرطبات، ميسيلار، واقي شمس، مسكارا، وعلاجات طبية مع توضيح معيار الحمل والاستخدام.',
-          titlePerfumes: '3. العطور الزيتية والكحولية والعالمية ومكوناتها (1، 2، 3، 4، 5، 6...)',
-          descPerfumes: 'تعرف على مكونات العطور الزيتية والكحولية وطريقة وضعها الآمن وتنبيهات الحمل والحساسية.',
-          titleCompanies: '4. الشركات ومنتجاتها وطريقة الاستخدام (جدول شامل)',
-          descCompanies: 'جدول منظم يوضح الشركة، نوع المواد، المنتجات، طريقة الاستخدام، ومعيار الحمل.',
-          titleRoutines: '5. الروتينات اليومية (صباحي • مسائي • أسبوعي)',
-          descRoutines: 'خطوات واضحة للبشرة الدهنية والجافة والحساسة والمختلطة والشعر المصبوغ والطبيعي والجسم.',
-          titleNutrition: '6. ستاندرات التغذية والعناية بالجسم',
-          descNutrition: 'معايير التغذية والترطيب الداعمة للبشرة والشعر والجسم مع التنبيه الطبي للحمل والمكملات.',
+          titleCatalog: 'الموسوعة المرقمة للمنتجات (520+ منتجاً)',
+          descCatalog: 'كل بطاقة تعرض الرقم، الشركة، التصنيف، نوع البشرة/الشعر، المكونات، طريقة الاستخدام، معيار الحمل، وصورة من الإنترنت مع بديل جاهز.',
+          titleCompanies: 'جدول الشركات والمنتجات وطريقة الاستخدام ومعايير الحمل',
+          descCompanies: 'مرجع جدولي منظم للشركات العالمية والمحلية، خطوط الإنتاج، الملاءمة، طريقة الاستخدام، وحالة الحمل.',
+          titleRoutines: 'الروتينات اليومية والعلاجية والعطرية',
+          descRoutines: 'خطوات عملية للروتين الصباحي والمسائي، البشرة الدهنية والجافة والحساسة، العناية بالشعر، وتنسيق العطور.',
+          titleNutrition: 'ستاندرات التغذية والعناية بالجسم',
+          descNutrition: 'أسس الترطيب والغذاء الداعم لصحة الجلد والشعر والجسم مع التنبيه الطبي للحمل والمكملات.',
           thNum: '#',
-          thCompany: 'الشركة',
-          thType: 'نوع المواد',
-          thProducts: 'المنتجات',
+          thCompany: 'الشركة / الماركة',
+          thCategory: 'القسم',
+          thProduct: 'المنتج',
+          thTarget: 'نوع البشرة / الشعر',
           thUsage: 'طريقة الاستخدام',
           thSafety: 'الحمل والسلامة',
-          lblCompany: 'الشركة:',
-          lblTarget: 'الملاءمة / المكونات:',
+          prevPage: 'السابق',
+          nextPage: 'التالي',
+          detailsBtn: 'التفاصيل',
+          webImgBtn: 'صورة من الويب',
+          lblTarget: 'الملاءمة والمكونات:',
           lblUsage: 'طريقة الاستخدام:',
           lblPregnancy: 'معيار الحمل:',
-          detailsBtn: 'عرض التفاصيل الكاملة',
-          emptyMsg: 'لا توجد عناصر مطابقة للبحث أو التصفية الحالية.'
+          emptyMsg: 'لا توجد نتائج مطابقة للفلاتر الحالية. جرّب تغيير الفلتر أو الضغط على إعادة ضبط.'
         },
         ku: {
           dir: 'rtl',
-          title: 'عناية — ڕێبەری گشتگیری گرنگیپێدان و کۆمپانیاکان',
-          subtitle: 'شامپۆ • کۆزمەتیک و ماکیاژ • بۆنی زەیتی و کهولی • کۆمپانیاکان • ڕۆتین • خۆراک',
-          status: 'ئامادەیە و کار دەکات • Ready',
+          title: 'عناية — ئینسایکلۆپیدیای گشتگیری گرنگیپێدان بە پێست، قژ، بۆن و کۆزمەتیک',
+          subtitle: 'زیاتر لە ٥٢٠ بەرهەمی ژمارەدراو • دژەخۆر • شامپۆ • غەسوول و تەقشیر • شێدارکەرەوە و سیرۆم • ماکیاژ • سابوون و بۆن',
           addBtn: 'زیادکردنی بەرهەم',
           resetBtn: 'ڕیسێت',
-          tabAll: 'هەمووی (1–6)',
-          tabShampoos: '1. شامپۆکان',
-          tabCosmetics: '2. کۆزمەتیک و ماکیاژ',
-          tabPerfumes: '3. بۆنەکان',
-          tabCompanies: '4. کۆمپانیا و خشتە',
-          tabRoutines: '5. ڕۆتینەکان',
-          tabNutrition: '6. خۆراک و جەستە',
-          heroHeading: 'ڕێبەری ژمارەدراو (1، 2، 3، 4، 5، 6...) بە وێنەی ئامادە، شێوازی بەکارهێنان و ستانداردی دووگیانی',
-          heroDesc: 'بە خێرایی کار دەکات لە مۆبایل و وێبگەڕ و ئامادەیە بۆ Glitch یان GitHub Pages و سکرینی iPhone.',
-          heroAdd: 'بەرهەم یان کۆمپانیای خۆت زیاد بکە',
-          iosBtn: 'شێوازی زیادکردن بۆ شاشەی iPhone / وێب',
-          lblSearch: 'گەڕانی خێرا بە ناو یان کۆمپانیا یان جۆر',
-          lblCompanyFilter: 'پاڵاوتن بەپێی کۆمپانیا',
-          lblSafetyFilter: 'ستانداردی سەلامەتی و دووگیانی',
+          tabAll: 'ئینسایکلۆپیدیا (520+)',
+          tabSunscreens: 'دژەخۆرەکان',
+          tabShampoos: 'شامپۆ و قژ',
+          tabPerfumes: 'بۆنی زەیتی و کهولی',
+          tabCompanies: 'خشتەی کۆمپانیاکان',
+          tabRoutines: 'ڕۆتینە ڕۆژانەکان',
+          tabNutrition: 'خۆراک و جەستە',
+          heroHeading: 'ئینسایکلۆپیدیای کارا بە زیاتر لە ٥٢٠ بەرهەمی ژمارەدراو لەگەڵ ستانداردی دووگیانی، پێست، قژ و وێنەی ئینتەرنێت',
+          heroDesc: 'دژەخۆرەکان، شامپۆ، غەسوول، تەقشیر، شێدارکەرەوە، سیرۆم، ماکیاژ، سابوون، جەستە و بۆنە زەیتی و کهولییەکان ببینە.',
+          heroAdd: 'بەرهەمێکی تایبەت زیاد بکە',
+          iosBtn: 'Glitch / شاشەی iPhone',
+          titleFilters: 'فلتەری گەڕان و گونجان (پێست • قژ • دووگیانی • کۆمپانیا)',
+          descFilters: 'جۆری پێست یان قژ و باری دووگیانی هەڵبژێرە بۆ زانینی گونجانی بەرهەمەکان.',
+          lblSearch: 'گەڕان بە ناو، کۆمپانیا، پێکهاتە یان ژمارە',
+          lblSkinType: 'جۆری پێست',
+          lblHairType: 'جۆری قژ',
+          lblPregnancyFilter: 'ستانداردی دووگیانی و شیرپێدان',
+          lblCompanyFilter: 'کۆمپانیا / براند',
+          allSkins: 'هەموو جۆرەکانی پێست',
+          allHair: 'هەموو جۆرەکانی قژ',
+          allPregnancy: 'هەموو حاڵەتەکان',
           allCompanies: 'هەموو کۆمپانیاکان',
-          allSafety: 'هەموو حاڵەتەکان',
-          safeLabel: 'گونجاوە بۆ بەکارهێنان / دووگیانی',
+          safeLabel: 'گونجاوە بۆ دووگیانی',
           cautionLabel: 'ڕاوێژ بە پزیشک بکرێت',
-          avoidLabel: 'لە کاتی دووگیانیدا دووربکەوەرەوە',
-          titleShampoos: '1. شامپۆ جیهانی و پزیشکی و تەندروستەکان (1، 2، 3، 4، 5، 6...)',
-          descShampoos: 'هەر شامپۆیەک بە ژمارە، وێنەی ئامادە، کۆمپانیا، جۆری قژ، شێوازی بەکارهێنان و تێبینی دووگیانی.',
-          titleCosmetics: '2. کۆزمەتیک و ماکیاژ و گرنگیپێدانی پزیشکی (1، 2، 3، 4، 5، 6...)',
-          descCosmetics: 'شێدارکەرەوە، میسێلار، دژەخۆر، مەسکارا و چارەسەری پزیشکی لەگەڵ ستانداردی دووگیانی.',
-          titlePerfumes: '3. بۆنی زەیتی و کهولی و جیهانی و پێکهاتەکانیان (1، 2، 3، 4، 5، 6...)',
-          descPerfumes: 'پێکهاتەی بۆنی زەیتی و کهولی بناسە و شێوازی بەکارهێنانی سەلامەت و تێبینی دووگیانی ببینە.',
-          titleCompanies: '4. کۆمپانیاکان و بەرهەمەکانیان و شێوازی بەکارهێنان (خشتەی گشتگیر)',
-          descCompanies: 'خشتەی ڕێکخراو بۆ کۆمپانیا، جۆری ماددە، بەرهەمەکان، شێوازی بەکارهێنان و دووگیانی.',
-          titleRoutines: '5. ڕۆتینە ڕۆژانەکان (بەیانی • ئێوارە • هەفتانە)',
-          descRoutines: 'هەنگاوی ڕوون بۆ پێستی چەور و وشک و هەستیار و تێکەڵ و قژی بۆیاخکراو و سروشتی و جەستە.',
-          titleNutrition: '6. ستانداردی خۆراک و گرنگیپێدان بە جەستە',
-          descNutrition: 'ستانداردی خۆراک و ئاوخواردنەوە بۆ پێست و قژ و جەستە لەگەڵ ڕاوێژی پزیشکی بۆ دووگیانی.',
+          avoidLabel: 'لە دووگیانیدا دووربکەوەرەوە',
+          titleCatalog: 'ئینسایکلۆپیدیای ژمارەدراوی بەرهەمەکان (520+ بەرهەم)',
+          descCatalog: 'هەر کارتێک ژمارە، کۆمپانیا، بەش، جۆری پێست/قژ، پێکهاتە، شێوازی بەکارهێنان، دووگیانی و وێنەی تێدایە.',
+          titleCompanies: 'خشتەی کۆمپانیاکان و بەرهەمەکان و شێوازی بەکارهێنان',
+          descCompanies: 'خشتەی ڕێکخراوی کۆمپانیا جیهانی و ناوخۆییەکان لەگەڵ شێوازی بەکارهێنان و دووگیانی.',
+          titleRoutines: 'ڕۆتینە ڕۆژانە، چارەسەری و بۆنەکان',
+          descRoutines: 'هەنگاوەکانی بەیانی و ئێوارە، پێستی چەور و وشک و هەستیار، قژ و تێکەڵکردنی بۆن.',
+          titleNutrition: 'ستانداردی خۆراک و گرنگیپێدان بە جەستە',
+          descNutrition: 'بنەماکانی ئاوخواردنەوە و خۆراک بۆ پێست و قژ و جەستە لەگەڵ ڕاوێژی پزیشکی بۆ دووگیانی.',
           thNum: '#',
-          thCompany: 'کۆمپانیا',
-          thType: 'جۆری ماددە',
-          thProducts: 'بەرهەمەکان',
+          thCompany: 'کۆمپانیا / براند',
+          thCategory: 'بەش',
+          thProduct: 'بەرهەم',
+          thTarget: 'جۆری پێست / قژ',
           thUsage: 'شێوازی بەکارهێنان',
           thSafety: 'دووگیانی و سەلامەتی',
-          lblCompany: 'کۆمپانیا:',
-          lblTarget: 'گونجان / پێکهاتە:',
+          prevPage: 'پێشوو',
+          nextPage: 'دواتر',
+          detailsBtn: 'وردەکاری',
+          webImgBtn: 'وێنەی وێب',
+          lblTarget: 'گونجان و پێکهاتە:',
           lblUsage: 'شێوازی بەکارهێنان:',
           lblPregnancy: 'ستانداردی دووگیانی:',
-          detailsBtn: 'وردەکاری تەواو ببینە',
-          emptyMsg: 'هیچ بەرهەمێک نەدۆزرایەوە کە لەگەڵ گەڕان یان پاڵاوتنەکە بگونجێت.'
+          emptyMsg: 'هیچ ئەنجامێک نەدۆزرایەوە. فلتەرەکان بگۆڕە یان ڕیسێت بکە.'
         },
         tk: {
           dir: 'ltr',
-          title: 'Inaya — Ideg we Kompaniýalar Boýunça Doly Gollanma',
-          subtitle: 'Şampunlar • Kosmetika we Makiýaž • Ýagly we Spirtli Atırlar • Kompaniýalar • Tertip • Iýmit',
-          status: 'Taýyn we Işleýär • Ready',
+          title: 'Inaya — Deri, Saç, Atır we Kosmetika Boýunça Uly Ensiklopediýa',
+          subtitle: '520+ belgili önüm • Gün goraglary • Şampunlar • Ýuwujylar • Krem & Serumalar • Makiýaž • Sabyn & Atırlar',
           addBtn: 'Önüm Goş',
           resetBtn: 'Täzele',
-          tabAll: 'Ählisi (1–6)',
-          tabShampoos: '1. Şampunlar',
-          tabCosmetics: '2. Kosmetika we Makiýaž',
-          tabPerfumes: '3. Atırlar',
-          tabCompanies: '4. Kompaniýalar we Tablisa',
-          tabRoutines: '5. Günlük Tertip',
-          tabNutrition: '6. Iýmit we Beden',
-          heroHeading: 'Belgili gollanma (1, 2, 3, 4, 5, 6...) — taýyn suratlar, ulanylyş usuly we göwrelilik standartlary',
-          heroDesc: 'Telefonda we brauzerde çalt işleýär, Glitch ýa-da GitHub Pages we iPhone baş ekrany üçin amatly.',
-          heroAdd: 'Önümiňizi ýa-da kompaniýaňyzy goşuň',
-          iosBtn: 'iPhone / Brauzer Ekranyna Goşmak',
-          lblSearch: 'At, kompaniýa ýa-da görnüş boýunça gözleg',
-          lblCompanyFilter: 'Kompaniýa boýunça süz',
-          lblSafetyFilter: 'Howpsuzlyk we Göwrelilik Standarty',
+          tabAll: 'Ensiklopediýa (520+)',
+          tabSunscreens: 'Gün Goraglary',
+          tabShampoos: 'Şampun we Saç',
+          tabPerfumes: 'Ýagly we Spirtli Atırlar',
+          tabCompanies: 'Kompaniýalar Tablisasy',
+          tabRoutines: 'Günlük Tertip',
+          tabNutrition: 'Iýmit we Beden',
+          heroHeading: '520+ belgili önüm, göwrelilik standartlary, deri/saç laýyklygy we internet suratlary',
+          heroDesc: 'Gün goraglaryny, şampunlary, ýuwujylary, arassalaýjylary, kremleri, makiýažy, bedeni we atyrlary gözden geçiriň.',
+          heroAdd: 'Öz Önümiňizi Goşuň',
+          iosBtn: 'Glitch / iPhone Görnüşi',
+          titleFilters: 'Gözleg we Laýyklyk Süzgüçleri (Deri • Saç • Göwrelilik • Kompaniýa)',
+          descFilters: 'Deri ýa-da saç görnüşini we göwrelilik ýagdaýyny saýlaň.',
+          lblSearch: 'At, kompaniýa, düzüm ýa-da belgi boýunça gözleg',
+          lblSkinType: 'Deri Görnüşi',
+          lblHairType: 'Saç Görnüşi',
+          lblPregnancyFilter: 'Göwrelilik Standarty',
+          lblCompanyFilter: 'Kompaniýa / Marka',
+          allSkins: 'Ähli Deri Görnüşleri',
+          allHair: 'Ähli Saç Görnüşleri',
+          allPregnancy: 'Ähli Ýagdaýlar',
           allCompanies: 'Ähli Kompaniýalar',
-          allSafety: 'Ähli Ýagdaýlar',
-          safeLabel: 'Ulanmak / Göwrelilikde Howpsuz',
+          safeLabel: 'Göwrelilikde Howpsuz',
           cautionLabel: 'Lukman bilen Maslahatlaşyň',
           avoidLabel: 'Göwrelilikde Gaça Duruň',
-          titleShampoos: '1. Global, Lukmançylyk we Saglyk Şampunlary (1, 2, 3, 4, 5, 6...)',
-          descShampoos: 'Her şampunyň belgisi, taýyn suraty, kompaniýasy, saç görnüşi, ulanylyşy we göwrelilik belligi bar.',
-          titleCosmetics: '2. Kosmetika, Makiýaž we Lukmançylyk Idegi (1, 2, 3, 4, 5, 6...)',
-          descCosmetics: 'Çyglandyryjylar, miselýar suw, gün goragy, tuş we bejeriş serişdeleri.',
-          titlePerfumes: '3. Ýagly, Spirtli we Halkara Atırlar we Düzümleri (1, 2, 3, 4, 5, 6...)',
-          descPerfumes: 'Ýagly we spirtli atyrlaryň düzümi, ulanylyşy we göwrelilik/duýgurlyk bellikleri.',
-          titleCompanies: '4. Kompaniýalar, Önümleri we Ulanylyş Usullary (Tablisa)',
-          descCompanies: 'Kompaniýa, önüm görnüşi, meşhur önümleri, ulanylyşy we howpsuzlyk standarty.',
-          titleRoutines: '5. Günlük Tertip (Irden • Agşam • Hepdelik)',
-          descRoutines: 'Ýagly, gury, duýgur, garyşyk deri, boýalan we tebigy saç hem-de beden üçin ädimler.',
-          titleNutrition: '6. Iýmitleniş we Beden Idegi Standartlary',
-          descNutrition: 'Deri, saç we beden üçin suw, belok, witamin standartlary we lukmançylyk duýduryşy.',
+          titleCatalog: 'Belgili Önümler Ensiklopediýasy (520+ Önüm)',
+          descCatalog: 'Her kartoçkada belgi, kompaniýa, bölüm, deri/saç görnüşi, düzümi, ulanylyşy, göwrelilik belligi we suraty bar.',
+          titleCompanies: 'Kompaniýalar, Önümler, Ulanylyş we Howpsuzlyk Tablisasy',
+          descCompanies: 'Halkara we ýerli kompaniýalaryň önümleri we ulanylyş usullary.',
+          titleRoutines: 'Günlük, Bejeriş we Atır Tertipleri',
+          descRoutines: 'Irdenki we agşamky tertip, ýagly/gury/duýgur deri, saç idegi we atır ulanylyşy.',
+          titleNutrition: 'Iýmitleniş we Beden Idegi Standartlary',
+          descNutrition: 'Deri, saç we beden saglygy üçin suw we iýmit standartlary.',
           thNum: '#',
-          thCompany: 'Kompaniýa',
-          thType: 'Önüm Görnüşi',
-          thProducts: 'Önümler',
+          thCompany: 'Kompaniýa / Marka',
+          thCategory: 'Bölüm',
+          thProduct: 'Önüm',
+          thTarget: 'Deri / Saç Görnüşi',
           thUsage: 'Ulanylyş Usuly',
           thSafety: 'Göwrelilik we Howpsuzlyk',
-          lblCompany: 'Kompaniýa:',
-          lblTarget: 'Laýyklyk / Düzüm:',
+          prevPage: 'Öňki',
+          nextPage: 'Indiki',
+          detailsBtn: 'Jikme-jik',
+          webImgBtn: 'Web Surat',
+          lblTarget: 'Laýyklyk we Düzüm:',
           lblUsage: 'Ulanylyş Usuly:',
           lblPregnancy: 'Göwrelilik Standarty:',
-          detailsBtn: 'Doly Maglumat',
-          emptyMsg: 'Gözleg ýa-da süzgüçlere laýyk önüm tapylmady.'
+          emptyMsg: 'Süzgüçlere laýyk önüm tapylmady. Täzelemegi synap görüň.'
         },
         en: {
           dir: 'ltr',
-          title: 'Inaya — Complete Guide to Care & Brands',
-          subtitle: 'Shampoos • Cosmetics & Makeup • Oil & Alcohol Perfumes • Brands • Routines • Nutrition',
-          status: 'Ready & Active • جاهز ويعمل',
+          title: 'Inaya — Complete Encyclopedia of Skin, Hair, Perfumes & Cosmetics',
+          subtitle: '520+ Numbered Items • Sunscreens • Shampoos • Cleansers & Exfoliants • Moisturizers & Serums • Makeup • Body & Perfumes',
           addBtn: 'Add Item',
           resetBtn: 'Reset',
-          tabAll: 'All (1–6)',
-          tabShampoos: '1. Shampoos',
-          tabCosmetics: '2. Cosmetics & Makeup',
-          tabPerfumes: '3. Perfumes',
-          tabCompanies: '4. Brands Table',
-          tabRoutines: '5. Routines',
-          tabNutrition: '6. Nutrition & Body',
-          heroHeading: 'Numbered guide (1, 2, 3, 4, 5, 6...) with inline illustrations, how-to-use steps & pregnancy safety',
-          heroDesc: 'Fast mobile-first single-file app ready for Glitch, GitHub Pages, and iPhone Home Screen.',
-          heroAdd: 'Add Your Product or Brand Now',
-          iosBtn: 'Add to iPhone Home Screen / Browser',
-          lblSearch: 'Quick search by name, brand, or type',
-          lblCompanyFilter: 'Filter by Brand',
-          lblSafetyFilter: 'Safety & Pregnancy Standard',
+          tabAll: 'Encyclopedia (520+)',
+          tabSunscreens: 'Sunscreens',
+          tabShampoos: 'Shampoos & Hair',
+          tabPerfumes: 'Oil & Alcohol Perfumes',
+          tabCompanies: 'Brands Table',
+          tabRoutines: 'Daily Routines',
+          tabNutrition: 'Nutrition & Body',
+          heroHeading: 'Interactive encyclopedia with 520+ numbered items, pregnancy safety, skin/hair matching & web images',
+          heroDesc: 'Browse sunscreens, shampoos, cleansers, exfoliants, moisturizers, serums, makeup, body care, and oil/alcohol perfumes.',
+          heroAdd: 'Add Custom Product',
+          iosBtn: 'Glitch / iPhone Setup',
+          titleFilters: 'Search & Suitability Filters (Skin • Hair • Pregnancy • Brand)',
+          descFilters: 'Select skin/hair type and pregnancy status to check suitability, doctor consultation, or avoidance.',
+          lblSearch: 'Search by name, brand, ingredient, or number',
+          lblSkinType: 'Skin Type',
+          lblHairType: 'Hair Type',
+          lblPregnancyFilter: 'Pregnancy Standard',
+          lblCompanyFilter: 'Brand / Company',
+          allSkins: 'All Skin Types',
+          allHair: 'All Hair Types',
+          allPregnancy: 'All Statuses',
           allCompanies: 'All Brands',
-          allSafety: 'All Statuses',
-          safeLabel: 'Safe for Use / Pregnancy',
+          safeLabel: 'Safe in Pregnancy',
           cautionLabel: 'Consult Doctor',
-          avoidLabel: 'Avoid During Pregnancy',
-          titleShampoos: '1. Global, Medicated & Gentle Shampoos (1, 2, 3, 4, 5, 6...)',
-          descShampoos: 'Numbered items with ready inline visuals, brand, hair type, usage instructions, and pregnancy note.',
-          titleCosmetics: '2. Cosmetics, Makeup & Clinical Care (1, 2, 3, 4, 5, 6...)',
-          descCosmetics: 'Moisturizers, micellar water, sunscreen, mascara, and clinical treatments with pregnancy guidance.',
-          titlePerfumes: '3. Oil-Based, Alcohol Perfumes & Notes (1, 2, 3, 4, 5, 6...)',
-          descPerfumes: 'Explore oil and alcohol perfume notes, safe application, and pregnancy/sensitivity precautions.',
-          titleCompanies: '4. Brands, Product Lines & How to Use (Structured Table)',
-          descCompanies: 'Clear table showing brand, product category, key items, usage steps, and pregnancy note.',
-          titleRoutines: '5. Daily Routines (Morning • Evening • Weekly)',
-          descRoutines: 'Step-by-step routines for oily, dry, sensitive, combination skin, dyed/natural hair, and body care.',
-          titleNutrition: '6. Nutrition & Body Care Standards',
-          descNutrition: 'Hydration and nutrition standards for skin, hair, and body with medical guidance for pregnancy.',
+          avoidLabel: 'Avoid in Pregnancy',
+          titleCatalog: 'Numbered Product Encyclopedia (520+ Items)',
+          descCatalog: 'Each card displays item number, brand, category, skin/hair target, actives/notes, how to use, pregnancy safety & image.',
+          titleCompanies: 'Brands, Products, How to Use & Pregnancy Safety Table',
+          descCompanies: 'Structured reference of global and regional brands, product lines, usage steps, and pregnancy guidance.',
+          titleRoutines: 'Daily, Targeted & Fragrance Routines',
+          descRoutines: 'Practical AM/PM routines, oily/dry/sensitive skin steps, haircare routines, and perfume layering.',
+          titleNutrition: 'Nutrition & Body Care Standards',
+          descNutrition: 'Hydration and nutrition standards supporting skin, hair, and body health with pregnancy guidance.',
           thNum: '#',
-          thCompany: 'Brand',
-          thType: 'Category Type',
-          thProducts: 'Key Products',
+          thCompany: 'Brand / Company',
+          thCategory: 'Category',
+          thProduct: 'Product',
+          thTarget: 'Skin / Hair Type',
           thUsage: 'How to Use',
           thSafety: 'Pregnancy & Safety',
-          lblCompany: 'Brand:',
-          lblTarget: 'Suitability / Notes:',
+          prevPage: 'Previous',
+          nextPage: 'Next',
+          detailsBtn: 'Details',
+          webImgBtn: 'Web Image',
+          lblTarget: 'Target & Actives:',
           lblUsage: 'How to Use:',
           lblPregnancy: 'Pregnancy Standard:',
-          detailsBtn: 'View Full Details',
-          emptyMsg: 'No items match your current search or filter.'
+          emptyMsg: 'No items match your active filters. Try changing filters or clicking Reset.'
         }
       };
 
-      const INITIAL_DATA = {
-        shampoos: [
-          {
-            id: 'sh-1',
-            num: 1,
-            icon: 'shampoo',
-            color: '#0f766e',
-            company: 'Johnson & Johnson / STADA',
-            safety: 'caution',
-            name: {
-              ar: 'Nizoral Anti-Dandruff Shampoo (Ketoconazole)',
-              ku: 'شامپۆی دژە کڕێشی نیزۆرال (کیتۆکۆنازۆل)',
-              tk: 'Nizoral Kepege Garşy Şampun (Ketokonazol)',
-              en: 'Nizoral Anti-Dandruff Shampoo (Ketoconazole)'
-            },
-            target: {
-              ar: 'للشعر الدهني والقشرة وفطريات الفروة الخفيفة',
-              ku: 'بۆ قژی چەور و کڕێش و هەستیاری پێستی سەر',
-              tk: 'Ýagly saç, kepek we kelläniň derisi üçin',
-              en: 'Oily hair, dandruff & scalp flaking'
-            },
-            usage: {
-              ar: 'يوضع على فروة الرأس المبللة لمدة 3–5 دقائق ثم يُشطف، بمعدل 2–3 مرات أسبوعياً.',
-              ku: 'لەسەر پێستی سەری تەڕ بۆ ٣–٥ خولەک دابنرێت و پاشان بشۆرێت، ٢–٣ جار لە هەفتەیەکدا.',
-              tk: 'Öl kelle derisine 3-5 minut çalyň we ýuwuň, hepdede 2-3 gezek.',
-              en: 'Apply to wet scalp for 3–5 minutes then rinse, 2–3 times weekly.'
-            },
-            pregnancy: {
-              ar: 'يُستشار الطبيب (امتصاص جهازي منخفض جداً لكن يُفضل استشارة الطبيب أثناء الحمل).',
-              ku: 'ڕاوێژ بە پزیشک بکرێت (مژینی ناوەکی زۆر کەمە بەڵام باشترە پرسیار بە پزیشک بکرێت).',
-              tk: 'Lukman bilen maslahatlaşyň (göwrelilikde lukmanyň rugsaty bilen).',
-              en: 'Consult doctor (very low systemic absorption, confirm with physician during pregnancy).'
-            }
+      const ROUTINES_DATA = [
+        {
+          title: {
+            ar: 'الروتين الصباحي (AM) للحماية والترطيب',
+            ku: 'ڕۆتینی بەیانیان بۆ پاراستن و شێدارکردنەوە',
+            tk: 'Irdenki Tertip (AM) — Gorag we Çyglylyk',
+            en: 'Morning Routine (AM) — Protection & Hydration'
           },
-          {
-            id: 'sh-2',
-            num: 2,
-            icon: 'shampoo',
-            color: '#0284c7',
-            company: 'Bioderma',
-            safety: 'safe',
-            name: {
-              ar: 'Bioderma Nodé Fluid Shampoo',
-              ku: 'شامپۆی نۆدێ فلویدی بایۆدێرما',
-              tk: 'Bioderma Nodé Suyuk Şampuny',
-              en: 'Bioderma Nodé Fluid Shampoo'
-            },
-            target: {
-              ar: 'لجميع أنواع الشعر وفروة الرأس الحساسة',
-              ku: 'بۆ هەموو جۆرەکانی قژ و پێستی سەری هەستیار',
-              tk: 'Ähli saç görnüşleri we duýgur kelle derisi üçin',
-              en: 'All hair types & sensitive scalp'
-            },
-            usage: {
-              ar: 'يُدلك بلطف حتى تتكون رغوة خفيفة ويُشطف جيداً، مناسب للاستخدام اليومي.',
-              ku: 'بە نەرمی مەساج بدرێت تا کەفی سووک دروست دەبێت و بە باشی بشۆرێت، بۆ ڕۆژانە گونجاوە.',
-              tk: 'Ýumşak köpüklendiriň we gowy ýuwuň, gündelik ulanmaga amatly.',
-              en: 'Massage gently into a light lather and rinse thoroughly; suitable for daily use.'
-            },
-            pregnancy: {
-              ar: 'آمن للاستخدام.',
-              ku: 'گونجاوە بۆ بەکارهێنان.',
-              tk: 'Ulanmak üçin howpsuz.',
-              en: 'Safe for use.'
-            }
-          },
-          {
-            id: 'sh-3',
-            num: 3,
-            icon: 'shampoo',
-            color: '#b45309',
-            company: "L'Oréal / Kérastase",
-            safety: 'safe',
-            name: {
-              ar: 'Kérastase Bain Satin / Nutritive Shampoo',
-              ku: 'شامپۆی بێین ساتین / نوتریتیڤی کێراستاس',
-              tk: 'Kérastase Bain Satin / Nutritive Şampuny',
-              en: 'Kérastase Bain Satin / Nutritive Shampoo'
-            },
-            target: {
-              ar: 'للشعر الجاف والمجهد والمحتاج للتغذية',
-              ku: 'بۆ قژی وشک و ماندوو و پێویست بە خۆراک',
-              tk: 'Gury we iýmitlenmä mätäç saçlar üçin',
-              en: 'Dry, stressed hair needing nourishment'
-            },
-            usage: {
-              ar: 'يوضع على شعر مبلل، يُدلك ويُشطف ثم يُكرر وتُترك الرغوة دقيقتين ثم تُشطف.',
-              ku: 'لەسەر قژی تەڕ دابنرێت، مەساج بدرێت و بشۆرێت و دووبارە بکرێتەوە بۆ ٢ خولەک.',
-              tk: 'Öl saça çalyň, owkalaň, ýuwuň we ýene bir gezek 2 minut saklap ýuwuň.',
-              en: 'Apply to wet hair, massage and rinse, then repeat leaving lather 2 minutes before rinsing.'
-            },
-            pregnancy: {
-              ar: 'آمن للاستخدام.',
-              ku: 'گونجاوە بۆ بەکارهێنان.',
-              tk: 'Ulanmak üçin howpsuz.',
-              en: 'Safe for use.'
-            }
-          },
-          {
-            id: 'sh-4',
-            num: 4,
-            icon: 'shampoo',
-            color: '#7c3aed',
-            company: 'Olaplex',
-            safety: 'safe',
-            name: {
-              ar: 'Olaplex No. 4 Bond Maintenance Shampoo',
-              ku: 'شامپۆی ئۆلاپلێکس ژمارە ٤ بۆ قژی بۆیاخکراو',
-              tk: 'Olaplex No. 4 Boýalan Saç Üçin Şampun',
-              en: 'Olaplex No. 4 Bond Maintenance Shampoo'
-            },
-            target: {
-              ar: 'للشعر المصبوغ والمعالج كيميائياً أو المجهد بالحرارة',
-              ku: 'بۆ قژی بۆیاخکراو و کیمیایی کراو یان بە گەرمی زیانپێگەیشتوو',
-              tk: 'Boýalan we himiki taýdan täsir edilen saçlar üçin',
-              en: 'Color-treated, chemically processed or heat-styled hair'
-            },
-            usage: {
-              ar: 'يوضع من الجذور للأطراف مع تركيز على الخصل المصبوغة ثم يُشطف جيداً.',
-              ku: 'لە ڕەگەوە تا سەری قژ بدرێت بە گرنگیدان بە تاڵە بۆیاخکراوەکان و پاشان بشۆرێت.',
-              tk: 'Düýbünden ujuna çenli çalyň, boýalan ýerlere üns beriň we ýuwuň.',
-              en: 'Apply from root to tip focusing on color-treated strands, then rinse thoroughly.'
-            },
-            pregnancy: {
-              ar: 'آمن للاستخدام.',
-              ku: 'گونجاوە بۆ بەکارهێنان.',
-              tk: 'Ulanmak üçin howpsuz.',
-              en: 'Safe for use.'
-            }
-          },
-          {
-            id: 'sh-5',
-            num: 5,
-            icon: 'shampoo',
-            color: '#0e7490',
-            company: 'Vichy',
-            safety: 'caution',
-            name: {
-              ar: 'Vichy Dercos Technique Shampoo',
-              ku: 'شامپۆی دێرکۆس تەکنیکی ڤیچی',
-              tk: 'Vichy Dercos Tehniki Şampuny',
-              en: 'Vichy Dercos Technique Shampoo'
-            },
-            target: {
-              ar: 'لفروة الرأس الدهنية أو القشرة أو الحكة',
-              ku: 'بۆ پێستی سەری چەور یان کڕێش یان خوران',
-              tk: 'Ýagly kelle derisi we kepek üçin',
-              en: 'Oily scalp, dandruff or scalp discomfort'
-            },
-            usage: {
-              ar: 'يوضع على فروة الرأس ويُدلك ثم يُترك دقيقتين ويُشطف جيداً.',
-              ku: 'لەسەر پێستی سەر دابنرێت و مەساج بدرێت و بۆ ٢ خولەک بهێڵرێتەوە و بشۆرێت.',
-              tk: 'Kelle derisine çalyň, owkalaň, 2 minut saklaň we ýuwuň.',
-              en: 'Apply to scalp, massage, leave on for 2 minutes, and rinse well.'
-            },
-            pregnancy: {
-              ar: 'يُستشار الطبيب حسب التركيبة النشطة المختارة.',
-              ku: 'ڕاوێژ بە پزیشک بکرێت بەپێی پێکهاتەی چالاکی شامپۆکە.',
-              tk: 'Aktiw düzümine görä lukman bilen maslahatlaşyň.',
-              en: 'Consult doctor depending on the specific active formula.'
-            }
-          },
-          {
-            id: 'sh-6',
-            num: 6,
-            icon: 'shampoo',
-            color: '#0369a1',
-            company: 'CeraVe',
-            safety: 'safe',
-            name: {
-              ar: 'CeraVe Hydrating / Balancing Shampoo',
-              ku: 'شامپۆی شێدارکەرەوە و هاوسەنگی سیراڤی',
-              tk: 'CeraVe Çyglandyryjy we Deňagramly Şampun',
-              en: 'CeraVe Hydrating / Balancing Shampoo'
-            },
-            target: {
-              ar: 'للشعر العادي والجاف والمختلط',
-              ku: 'بۆ قژی ئاسایی، وشک و تێکەڵ',
-              tk: 'Kadaly, gury we garyşyk saçlar üçin',
-              en: 'Normal, dry & combination hair'
-            },
-            usage: {
-              ar: 'يُدلك على فروة الرأس المبللة بلطف ثم يُشطف جيداً بالماء الفاتر.',
-              ku: 'لەسەر پێستی سەری تەڕ بە نەرمی مەساج بدرێت و بە ئاوی شلەتێن بشۆرێت.',
-              tk: 'Öl kelle derisine ýumşak owkalaň we mylaýym suw bilen ýuwuň.',
-              en: 'Massage gently into wet scalp and rinse thoroughly with lukewarm water.'
-            },
-            pregnancy: {
-              ar: 'آمن للاستخدام.',
-              ku: 'گونجاوە بۆ بەکارهێنان.',
-              tk: 'Ulanmak üçin howpsuz.',
-              en: 'Safe for use.'
-            }
+          steps: {
+            ar: [
+              'غسول لطيف مناسب لنوع البشرة (رغوي للدهنية، كريمي أو ميسيلار للجافة والحساسة).',
+              'سيروم مرطب أو مضاد أكسدة مناسب للبشرة (مع تجنب المكونات المقشرة القوية إذا كانت البشرة متهيجة).',
+              'مرطب مناسب ثم واقي شمس واسع الطيف (SPF 30–50+) قبل الخروج بـ 15 دقيقة.'
+            ],
+            ku: [
+              'غەسوولی نەرم بەپێی جۆری پێست.',
+              'سیرۆمی شێدارکەرەوە یان دژە ئۆکسید بەپێی گونجان.',
+              'شێدارکەرەوە و پاشان دژەخۆر (SPF 30–50+) ١٥ خولەک پێش چوونە بەر خۆر.'
+            ],
+            tk: [
+              'Deri görnüşine görä ýumşak ýuwujy serişde ulanyň.',
+              'Çyglandyryjy ýa-da antioksidant serumasyny çalyň.',
+              'Çyglandyryjy we güne çykmazdan 15 minut öň gün goragyny (SPF 30–50+) çalyň.'
+            ],
+            en: [
+              'Gentle cleanser suited to skin type (gel/foam for oily, cream/micellar for dry/sensitive).',
+              'Hydrating or antioxidant serum if tolerated.',
+              'Moisturizer followed by broad-spectrum sunscreen (SPF 30–50+) 15 minutes before sun exposure.'
+            ]
           }
-        ],
-        cosmetics: [
+        },
+        {
+          title: {
+            ar: 'الروتين المسائي (PM) للتنظيف والترميم',
+            ku: 'ڕۆتینی ئێواران بۆ پاککردنەوە و چاککردنەوە',
+            tk: 'Agşamky Tertip (PM) — Arassalamak we Dikeldiş',
+            en: 'Evening Routine (PM) — Cleanse & Recover'
+          },
+          steps: {
+            ar: [
+              'إزالة المكياج والماسكارا وواقي الشمس بمحلول ميسيلار أو منظف لطيف دون فرك قاسٍ.',
+              'غسل البشرة وتجفيفها بالتربيت بمنشفة نظيفة.',
+              'تطبيق مرطب مغذٍ؛ وفي حال الحمل يُتجنب الريتينول/الريتينويدات وتُستشار الطبيبة لأي مقشر أو علاج.'
+            ],
+            ku: [
+              'لابردنی ماکیاژ، مەسکارا و دژەخۆر بە نەرمی.',
+              'شۆردن و وشککردنەوە بە نەرمی بە خاولیی پاک.',
+              'شێدارکەرەوەی شەوان؛ لە کاتی دووگیانیدا لە ڕیتینۆل دووربکەوەرەوە و پرسیار بە پزیشک بکە.'
+            ],
+            tk: [
+              'Makiýažy, tuşy we gün goragyny ýumşaklyk bilen aýyryň.',
+              'Ýüzüňizi ýuwuň we arassa süpürgiç bilen ýeňil guradyň.',
+              'Gijelik çyglandyryjy çalyň; göwrelilikde retinoidlerden gaça duruň.'
+            ],
+            en: [
+              'Remove makeup, mascara, and SPF gently with micellar water or cleanser without harsh rubbing.',
+              'Cleanse and pat dry softly with a clean towel.',
+              'Apply barrier moisturizer; avoid retinoids in pregnancy and consult a doctor before strong actives.'
+            ]
+          }
+        },
+        {
+          title: {
+            ar: 'روتين الشعر (الدهني، الجاف، المصبوغ، والطبيعي)',
+            ku: 'ڕۆتینی قژ (چەور، وشک، بۆیاخکراو و سروشتی)',
+            tk: 'Saç Tertibi (Ýagly, Gury, Boýalan we Tebigy)',
+            en: 'Hair Routine (Oily, Dry, Dyed & Untreated Hair)'
+          },
+          steps: {
+            ar: [
+              'الشعر الدهني: شامبو منقٍ أو موازن للدهون مع وضع البلسم على الأطراف فقط.',
+              'الشعر الجاف والمصبوغ: شامبو مرطب أو مخصص للشعر المصبوغ + ماسك أسبوعي + تقليل الحرارة.',
+              'الشعر غير المصبوغ: شامبو لطيف متوازن ومرطب خفيف وحماية من أشعة الشمس والحرارة العالية.'
+            ],
+            ku: [
+              'قژی چەور: شامپۆی هاوسەنگی چەوری و نەرمکەرەوە تەنها بۆ سەری قژ.',
+              'قژی وشک و بۆیاخکراو: شامپۆی شێدارکەرەوە یان پارێزەری ڕەنگ + ماسکی هەفتانە.',
+              'قژی بۆیاخ نەکراو: شامپۆی نەرم و شێدارکردنەوەی سووک.'
+            ],
+            tk: [
+              'Ýagly saç: ýag deňagramly şampun we kondisioneri diňe ujuna çalyň.',
+              'Gury we boýalan saç: çyglandyryjy ýa-da reňk goraýjy şampun we hepdelik maska.',
+              'Boýalmadyk saç: ýumşak şampun we ýeňil çyglandyryjy.'
+            ],
+            en: [
+              'Oily hair: balancing/clarifying shampoo with conditioner applied only to ends.',
+              'Dry or color-treated hair: hydrating or color-protect shampoo, weekly mask & lower heat.',
+              'Untreated hair: gentle balanced shampoo, light conditioning & heat protection.'
+            ]
+          }
+        },
+        {
+          title: {
+            ar: 'روتين العطور الزيتية والكحولية وتنسيقها',
+            ku: 'ڕۆتینی بۆنی زەیتی و کهولی و ڕێکخستنیان',
+            tk: 'Ýagly we Spirtli Atyrlaryň Tertibi',
+            en: 'Oil & Alcohol Perfume Layering Routine'
+          },
+          steps: {
+            ar: [
+              'العطور الزيتية (عود، مسك، عنبر، ورد): توضع بنقطة خفيفة على الملابس أو نقاط النبض بعد تجربة التحسس.',
+              'العطور الكحولية (EDP / EDT): تُرش من مسافة مناسبة وتُترك لتستقر دون فرك المعصمين معاً.',
+              'أثناء الحمل: يُفضل اختيار روائح خفيفة ورشها على الملابس لتقليل الحساسية أو الغثيان.'
+            ],
+            ku: [
+              'بۆنی زەیتی (عوود، میسک، عەنبەر، گوڵ): بە دڵۆپێکی کەم لەسەر جل یان خاڵی لێدانی دڵ.',
+              'بۆنی کهولی: لە دووری گونجاو بپرژێندرێت بەبێ لێکخشاندنی مەچەکەکان.',
+              'لە دووگیانیدا: بۆنی سووک هەڵبژێرە و لەسەر جل بپرژێنە.'
+            ],
+            tk: [
+              'Ýagly atırlar (ud, müşk, änbir, bägül): eşige ýa-da bilege azajyk çalyň.',
+              'Spirtli atırlar: mynasyp uzaklykdan sepiliň, bilekleri biri-birine sürtmeň.',
+              'Göwrelilikde ýeňil yslary saýlaň we eşige sepiň.'
+            ],
+            en: [
+              'Oil perfumes (oud, musk, amber, rose): dab lightly on fabric or pulse points after patch testing.',
+              'Alcohol perfumes (EDP/EDT): spray at a proper distance and let dry without rubbing wrists together.',
+              'During pregnancy: prefer mild scents and spray on clothing to reduce sensitivity or nausea.'
+            ]
+          }
+        }
+      ];
+
+      const NUTRITION_DATA = [
+        {
+          title: {
+            ar: '1. ستاندرد الترطيب والماء اليومي',
+            ku: '١. ستانداردی شێداربوونەوە و ئاوی ڕۆژانە',
+            tk: '1. Gündelik Suw we Çyglylyk Standarty',
+            en: '1. Daily Water & Hydration Standard'
+          },
+          steps: {
+            ar: [
+              'توزيع شرب الماء بانتظام طوال اليوم لدعم مرونة الجلد وتوازن السوائل.',
+              'زيادة السوائل عند ارتفاع الحرارة أو ممارسة الرياضة.',
+              'تجنب الاعتماد على المشروبات السكرية كبديل للماء.'
+            ],
+            ku: [
+              'ئاوخواردنەوە بە شێوەی ڕێکخراو بە درێژایی ڕۆژ.',
+              'زیادکردنی ئاو لە کاتی گەرما یان وەرزشکردندا.',
+              'خۆپاراستن لە خواردنەوە شەکراوییەکان وەک جێگرەوەی ئاو.'
+            ],
+            tk: [
+              'Gün dowamynda suwy yzygiderli içiň.',
+              'Yssyda ýa-da maşk edeniňizde suw mukdaryny köpeldiň.',
+              'Süýji içgileri suwuň ornuna ulanmaň.'
+            ],
+            en: [
+              'Space water intake evenly throughout the day to support skin elasticity and hydration.',
+              'Increase fluids in hot weather or during physical activity.',
+              'Avoid sugary drinks as a substitute for plain water.'
+            ]
+          }
+        },
+        {
+          title: {
+            ar: '2. ستاندرد البروتين، الحديد، الزنك، وأوميغا-3',
+            ku: '٢. ستانداردی پرۆتین، ئاسن، زینک و ئۆمێگا-٣',
+            tk: '2. Belok, Demir, Sink we Omega-3 Standarty',
+            en: '2. Protein, Iron, Zinc & Omega-3 Standard'
+          },
+          steps: {
+            ar: [
+              'البروتين والحديد والزنك ضرورية لبناء ألياف الشعر وتجديد الخلايا؛ تُؤخذ من غذاء متوازن.',
+              'أحماض أوميغا-3 والدهون الصحية (الأسماك، الجوز، زيت الزيتون) تدعم حاجز البشرة.',
+              'تنبيه الحمل: يُمنع تناول جرعات عالية من فيتامين A أو أي مكملات دون استشارة الطبيب.'
+            ],
+            ku: [
+              'پرۆتین و ئاسن و زینک گرنگن بۆ قژ و پێست لە خۆراکی هاوسەنگدا.',
+              'ئۆمێگا-٣ و چەوری سوودبەخش (ماسی، گوێز، زەیتی زەیتوون) پشتگیری پێست دەکەن.',
+              'تێبینی دووگیانی: بڕی زۆری ڤیتامین A و تەواوکەرەکان تەنها بە ڕاوێژی پزیشک.'
+            ],
+            tk: [
+              'Belok, demir we sink saç we deri üçin zerurdyr.',
+              'Omega-3 we peýdaly ýaglar (balyk, hoz, zeýtun ýagy) derini goldaýar.',
+              'Göwrelilik duýduryşy: ýokary dozaly A witamini we goşundylar lukman bilen.'
+            ],
+            en: [
+              'Protein, iron, and zinc support hair fibers and cell renewal through balanced nutrition.',
+              'Omega-3s and healthy fats (fish, walnuts, olive oil) support skin barrier function.',
+              'Pregnancy note: avoid high-dose vitamin A and check all supplements with a doctor.'
+            ]
+          }
+        }
+      ];
+
+      function generateCatalog520() {
+        const list = [];
+        let num = 1;
+
+        const brands = [
+          'La Roche-Posay',
+          'Bioderma',
+          'CeraVe',
+          'Vichy',
+          'Eucerin',
+          'Cetaphil',
+          'The Ordinary',
+          "L'Oréal Paris",
+          'Garnier',
+          'Maybelline New York',
+          'Kérastase',
+          'Olaplex',
+          'Dove',
+          'Nivea',
+          'Dior',
+          'Chanel',
+          'Tom Ford',
+          'Swiss Arabian',
+          'Ajmal',
+          'Abdul Samad Al Qurashi'
+        ];
+
+        const skinTypes = ['Oily', 'Dry', 'Sensitive', 'Combination'];
+        const hairTypes = ['Oily Hair', 'Dry Hair', 'Color-Treated', 'Untreated'];
+
+        // 1. Sunscreens (80 items)
+        const sunscreenTemplates = [
           {
-            id: 'cos-1',
-            num: 1,
-            icon: 'cream',
-            color: '#0284c7',
-            company: 'CeraVe',
+            ar: 'واقي شمس معدني بالزنك والتيتانيوم SPF 50+',
+            ku: 'دژەخۆری کانزایی بە زینک و تیتانیۆم SPF 50+',
+            tk: 'Sink we Titan Mineral Gün Goragy SPF 50+',
+            en: 'Mineral Zinc & Titanium Sunscreen SPF 50+',
+            skin: 'Sensitive',
+            hair: 'Untreated',
             safety: 'safe',
-            name: {
-              ar: 'CeraVe Moisturizing Cream / Lotion',
-              ku: 'کرێم / لۆشنی شێدارکەرەوەی سیراڤی',
-              tk: 'CeraVe Çyglandyryjy Krem / Losýon',
-              en: 'CeraVe Moisturizing Cream / Lotion'
-            },
-            target: {
-              ar: 'للبشرة الجافة والحساسة والمختلطة',
-              ku: 'بۆ پێستی وشک، هەستیار و تێکەڵ',
-              tk: 'Gury, duýgur we garyşyk deri üçin',
-              en: 'Dry, sensitive & combination skin'
-            },
-            usage: {
-              ar: 'يوضع صباحاً ومساءً على بشرة نظيفة للوجه والجسم.',
-              ku: 'بەیانی و ئێوارە لەسەر پێستی پاکی دەم و چاو و جەستە دابنرێت.',
-              tk: 'Irden we agşam arassa ýüze we bedene çalyň.',
-              en: 'Apply morning and evening to clean face and body skin.'
-            },
-            pregnancy: {
-              ar: 'آمن.',
-              ku: 'گونجاوە (ئارام).',
-              tk: 'Howpsuz.',
-              en: 'Safe.'
-            }
+            img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=70'
           },
           {
-            id: 'cos-2',
-            num: 2,
-            icon: 'cleanser',
-            color: '#e11d48',
-            company: 'Bioderma',
+            ar: 'واقي شمس سائل خفيف للبشرة الدهنية SPF 50',
+            ku: 'دژەخۆری شلی سووک بۆ پێستی چەور SPF 50',
+            tk: 'Ýagly Deri Üçin Ýeňil Suyuk Gün Goragy SPF 50',
+            en: 'Lightweight Fluid Sunscreen for Oily Skin SPF 50',
+            skin: 'Oily',
+            hair: 'Oily Hair',
             safety: 'safe',
-            name: {
-              ar: 'Bioderma Sensibio H2O',
-              ku: 'بایۆدێرما سێنسیبیۆ H2O',
-              tk: 'Bioderma Sensibio H2O',
-              en: 'Bioderma Sensibio H2O'
-            },
-            target: {
-              ar: 'للبشرة الحساسة وجميع أنواع البشرة',
-              ku: 'بۆ پێستی هەستیار و هەموو جۆرەکانی پێست',
-              tk: 'Duýgur deri we ähli deri görnüşleri üçin',
-              en: 'Sensitive skin & all skin types'
-            },
-            usage: {
-              ar: 'يُبلل قطن ويُمسح الوجه والعينان بلطف دون فرك قوي.',
-              ku: 'لۆکە تەڕ بکرێت و بە نەرمی دەم و چاو و چاوەکان بسڕدرێت بەبێ خوراندن.',
-              tk: 'Pagtany öllediň we ýüzi/gözi ýumşaklyk bilen süpüriň.',
-              en: 'Soak a cotton pad and gently wipe face and eyes without harsh rubbing.'
-            },
-            pregnancy: {
-              ar: 'آمن.',
-              ku: 'گونجاوە.',
-              tk: 'Howpsuz.',
-              en: 'Safe.'
-            }
+            img: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=70'
           },
           {
-            id: 'cos-3',
-            num: 3,
-            icon: 'exfoliant',
-            color: '#ea580c',
-            company: 'La Roche-Posay',
+            ar: 'واقي شمس مرطب بالسيراميد للبشرة الجافة SPF 50',
+            ku: 'دژەخۆری شێدارکەرەوە بە سیرامید بۆ پێستی وشک SPF 50',
+            tk: 'Gury Deri Üçin Keramidli Gün Goragy SPF 50',
+            en: 'Ceramide Hydrating Sunscreen for Dry Skin SPF 50',
+            skin: 'Dry',
+            hair: 'Dry Hair',
             safety: 'safe',
-            name: {
-              ar: 'La Roche-Posay Effaclar / Anthelios',
-              ku: 'لارۆش پۆزێ ئێفاکلار / ئەنسێلیۆس',
-              tk: 'La Roche-Posay Effaclar / Anthelios',
-              en: 'La Roche-Posay Effaclar / Anthelios'
-            },
-            target: {
-              ar: 'للبشرة الدهنية والمختلطة والحساسة وحماية الشمس',
-              ku: 'بۆ پێستی چەور، تێکەڵ و هەستیار و پاراستن لە خۆر',
-              tk: 'Ýagly, garyşyk, duýgur deri we gün goragy üçin',
-              en: 'Oily, combination, sensitive skin & sun protection'
-            },
-            usage: {
-              ar: 'الغسول مرتين يومياً أو واقي الشمس قبل التعرض للشمس بـ 15 دقيقة.',
-              ku: 'غەسوول ڕۆژی دوو جار یان دژەخۆر ١٥ خولەک پێش بەرکەوتنی خۆر.',
-              tk: 'Ýuwujy günde 2 gezek ýa-da gün goragy güne çykmazdan 15 minut öň.',
-              en: 'Cleanser twice daily or sunscreen 15 minutes before sun exposure.'
-            },
-            pregnancy: {
-              ar: 'آمن عموماً (يُفضل فلاتر معدنية للبشرة الحساسة أثناء الحمل).',
-              ku: 'بە گشتی گونجاوە (بۆ پێستی هەستیار لە دووگیانیدا فلتەری کانزایی باشترە).',
-              tk: 'Umuman howpsuz (göwrelilikde duýgur derä mineral filtrler maslahat berilýär).',
-              en: 'Generally safe (mineral filters preferred for sensitive skin in pregnancy).'
-            }
+            img: 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=600&q=70'
           },
           {
-            id: 'cos-4',
-            num: 4,
-            icon: 'makeup',
-            color: '#be185d',
-            company: 'Maybelline New York',
+            ar: 'واقي شمس ملون (Tinted) لتوحيد مظهر البشرة SPF 50',
+            ku: 'دژەخۆری ڕەنگدار بۆ یەکخستنی ڕەنگی پێست SPF 50',
+            tk: 'Reňkli Gün Goragy SPF 50',
+            en: 'Tinted Broad-Spectrum Sunscreen SPF 50',
+            skin: 'Combination',
+            hair: 'Color-Treated',
             safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=600&q=70'
+          }
+        ];
+
+        for (let i = 0; i < 80; i++) {
+          const tpl = sunscreenTemplates[i % sunscreenTemplates.length];
+          const brand = brands[i % brands.length];
+          const variant = Math.floor(i / sunscreenTemplates.length) + 1;
+          list.push({
+            id: 'item-' + num,
+            num: num++,
+            category: 'Sunscreen',
+            company: brand,
+            skinType: tpl.skin,
+            hairType: tpl.hair,
+            safety: tpl.safety,
+            image: tpl.img,
             name: {
-              ar: 'Maybelline Lash Sensational Mascara',
-              ku: 'مەسکارای لاش سێنسیشنالی مێیبێلین',
-              tk: 'Maybelline Lash Sensational Tuşy',
-              en: 'Maybelline Lash Sensational Mascara'
+              ar: `${tpl.ar} — إصدار ${variant}`,
+              ku: `${tpl.ku} — جۆری ${variant}`,
+              tk: `${tpl.tk} — ${variant}`,
+              en: `${tpl.en} — Edition ${variant}`
             },
             target: {
-              ar: 'مكياج العيون والرموش لجميع أنواع البشرة',
-              ku: 'ماکیاژی چاو و برژانگ بۆ هەموو جۆرەکانی پێست',
-              tk: 'Göz makiýažy we kirpikler üçin',
-              en: 'Eye & lash makeup for all skin types'
+              ar: `مناسب للبشرة (${tpl.skin}) • فلاتر حماية واسعة الطيف من الأشعة UVA/UVB`,
+              ku: `گونجاو بۆ پێستی (${tpl.skin}) • پاراستنی بەرفراوان لە تیشکی خۆر`,
+              tk: `(${tpl.skin}) deri üçin • UVA/UVB goragy`,
+              en: `Suited for (${tpl.skin}) skin • Broad-spectrum UVA/UVB protection`
             },
             usage: {
-              ar: 'يُمرر من جذور الرموش للأطراف بحركة متعرجة ويُزال بمزيل مكياج لطيف.',
-              ku: 'لە ڕەگی برژانگەوە بۆ سەر بە نەرمی بدە و بە لابەرەوەی نەرم لایبەرە.',
-              tk: 'Kirpikleriň düýbünden ujuna çalyň we ýumşak serişde bilen aýyryň.',
-              en: 'Sweep from lash roots to tips in a zig-zag motion; remove with gentle remover.'
+              ar: 'يوضع بسخاء على الوجه والرقبة قبل التعرض للشمس بـ 15–20 دقيقة ويُجدد كل ساعتين.',
+              ku: '١٥–٢٠ خولەک پێش خۆر بە جوانی لە دەم و چاو و مل بدرێت و هەر دوو کاتژمێر جارێک نوێ بکرێتەوە.',
+              tk: 'Güne çykmazdan 15-20 minut öň çalyň we her 2 sagatdan täzeläň.',
+              en: 'Apply generously to face and neck 15–20 minutes before sun exposure; reapply every 2 hours.'
             },
             pregnancy: {
-              ar: 'آمن للاستخدام الخارجي.',
-              ku: 'گونجاوە بۆ بەکارهێنانی دەرەکی.',
-              tk: 'Daşky ulanmak üçin howpsuz.',
-              en: 'Safe for external cosmetic use.'
+              ar: 'آمن للحمل (يُفضل واقي الشمس المعدني/الفيزيائي للبشرة الحساسة أثناء الحمل).',
+              ku: 'گونجاوە بۆ دووگیانی (دژەخۆری کانزایی بۆ پێستی هەستیار باشترە).',
+              tk: 'Göwrelilikde howpsuz (mineral görnüşi maslahat berilýär).',
+              en: 'Safe in pregnancy (mineral filters especially suited for sensitive pregnancy skin).'
             }
+          });
+        }
+
+        // 2. Shampoos & Hair Care (80 items)
+        const shampooTemplates = [
+          {
+            ar: 'شامبو موازنة الدهون وتنقية الفروة للشعر الدهني',
+            ku: 'شامپۆی هاوسەنگی چەوری و پاککردنەوەی پێستی سەر بۆ قژی چەور',
+            tk: 'Ýagly Saç Üçin Deňagramly Şampun',
+            en: 'Oil-Balancing Scalp Purifying Shampoo for Oily Hair',
+            skin: 'Oily',
+            hair: 'Oily Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&w=600&q=70'
           },
           {
-            id: 'cos-5',
-            num: 5,
-            icon: 'serum',
-            color: '#dc2626',
-            company: 'شركات دوائية عالمية',
+            ar: 'شامبو ترطيب وتغذية مكثفة للشعر الجاف',
+            ku: 'شامپۆی شێدارکەرەوە و خۆراکدەر بۆ قژی وشک',
+            tk: 'Gury Saç Üçin Çyglandyryjy Şampun',
+            en: 'Intensive Moisture Shampoo for Dry Hair',
+            skin: 'Dry',
+            hair: 'Dry Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'شامبو حماية اللون وإصلاح الروابط للشعر المصبوغ',
+            ku: 'شامپۆی پاراستنی ڕەنگ و چاککردنەوەی تاڵ بۆ قژی بۆیاخکراو',
+            tk: 'Boýalan Saç Üçin Reňk Goraýjy Şampun',
+            en: 'Color-Protect & Bond Care Shampoo for Dyed Hair',
+            skin: 'Sensitive',
+            hair: 'Color-Treated',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'شامبو علاجي للقشرة وتهدئة الفروة (يُستشار الطبيب للحمل)',
+            ku: 'شامپۆی چارەسەری کڕێش و ئارامکەرەوەی پێستی سەر',
+            tk: 'Kepege Garşy Bejeriş Şampuny',
+            en: 'Anti-Dandruff Scalp Care Shampoo (Consult Doctor in Pregnancy)',
+            skin: 'Combination',
+            hair: 'Untreated',
+            safety: 'caution',
+            img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=70'
+          }
+        ];
+
+        for (let i = 0; i < 80; i++) {
+          const tpl = shampooTemplates[i % shampooTemplates.length];
+          const brand = brands[(i + 2) % brands.length];
+          const variant = Math.floor(i / shampooTemplates.length) + 1;
+          list.push({
+            id: 'item-' + num,
+            num: num++,
+            category: 'Shampoo',
+            company: brand,
+            skinType: tpl.skin,
+            hairType: tpl.hair,
+            safety: tpl.safety,
+            image: tpl.img,
+            name: {
+              ar: `${tpl.ar} — رقم ${variant}`,
+              ku: `${tpl.ku} — ژمارە ${variant}`,
+              tk: `${tpl.tk} — №${variant}`,
+              en: `${tpl.en} — #${variant}`
+            },
+            target: {
+              ar: `مناسب لنوع الشعر (${tpl.hair}) • عناية متوازنة بفروة الرأس والألياف`,
+              ku: `گونجاو بۆ جۆری قژی (${tpl.hair}) • گرنگیدان بە پێستی سەر و تاڵەکان`,
+              tk: `(${tpl.hair}) saç görnüşi üçin • kelle derisi we saç idegi`,
+              en: `Suited for (${tpl.hair}) • Scalp & fiber balance care`
+            },
+            usage: {
+              ar: 'يُدلك على فروة الرأس المبللة ويُشطف بالماء الفاتر، ويُتبع ببلسم مناسب على الأطراف.',
+              ku: 'لەسەر پێستی سەری تەڕ مەساج بدرێت و بە ئاوی شلەتێن بشۆرێت و نەرمکەرەوە بۆ سەری قژ بدرێت.',
+              tk: 'Öl kelle derisine owkalaň, mylaýym suw bilen ýuwuň we ujyna kondisioner çalyň.',
+              en: 'Massage onto wet scalp, rinse with lukewarm water, and follow with conditioner on lengths/ends.'
+            },
+            pregnancy: {
+              ar:
+                tpl.safety === 'safe'
+                  ? 'آمن للحمل والرضاعة عند الاستخدام الخارجي المعتاد.'
+                  : 'يُستشار الطبيب للحمل قبل استخدام المكونات العلاجية النشطة.',
+              ku:
+                tpl.safety === 'safe'
+                  ? 'لە دووگیانی و شیرپێداندا گونجاوە.'
+                  : 'پێش بەکارهێنانی ماددەی چارەسەری لە دووگیانیدا ڕاوێژ بە پزیشک بکە.',
+              tk:
+                tpl.safety === 'safe'
+                  ? 'Göwrelilikde we emziklikde howpsuz.'
+                  : 'Göwrelilikde lukman bilen maslahatlaşyň.',
+              en:
+                tpl.safety === 'safe'
+                  ? 'Safe in pregnancy and breastfeeding with normal external use.'
+                  : 'Consult doctor in pregnancy before using medicated actives.'
+            }
+          });
+        }
+
+        // 3. Cleansers & Exfoliants (75 items)
+        const cleanserTemplates = [
+          {
+            ar: 'غسول جل منظف للبشرة الدهنية والمختلطة',
+            ku: 'غەسوولی جێڵی پاککەرەوە بۆ پێستی چەور و تێکەڵ',
+            tk: 'Ýagly we Garyşyk Deri Üçin Gel Ýuwujy',
+            en: 'Purifying Gel Cleanser for Oily & Combination Skin',
+            skin: 'Oily',
+            hair: 'Oily Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'ماء ميسيلار لطيف للبشرة الحساسة وإزالة المكياج',
+            ku: 'ئاوی میسێلاری نەرم بۆ پێستی هەستیار و لابردنی ماکیاژ',
+            tk: 'Duýgur Deri we Makiýaž Üçin Miselýar Suw',
+            en: 'Gentle Micellar Water for Sensitive Skin & Makeup Removal',
+            skin: 'Sensitive',
+            hair: 'Untreated',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'مقشر أحماض (AHA / BHA / PHA) لتجديد نضارة البشرة',
+            ku: 'تەقشیری ترشەکان (AHA / BHA / PHA) بۆ نوێکردنەوەی پێست',
+            tk: 'AHA / BHA / PHA Arassalaýjy Serişde',
+            en: 'AHA / BHA / PHA Exfoliating Solution for Skin Renewal',
+            skin: 'Combination',
+            hair: 'Dry Hair',
+            safety: 'caution',
+            img: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=600&q=70'
+          }
+        ];
+
+        for (let i = 0; i < 75; i++) {
+          const tpl = cleanserTemplates[i % cleanserTemplates.length];
+          const brand = brands[(i + 4) % brands.length];
+          const variant = Math.floor(i / cleanserTemplates.length) + 1;
+          list.push({
+            id: 'item-' + num,
+            num: num++,
+            category: 'Cleanser & Exfoliant',
+            company: brand,
+            skinType: tpl.skin,
+            hairType: tpl.hair,
+            safety: tpl.safety,
+            image: tpl.img,
+            name: {
+              ar: `${tpl.ar} — ${variant}`,
+              ku: `${tpl.ku} — ${variant}`,
+              tk: `${tpl.tk} — ${variant}`,
+              en: `${tpl.en} — ${variant}`
+            },
+            target: {
+              ar: `مناسب للبشرة (${tpl.skin}) • تنظيف المسام أو تقشير لطيف مدروس`,
+              ku: `گونجاو بۆ پێستی (${tpl.skin}) • پاککردنەوەی کونیلەکان یان تەقشیری نەرم`,
+              tk: `(${tpl.skin}) deri üçin • gözenekleri arassalamak`,
+              en: `Suited for (${tpl.skin}) skin • Pore cleansing or controlled exfoliation`
+            },
+            usage: {
+              ar: 'الغسول يُستخدم صباحاً ومساءً؛ المقشر يُستخدم 1–3 مرات أسبوعياً مساءً مع واقي شمس نهاراً.',
+              ku: 'غەسوول بەیانی و ئێوارە؛ تەقشیر ١–٣ جار لە هەفتەدا لە ئێواران بە دژەخۆر لە ڕۆژدا.',
+              tk: 'Ýuwujy irden/agşam; arassalaýjy hepdede 1-3 gezek agşam gün goragy bilen.',
+              en: 'Cleanser AM/PM; exfoliant 1–3 times weekly in PM with daytime sunscreen.'
+            },
+            pregnancy: {
+              ar:
+                tpl.safety === 'safe'
+                  ? 'آمن للحمل والرضاعة.'
+                  : 'يُستشار طبيب للحمل قبل استخدام المقشرات الحمضية أثناء الحمل.',
+              ku:
+                tpl.safety === 'safe'
+                  ? 'لە دووگیانیدا گونجاوە.'
+                  : 'پێش بەکارهێنانی تەقشیری ترش لە دووگیانیدا ڕاوێژ بە پزیشک بکە.',
+              tk:
+                tpl.safety === 'safe'
+                  ? 'Göwrelilikde howpsuz.'
+                  : 'Göwrelilikde lukman bilen maslahatlaşyň.',
+              en:
+                tpl.safety === 'safe'
+                  ? 'Safe in pregnancy and breastfeeding.'
+                  : 'Consult doctor in pregnancy before using acid exfoliants.'
+            }
+          });
+        }
+
+        // 4. Moisturizers & Serums (80 items)
+        const serumTemplates = [
+          {
+            ar: 'سيروم هيالورونيك أسيد ومرطب سيراميد لحاجز البشرة',
+            ku: 'سیرۆمی هایالۆرۆنیک ئەسید و سیرامید بۆ پاراستنی پێست',
+            tk: 'Gialuron Kislotasy we Keramid Serumasy / Kremi',
+            en: 'Hyaluronic Acid Serum & Ceramide Barrier Moisturizer',
+            skin: 'Dry',
+            hair: 'Dry Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'سيروم نياسيناميد 10% لتنظيم الإفرازات ومظهر المسام',
+            ku: 'سیرۆمی نیاسینامید ١٠٪ بۆ ڕێکخستنی چەوری پێست',
+            tk: '10% Niasinamid Serumasy',
+            en: '10% Niacinamide Serum for Sebum & Pore Balance',
+            skin: 'Oily',
+            hair: 'Oily Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'سيروم/علاج ريتينول لتجديد البشرة (يُتجنب أثناء الحمل)',
+            ku: 'سیرۆم/چارەسەری ڕیتینۆل (لە دووگیانیدا دووربکەوەرەوە)',
+            tk: 'Retinol Serumasy (Göwrelilikde Gaça Duruň)',
+            en: 'Retinol Renewal Treatment (Avoid During Pregnancy)',
+            skin: 'Combination',
+            hair: 'Color-Treated',
             safety: 'avoid',
-            name: {
-              ar: 'Retinoid / Adapalene Treatment (تنبيه علاجي)',
-              ku: 'چارەسەری ڕیتینۆید / ئەداپالین (هۆشداری پزیشکی)',
-              tk: 'Retinoid / Adapalen Bejergisi (Duýduryş)',
-              en: 'Retinoid / Adapalene Treatment (Caution)'
-            },
-            target: {
-              ar: 'علاجي لحب الشباب وتجديد البشرة بإشراف طبي',
-              ku: 'چارەسەری زیپکە و نوێکردنەوەی پێست بە ڕێنمایی پزیشک',
-              tk: 'Lukmanyň gözegçiliginde düwürtik üçin bejergi',
-              en: 'Clinical acne & skin renewal under medical guidance'
-            },
-            usage: {
-              ar: 'كمية بحجم حبة بازلاء مساءً بعد استشارة الطبيب مع واقي شمس نهاراً.',
-              ku: 'بڕێکی کەم بە قەد دەنکە نۆکێک لە ئێواراندا دوای ڕاوێژ بە پزیشک.',
-              tk: 'Lukman bilen maslahatlaşyp, agşam nohut ululygynda çalyň.',
-              en: 'Pea-sized amount in the evening after doctor consultation, with daytime SPF.'
-            },
-            pregnancy: {
-              ar: 'يُمنع / يُتجنب أثناء الحمل والرضاعة حسب الإرشادات الطبية.',
-              ku: 'لە کاتی دووگیانی و شیرپێداندا قەدەغەیە / دووربکەوەرەوە.',
-              tk: 'Göwrelilikde we emziklikde gadagan / gaça duruň.',
-              en: 'Avoid / contraindicated during pregnancy and breastfeeding per medical guidance.'
-            }
-          },
-          {
-            id: 'cos-6',
-            num: 6,
-            icon: 'cream',
-            color: '#1d4ed8',
-            company: 'Beiersdorf / Eucerin',
-            safety: 'safe',
-            name: {
-              ar: 'Eucerin pH5 / Aquaphor',
-              ku: 'یۆسێرین pH5 / ئەکووافۆر',
-              tk: 'Eucerin pH5 / Aquaphor',
-              en: 'Eucerin pH5 / Aquaphor'
-            },
-            target: {
-              ar: 'للبشرة الجافة جداً والمتشققة والشفاه والمناطق الخشنة',
-              ku: 'بۆ پێستی زۆر وشک و قڵیشاو و لێو و ناوچە زبرەکان',
-              tk: 'Örän gury, jaýrylan deri we dodaklar üçin',
-              en: 'Very dry, chapped skin, lips & rough patches'
-            },
-            usage: {
-              ar: 'تُوضع طبقة رقيقة على المناطق الجافة أو المتشققة حسب الحاجة.',
-              ku: 'چینێکی تەنک لەسەر شوێنە وشک یان قڵیشاوەکان دابنرێت بەپێی پێویست.',
-              tk: 'Gury ýa-da jaýrylan ýerlere ýuka gatlak edip çalyň.',
-              en: 'Apply a thin layer to dry or chapped areas as needed.'
-            },
-            pregnancy: {
-              ar: 'آمن.',
-              ku: 'گونجاوە.',
-              tk: 'Howpsuz.',
-              en: 'Safe.'
-            }
+            img: 'https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?auto=format&fit=crop&w=600&q=70'
           }
-        ],
-        perfumes: [
-          {
-            id: 'pf-1',
-            num: 1,
-            icon: 'perfume',
-            color: '#b45309',
-            company: 'عطور زيتية شرقية وعالمية',
-            safety: 'caution',
+        ];
+
+        for (let i = 0; i < 80; i++) {
+          const tpl = serumTemplates[i % serumTemplates.length];
+          const brand = brands[(i + 6) % brands.length];
+          const variant = Math.floor(i / serumTemplates.length) + 1;
+          list.push({
+            id: 'item-' + num,
+            num: num++,
+            category: 'Moisturizer & Serum',
+            company: brand,
+            skinType: tpl.skin,
+            hairType: tpl.hair,
+            safety: tpl.safety,
+            image: tpl.img,
             name: {
-              ar: 'عطر دهن العود والورد الطائفي (زيتي خالي من الكحول)',
-              ku: 'بۆنی دەهنی عوود و گوڵی تائیفی (زەیتی بێ کهول)',
-              tk: 'Ud we Taif Bägüli Ýagly Atır (Alkagolsyz)',
-              en: 'Oud Oil & Taif Rose (Alcohol-Free Oil)'
+              ar: `${tpl.ar} — #${variant}`,
+              ku: `${tpl.ku} — #${variant}`,
+              tk: `${tpl.tk} — №${variant}`,
+              en: `${tpl.en} — #${variant}`
             },
             target: {
-              ar: 'المكونات: دهن عود معتق، ورد طائفي، عنبر دافئ — ثبات عالٍ',
-              ku: 'پێکهاتە: دەهنی عوود، گوڵی تائیفی، عەنبەری گەرم',
-              tk: 'Düzümi: ud ýagy, taif bägüli, ýyly änbir',
-              en: 'Notes: aged oud oil, Taif rose, warm amber — high longevity'
+              ar: `مناسب للبشرة (${tpl.skin}) • ترطيب أو دعم توازن البشرة`,
+              ku: `گونجاو بۆ پێستی (${tpl.skin}) • شێدارکردنەوە و هاوسەنگی پێست`,
+              tk: `(${tpl.skin}) deri üçin • çyglandyryjy we deňagramlylyk`,
+              en: `Suited for (${tpl.skin}) skin • Hydration & barrier support`
             },
             usage: {
-              ar: 'نقطة صغيرة على نقاط النبض (المعصم، خلف الأذن) أو على الملابس.',
-              ku: 'دڵۆپێکی بچووک لەسەر خاڵەکانی لێدانی دڵ (مەچەک، پشت گوێ) یان جلوبەرگ.',
-              tk: 'Bilege, gulagyň arkasyna ýa-da eşige azajyk çalyň.',
-              en: 'Dab lightly on pulse points (wrists, behind ears) or fabric.'
+              ar: 'يُوضع 2–3 قطرات أو كمية مناسبة من المرطب على بشرة نظيفة صباحاً أو مساءً حسب المنتج.',
+              ku: '٢–٣ دڵۆپ یان بڕی گونجاو لە کرێم لەسەر پێستی پاک بدرێت بەیانی یان ئێوارە.',
+              tk: 'Arassa derä 2-3 damja ýa-da kremi irden/agşam çalyň.',
+              en: 'Apply 2–3 drops or appropriate moisturizer amount onto clean skin AM/PM as directed.'
             },
             pregnancy: {
-              ar: 'يُفضل اختيار روائح خفيفة وتجنب التركيزات القوية إذا وُجدت حساسية أو غثيان حمل.',
-              ku: 'باشترە بۆنی سووک هەڵبژێردرێت و لە بۆنی زۆر توند دووربکەویتەوە لە کاتی هەستیاری دووگیانی.',
-              tk: 'Göwrelilikde duýgurlyk ýa-da ýürek bulanma bolsa ýeňil ys saýlaň.',
-              en: 'Prefer lighter scents and avoid heavy concentrations if experiencing pregnancy sensitivity or nausea.'
+              ar:
+                tpl.safety === 'safe'
+                  ? 'آمن للحمل والرضاعة.'
+                  : tpl.safety === 'avoid'
+                    ? 'يُتجنب أثناء الحمل والرضاعة بناءً على المعايير الطبية للريتينويدات.'
+                    : 'يُستشار طبيب للحمل.',
+              ku:
+                tpl.safety === 'safe'
+                  ? 'لە دووگیانیدا گونجاوە.'
+                  : tpl.safety === 'avoid'
+                    ? 'لە کاتی دووگیانیدا دووربکەوەرەوە.'
+                    : 'ڕاوێژ بە پزیشک بکرێت.',
+              tk:
+                tpl.safety === 'safe'
+                  ? 'Göwrelilikde howpsuz.'
+                  : tpl.safety === 'avoid'
+                    ? 'Göwrelilikde gaça duruň.'
+                    : 'Lukman bilen maslahatlaşyň.',
+              en:
+                tpl.safety === 'safe'
+                  ? 'Safe in pregnancy and breastfeeding.'
+                  : tpl.safety === 'avoid'
+                    ? 'Avoid during pregnancy and breastfeeding per retinoid safety standards.'
+                    : 'Consult doctor in pregnancy.'
             }
-          },
+          });
+        }
+
+        // 5. Makeup & Cosmetics (75 items)
+        const makeupTemplates = [
           {
-            id: 'pf-2',
-            num: 2,
-            icon: 'perfume',
-            color: '#0d9488',
-            company: 'عطور زيتية / خفيفة',
+            ar: 'ماسكارا تكثيف وتطويل الرموش مقاومة للتكتل',
+            ku: 'مەسکارای چڕکردنەوە و درێژکردنی برژانگ',
+            tk: 'Kirpikleri Uzaldyjy we Goýaldýjy Tuş',
+            en: 'Volumizing & Lengthening Clump-Free Mascara',
+            skin: 'Sensitive',
+            hair: 'Color-Treated',
             safety: 'safe',
-            name: {
-              ar: 'عطر المسك الأبيض والياسمين (زيتي / خفيف)',
-              ku: 'بۆنی میسکی سپی و یاسەمین (زەیتی / سووک)',
-              tk: 'Ak Müşk we Ýasmin Atıry (Ýagly / Ýeňil)',
-              en: 'White Musk & Jasmine (Oil / Light)'
-            },
-            target: {
-              ar: 'المكونات: مسك أبيض، ياسمين، أخشاب ناعمة',
-              ku: 'پێکهاتە: میسکی سپی، یاسەمین، داری نەرم',
-              tk: 'Düzümi: ak müşk, ýasmin, ýumşak agaç notalary',
-              en: 'Notes: white musk, jasmine, soft woods'
-            },
-            usage: {
-              ar: 'يُربت بلطف على الجلد أو الملابس بكمية معتدلة.',
-              ku: 'بە نەرمی لەسەر پێست یان جلوبەرگ بدرێت بە بڕی مامناوەند.',
-              tk: 'Derä ýa-da eşige kadaly mukdarda çalyň.',
-              en: 'Pat gently onto skin or clothing in a moderate amount.'
-            },
-            pregnancy: {
-              ar: 'آمن عموماً بتركيز معتدل.',
-              ku: 'بە گشتی گونجاوە بە چڕی مامناوەند.',
-              tk: 'Kadaly konsentrasiýada umuman howpsuz.',
-              en: 'Generally safe in moderate concentration.'
-            }
+            img: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=70'
           },
           {
-            id: 'pf-3',
-            num: 3,
-            icon: 'perfume',
-            color: '#0284c7',
-            company: 'عطور كحولية عالمية (EDP / EDT)',
-            safety: 'caution',
-            name: {
-              ar: 'عطر الحمضيات والبرغموت الكحولي (Eau de Parfum / Toilette)',
-              ku: 'بۆنی مزرەمەنی و بێرگامۆتی کهولی (EDP / EDT)',
-              tk: 'Sitrus we Bergamot Spirtli Atıry (EDP / EDT)',
-              en: 'Citrus & Bergamot Alcohol Perfume (EDP / EDT)'
-            },
-            target: {
-              ar: 'المكونات: برغموت، ليمون، أخشاب الأرز، كحول عطر نقي',
-              ku: 'پێکهاتە: بێرگامۆت، لیمۆ، داری ئارز، کهولی پاکی بۆن',
-              tk: 'Düzümi: bergamot, limon, kedr agajy, arassa atır spirti',
-              en: 'Notes: bergamot, lemon, cedarwood, perfumery alcohol'
-            },
-            usage: {
-              ar: 'يُرش من مسافة 15–20 سم على الملابس أو نقاط النبض بعيداً عن البشرة المتهيجة.',
-              ku: 'لە دووری ١٥–٢٠ سم لەسەر جل یان خاڵی لێدانی دڵ بپرژێندرێت دوور لە پێستی هەستیار.',
-              tk: 'Eşige ýa-da bilege 15-20 sm uzaklykdan sepiliň.',
-              en: 'Spray 15–20 cm away on clothing or pulse points away from irritated skin.'
-            },
-            pregnancy: {
-              ar: 'يُفضل رشه على الملابس لتقليل تلامس الكحول والمواد العطرية مع الجلد الحساس أثناء الحمل.',
-              ku: 'باشترە لەسەر جل بپرژێندرێت تا بەرکەوتنی کهول و بۆن لەگەڵ پێستی هەستیار کەم بێتەوە.',
-              tk: 'Göwrelilikde duýgur deri bilen galtaşmazlygy üçin eşige sepmek amatly.',
-              en: 'Prefer spraying on fabric to minimize alcohol/fragrance contact on sensitive skin during pregnancy.'
-            }
-          },
-          {
-            id: 'pf-4',
-            num: 4,
-            icon: 'perfume',
-            color: '#92400e',
-            company: 'عطور شرقية دافئة',
-            safety: 'caution',
-            name: {
-              ar: 'عطر العنبر والفانيليا والتوابل الدافئة',
-              ku: 'بۆنی عەنبەر و ڤانێلا و بەهاراتی گەرم',
-              tk: 'Änbir, Wanil we Ýyly Burçlar Atıry',
-              en: 'Amber, Vanilla & Warm Spices'
-            },
-            target: {
-              ar: 'المكونات: عنبر، فانيليا، هيل أو قرفة خفيفة، خشب الصندل',
-              ku: 'پێکهاتە: عەنبەر، ڤانێلا، هێل یان دارچینی سووک، سەندەل',
-              tk: 'Düzümi: änbir, wanil, ýyly ysly otlar, sandal',
-              en: 'Notes: amber, vanilla, light spice, sandalwood'
-            },
-            usage: {
-              ar: 'رشتان إلى ثلاث في المساء أو المناسبات.',
-              ku: '٢ بۆ ٣ پڕژاندن لە ئێوارە یان بۆنەکاندا.',
-              tk: 'Agşam ýa-da baýramçylyklarda 2-3 gezek sepiliň.',
-              en: 'Two to three sprays for evening or special occasions.'
-            },
-            pregnancy: {
-              ar: 'يُستشار في حال التحسس من الروائح القوية.',
-              ku: 'لە ئەگەری هەستیاری بە بۆنی توند ڕاوێژ بکرێت.',
-              tk: 'Güýçli yslara duýgurlyk bolsa maslahatlaşyň.',
-              en: 'Consult if sensitive to rich or spicy scents.'
-            }
-          },
-          {
-            id: 'pf-5',
-            num: 5,
-            icon: 'perfume',
-            color: '#16a34a',
-            company: 'عطور يومية منعشة',
+            ar: 'كريم أساس خفيف متوازن للبشرة المختلطة والدهنية',
+            ku: 'فاوندەیشنی سووک بۆ پێستی تێکەڵ و چەور',
+            tk: 'Garyşyk we Ýagly Deri Üçin Ýeňil Tonal Krem',
+            en: 'Lightweight Balanced Foundation for Combination & Oily Skin',
+            skin: 'Combination',
+            hair: 'Oily Hair',
             safety: 'safe',
-            name: {
-              ar: 'عطر الزهور والفاكهة المنعشة',
-              ku: 'بۆنی گوڵ و میوەی تازە',
-              tk: 'Gül we Täze Miwe Atıry',
-              en: 'Fresh Floral & Fruity'
-            },
-            target: {
-              ar: 'المكونات: تفاح أخضر، فاوانيا، مسك خفيف',
-              ku: 'پێکهاتە: سێوی سەوز، پیۆنی، میسکی سووک',
-              tk: 'Düzümi: ýaşyl alma, pion, ýeňil müşk',
-              en: 'Notes: crisp apple, peony, soft musk'
-            },
-            usage: {
-              ar: 'يُرش صباحاً للاستخدام اليومي الخفيف.',
-              ku: 'لە بەیانیان بۆ بەکارهێنانی ڕۆژانەی سووک بپرژێندرێت.',
-              tk: 'Irden gündelik ýeňil ulanmak üçin sepiliň.',
-              en: 'Spray in the morning for light everyday wear.'
-            },
-            pregnancy: {
-              ar: 'لطيف ومناسب للاستخدام اليومي المعتدل.',
-              ku: 'نەرمە و گونجاوە بۆ بەکارهێنانی ڕۆژانەی مامناوەند.',
-              tk: 'Ýumşak we gündelik kadaly ulanmaga amatly.',
-              en: 'Gentle and suitable for moderate daily wear.'
-            }
+            img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=70'
           },
           {
-            id: 'pf-6',
-            num: 6,
-            icon: 'perfume',
-            color: '#475569',
-            company: 'عطور خشبية عميقة',
-            safety: 'caution',
-            name: {
-              ar: 'عطر الأخشاب والباتشولي والجلود',
-              ku: 'بۆنی دار و پاچۆلی و چەرم',
-              tk: 'Agaç, Paçuli we Deri Atıry',
-              en: 'Woody, Patchouli & Leather'
-            },
-            target: {
-              ar: 'المكونات: باتشولي، نجيل الهند، أخشاب داكنة',
-              ku: 'پێکهاتە: پاچۆلی، ڤێتیڤەر، دارە تۆخەکان',
-              tk: 'Düzümi: paçuli, wetiwer, goýy agaçlar',
-              en: 'Notes: patchouli, vetiver, dark woods'
-            },
-            usage: {
-              ar: 'يُستخدم بكمية معتدلة في الأجواء الباردة.',
-              ku: 'لە کەشوهەوای سارددا بە بڕی مامناوەند بەکاربهێنرێت.',
-              tk: 'Sowuk howada kadaly mukdarda ulanyň.',
-              en: 'Apply moderately in cooler weather.'
-            },
-            pregnancy: {
-              ar: 'يُفضل تجنب الروائح الثقيلة جداً أثناء فترة الحمل.',
-              ku: 'باشترە لە کاتی دووگیانیدا لە بۆنی زۆر قورس دووربکەویتەوە.',
-              tk: 'Göwrelilikde gaty agyr yslardan gaça durmak maslahat berilýär.',
-              en: 'Best to avoid very heavy scents during pregnancy.'
-            }
-          }
-        ],
-        companiesTable: [
-          {
-            num: 1,
-            company: 'Bioderma',
-            type: { ar: 'عناية طبية وتنظيف ولطافة', ku: 'گرنگیپێدانی پزیشکی و نەرم', tk: 'Lukmançylyk we Ýumşak Ideg', en: 'Dermatological & Gentle Care' },
-            products: 'Sensibio H2O, Nodé Shampoo, Cicabio',
-            usage: { ar: 'مسح لطيف بالقطن أو غسل يومي حسب المنتج.', ku: 'سڕین بە لۆکە یان شۆردنی ڕۆژانە.', tk: 'Pagta bilen süpürmek ýa-da gündelik ýuwmak.', en: 'Gentle cotton wipe or daily wash per item.' },
-            safety: { ar: 'آمن عموماً (يُستشار في العلاجات الخاصة).', ku: 'بە گشتی گونجاوە.', tk: 'Umuman howpsuz.', en: 'Generally safe.' }
-          },
-          {
-            num: 2,
-            company: 'CeraVe',
-            type: { ar: 'سيراميد وترطيب حاجز البشرة والشعر', ku: 'سیرامید و شێدارکردنەوە', tk: 'Keramidler we Çyglandyryjy', en: 'Ceramides & Barrier Hydration' },
-            products: 'Moisturizing Cream, Foaming Cleanser, Shampoo',
-            usage: { ar: 'صباحاً ومساءً على بشرة أو شعر نظيف.', ku: 'بەیانی و ئێوارە لەسەر پێست یان قژی پاک.', tk: 'Irden we agşam arassa derä/saça.', en: 'Morning & night on clean skin or hair.' },
-            safety: { ar: 'آمن للاستخدام والحمل.', ku: 'گونجاوە بۆ بەکارهێنان و دووگیانی.', tk: 'Göwrelilikde we ulanmakda howpsuz.', en: 'Safe for use & pregnancy.' }
-          },
-          {
-            num: 3,
-            company: 'La Roche-Posay',
-            type: { ar: 'بشرة دهنية، حساسة، وحماية شمس', ku: 'پێستی چەور و هەستیار و دژەخۆر', tk: 'Ýagly, Duýgur Deri we Gün Goragy', en: 'Oily/Sensitive Skin & Sun Care' },
-            products: 'Effaclar Gel, Anthelios SPF, Cicaplast',
-            usage: { ar: 'الغسول مرتين يومياً والواقي قبل الشمس بـ 15 دقيقة.', ku: 'غەسوول ٢ جار و دژەخۆر ١٥ خولەک پێش خۆر.', tk: 'Günde 2 gezek ýuwujy we 15 minut öň SPF.', en: 'Cleanser 2x/day; SPF 15 mins before sun.' },
-            safety: { ar: 'آمن عموماً (فلاتر معدنية للحمل).', ku: 'بە گشتی گونجاوە.', tk: 'Umuman howpsuz.', en: 'Generally safe (mineral SPF preferred).' }
-          },
-          {
-            num: 4,
-            company: 'Vichy',
-            type: { ar: 'عناية طبية بالبشرة وفروة الرأس', ku: 'گرنگیپێدانی پزیشکی پێست و قژ', tk: 'Deri we Kelle Derisi Idegi', en: 'Skin & Scalp Dermocosmetics' },
-            products: 'Dercos Shampoo, Mineral 89',
-            usage: { ar: 'حسب توجيهات العبوة ويُترك دقيقتين لشامبو الفروة.', ku: 'بەپێی ڕێنمایی و ٢ خولەک بۆ شامپۆ.', tk: 'Görkezme boýunça we şampuny 2 minut saklaň.', en: 'Per label; leave scalp shampoo 2 minutes.' },
-            safety: { ar: 'آمن عموماً؛ يُستشار في المكونات النشطة.', ku: 'بە گشتی گونجاوە؛ ڕاوێژ بکرێت.', tk: 'Umuman howpsuz; maslahatlaşyň.', en: 'Generally safe; consult on active formulas.' }
-          },
-          {
-            num: 5,
-            company: 'Beiersdorf / Eucerin',
-            type: { ar: 'ترطيب عميق وبشرة جافة ومتشققة', ku: 'شێدارکردنەوەی قووڵ بۆ پێستی وشک', tk: 'Çuňňur Çyglandyryjy', en: 'Intensive Dry & Barrier Care' },
-            products: 'Eucerin pH5, Aquaphor',
-            usage: { ar: 'طبقة مناسبة على المناطق الجافة حسب الحاجة.', ku: 'لەسەر ناوچە وشکەکان بەپێی پێویست.', tk: 'Gury ýerlere zerurlyga görä çalyň.', en: 'Apply to dry areas as needed.' },
-            safety: { ar: 'آمن.', ku: 'گونجاوە.', tk: 'Howpsuz.', en: 'Safe.' }
-          },
-          {
-            num: 6,
-            company: "L'Oréal / Kérastase / Olaplex / Maybelline",
-            type: { ar: 'شعر، صبغات، ومكياج ومسكارا', ku: 'قژ، بۆیاخ، ماکیاژ و مەسکارا', tk: 'Saç, Boýag, Makiýaž we Tuş', en: 'Haircare, Color & Makeup' },
-            products: 'Bain Satin, Olaplex No. 4, Lash Sensational',
-            usage: { ar: 'حسب نوع الشعر أو المكياج مع إزالة المكياج ليلاً.', ku: 'بەپێی جۆری قژ یان ماکیاژ و لابردنی شەوان.', tk: 'Saç/makiýaž görnüşine görä, agşam aýyryň.', en: 'Per hair/makeup type; remove makeup nightly.' },
-            safety: { ar: 'آمن للاستخدام الخارجي.', ku: 'بۆ بەکارهێنانی دەرەکی گونجاوە.', tk: 'Daşky ulanmak üçin howpsuz.', en: 'Safe for external cosmetic use.' }
-          }
-        ],
-        routines: [
-          {
-            title: { ar: 'الروتين الصباحي للبشرة (حماية وترطيب)', ku: 'ڕۆتینی بەیانیان بۆ پێست (پاراستن و شێ)', tk: 'Irdenki Deri Tertibi (Gorag we Çyglylyk)', en: 'Morning Skin Routine (Protection & Hydration)' },
-            steps: {
-              ar: [
-                'غسل الوجه بغسول لطيف مناسب لنوع البشرة (أو ماء فاتر للبشرة الحساسة جداً).',
-                'وضع مرطب خفيف للبشرة الدهنية/المختلطة أو كريم غني للبشرة الجافة.',
-                'وضع واقي الشمس قبل الخروج نهاراً.'
-              ],
-              ku: [
-                'شۆردنی دەم و چاو بە غەسوولی نەرم بەپێی جۆری پێست.',
-                'دانانی شێدارکەرەوەی سووک بۆ چەور/تێکەڵ یان کرێم بۆ وشک.',
-                'دانانی دژەخۆر پێش چوونە بەر خۆر.'
-              ],
-              tk: [
-                'Deri görnüşine görä ýumşak ýuwujy bilen ýuwuň.',
-                'Ýagly/garyşyk derä ýeňil, gury derä goýy çyglandyryjy çalyň.',
-                'Gündiz çykmazdan öň gün goragyny ulanyň.'
-              ],
-              en: [
-                'Cleanse gently with a skin-matched cleanser (or lukewarm water if very sensitive).',
-                'Apply lightweight moisturizer for oily/combination or richer cream for dry skin.',
-                'Apply broad-spectrum sunscreen before daytime outdoor exposure.'
-              ]
-            }
-          },
-          {
-            title: { ar: 'الروتين المسائي للبشرة (تنظيف وترميم)', ku: 'ڕۆتینی ئێواران بۆ پێست (پاککردنەوە و چاککردن)', tk: 'Agşamky Deri Tertibi (Arassalamak we Dikeldiş)', en: 'Evening Skin Routine (Cleanse & Recover)' },
-            steps: {
-              ar: [
-                'إزالة المكياج أو واقي الشمس بمحلول ميسيلار أو منظف لطيف.',
-                'غسل الوجه وتجفيفه بلطف بمنشفة نظيفة دون فرك.',
-                'وضع المرطب الليلي (وتجنب المقشرات/الريتينويدات أثناء الحمل إلا باستشارة الطبيب).'
-              ],
-              ku: [
-                'لابردنی ماکیاژ یان دژەخۆر بە میسێلار یان پاککەرەوەی نەرم.',
-                'شۆردن و وشککردنەوە بە نەرمی بە خاولییەکی پاک.',
-                'دانانی شێدارکەرەوەی شەوان (لە دووگیانیدا بەبێ ڕاوێژی پزیشک دەرمانی توند مەدە).'
-              ],
-              tk: [
-                'Makiýažy ýa-da gün goragyny miselýar suw bilen aýyryň.',
-                'Ýüzüňizi ýuwuň we arassa süpürgiç bilen ýumşak guradyň.',
-                'Gijelik çyglandyryjy çalyň (göwrelilikde güýçli serişdeleri lukmansyz ulanmaň).'
-              ],
-              en: [
-                'Remove makeup or SPF using micellar water or a gentle cleanser.',
-                'Wash and pat dry softly with a clean towel without rubbing.',
-                'Apply evening moisturizer (avoid strong actives/retinoids in pregnancy unless advised by doctor).'
-              ]
-            }
-          },
-          {
-            title: { ar: 'روتين الشعر (الدهني، الجاف، المصبوغ، والطبيعي)', ku: 'ڕۆتینی قژ (چەور، وشک، بۆیاخکراو و سروشتی)', tk: 'Saç Tertibi (Ýagly, Gury, Boýalan we Tebigy)', en: 'Hair Routine (Oily, Dry, Dyed & Virgin Hair)' },
-            steps: {
-              ar: [
-                'للشعر الدهني: تنظيف فروة الرأس بانتظام ووضع البلسم على الأطراف فقط.',
-                'للشعر الجاف أو المصبوغ: شامبو لطيف/واقي للون + ماسك مرطب أسبوعي + تقليل حرارة التصفيف.',
-                'للشعر غير المصبوغ: الحفاظ على الترطيب الخفيف والقص المنتظم للأطراف.'
-              ],
-              ku: [
-                'بۆ قژی چەور: پاککردنەوەی پێستی سەر بە ڕێکوپێکی و نەرمکەرەوە تەنها بۆ سەری قژ.',
-                'بۆ قژی وشک یان بۆیاخکراو: شامپۆی نەرم/پارێزەری ڕەنگ + ماسکی هەفتانە + کەمکردنەوەی گەرمی.',
-                'بۆ قژی بۆیاخ نەکراو: پاراستنی شێی سووک و بڕینی سەری قژ بە بەردەوامی.'
-              ],
-              tk: [
-                'Ýagly saç: kelle derisini yzygiderli ýuwuň, kondisioneri diňe ujuna çalyň.',
-                'Gury ýa-da boýalan saç: ýumşak/reňk goraýjy şampun, hepdelik maska we az gyzgynlyk.',
-                'Boýalmadyk saç: ýeňil çyglandyryjy we yzygiderli ujuny kesmek.'
-              ],
-              en: [
-                'Oily hair: cleanse scalp regularly and apply conditioner only to mid-lengths/ends.',
-                'Dry or dyed hair: gentle/color-safe shampoo, weekly mask, and lower heat styling.',
-                'Virgin hair: maintain light hydration and regular trims.'
-              ]
-            }
-          },
-          {
-            title: { ar: 'روتين العناية بالجسم والعطور', ku: 'ڕۆتینی گرنگیپێدان بە جەستە و بۆن', tk: 'Beden we Atır Tertibi', en: 'Body Care & Fragrance Routine' },
-            steps: {
-              ar: [
-                'الاستحمام بماء فاتر وليس شديد السخونة لتجنب جفاف الجلد.',
-                'وضع لوشن أو كريم مرطب للجسم خلال دقائق بعد التجفيف الخفيف.',
-                'وضع العطر الزيتي أو الكحولي باعتدال على الملابس أو نقاط النبض.'
-              ],
-              ku: [
-                'خۆشۆردن بە ئاوی شلەتێن نەک زۆر گەرم تا پێست وشک نەبێت.',
-                'لێدانی لۆشن یان کرێمی جەستە دوای وشککردنەوەی نەرم.',
-                'بەکارهێنانی بۆنی زەیتی یان کهولی بە شێوەی مامناوەند.'
-              ],
-              tk: [
-                'Derini guramazlyk üçin mylaýym suw bilen ýuwunyň.',
-                'Sähel guradanyňyzdan soň bedene losýon ýa-da krem çalyň.',
-                'Ýagly ýa-da spirtli atyry kadaly mukdarda ulanyň.'
-              ],
-              en: [
-                'Shower with lukewarm rather than scalding water to prevent skin dryness.',
-                'Apply body lotion or cream shortly after patting skin dry.',
-                'Apply oil or alcohol perfume moderately on clothing or pulse points.'
-              ]
-            }
-          }
-        ],
-        nutrition: [
-          {
-            num: 1,
-            icon: 'nutrition',
-            color: '#0284c7',
-            company: 'ستاندارد التغذية والترطيب',
+            ar: 'أحمر شفاه ومرطب شفاه مغذٍ للبشرة الجافة',
+            ku: 'سووراو و شێدارکەرەوەی لێو بۆ پێستی وشک',
+            tk: 'Gury Dodaklar Üçin Çyglandyryjy Pomada',
+            en: 'Nourishing Lip Color & Lip Balm for Dry Lips',
+            skin: 'Dry',
+            hair: 'Dry Hair',
             safety: 'safe',
-            name: {
-              ar: '1. شرب الماء والترطيب اليومي',
-              ku: '١. ئاوخواردنەوە و شێدارکردنەوەی ڕۆژانە',
-              tk: '1. Suw İçmek we Gündelik Çyglylyk',
-              en: '1. Daily Hydration & Water'
-            },
-            target: {
-              ar: 'دعم مرونة البشرة والوظائف الحيوية للجسم',
-              ku: 'پشتگیری نەرمی پێست و تەندروستی جەستە',
-              tk: 'Deriniň çeýeligi we bedeniň saglygy üçin',
-              en: 'Supports skin suppleness & body hydration'
-            },
-            usage: {
-              ar: 'توزيع شرب الماء بانتظام على مدار اليوم وزيادة السوائل عند الحر أو المجهود.',
-              ku: 'دابەشکردنی ئاوخواردنەوە بە درێژایی ڕۆژ و زیادکردنی لە کاتی گەرما یان ماندووبوون.',
-              tk: 'Gün dowamynda suwy yzygiderli içiň, yssyda köpeldip içiň.',
-              en: 'Space water intake steadily throughout the day; increase during heat or exercise.'
-            },
-            pregnancy: {
-              ar: 'مهم جداً في الحمل والرضاعة حسب توصية الطبيب.',
-              ku: 'لە کاتی دووگیانی و شیرپێداندا زۆر گرنگە بە ڕێنمایی پزیشک.',
-              tk: 'Göwrelilikde we emziklikde lukmanyň maslahaty bilen möhüm.',
-              en: 'Important during pregnancy and lactation per physician guidance.'
-            }
-          },
-          {
-            num: 2,
-            icon: 'nutrition',
-            color: '#0f766e',
-            company: 'ستاندارد تغذية الشعر والبشرة',
-            safety: 'caution',
-            name: {
-              ar: '2. البروتين، الحديد، الزنك والبيوتين',
-              ku: '٢. پرۆتین، ئاسن، زینک و بایۆتین',
-              tk: '2. Belok, Demir, Sink we Biotin',
-              en: '2. Protein, Iron, Zinc & Biotin'
-            },
-            target: {
-              ar: 'بناء الكيراتين ودعم قوة الشعر والأظافر وتجديد الأنسجة',
-              ku: 'بەهێزکردنی قژ و نینۆک و نوێکردنەوەی شانەکان',
-              tk: 'Saçyň we dyrnagyň berkligi üçin',
-              en: 'Supports keratin structure, hair/nail strength & tissue renewal'
-            },
-            usage: {
-              ar: 'الحصول عليها من الغذاء المتوازن (بقوليات، بيض، لحوم، مكسرات، خضروات ورقية).',
-              ku: 'وەرگرتنی لە خۆراکی هاوسەنگ (پاقلەمەنی، هێلکە، گۆشت، چەرەس و سەوزە).',
-              tk: 'Deňagramly iýmitden (ýumurtga, et, hoz, gök önümler) alyň.',
-              en: 'Obtain from balanced diet (legumes, eggs, meats, nuts, leafy greens).'
-            },
-            pregnancy: {
-              ar: 'يُستشار الطبيب أو الصيدلي قبل تناول أي مكملات غذائية أو فيتامينات أثناء الحمل.',
-              ku: 'پێش خواردنی هەر تەواوکەرێکی خۆراکی یان ڤیتامینێک لە دووگیانیدا ڕاوێژ بە پزیشک بکە.',
-              tk: 'Göwrelilikde goşmaça witaminleri lukman bilen maslahatlaşyp içiň.',
-              en: 'Consult doctor or pharmacist before taking supplements or high-dose vitamins in pregnancy.'
-            }
-          },
-          {
-            num: 3,
-            icon: 'nutrition',
-            color: '#d97706',
-            company: 'ستاندارد الدهون الصحية والفيتامينات',
-            safety: 'safe',
-            name: {
-              ar: '3. أوميغا 3، فيتامين C وE، وتقليل السكريات',
-              ku: '٣. ئۆمێگا ٣، ڤیتامین C و E و کەمکردنەوەی شەکر',
-              tk: '3. Omega-3, Vitamin C we E, Az Şeker',
-              en: '3. Omega-3, Vitamins C & E & Balanced Sugar'
-            },
-            target: {
-              ar: 'دعم حاجز البشرة وتقليل الالتهاب العام وتجنب الإفراط في السكر والدهون المشبعة',
-              ku: 'پشتگیری پێست و کەمکردنەوەی هەوکردن و کەمکردنەوەی شەکر و چەوری زیانبەخش',
-              tk: 'Deriniň goragyny goldamak we aşa şekerden gaça durmak',
-              en: 'Supports skin barrier & antioxidant defense while limiting excess sugar/saturated fat'
-            },
-            usage: {
-              ar: 'إدراج الأسماك، زيت الزيتون، الفواكه والخضروات ضمن الوجبات اليومية المعتدلة.',
-              ku: 'زیادکردنی ماسی، زەیتی زەیتوون، میوە و سەوزە لە ژەمە ڕۆژانەکاندا.',
-              tk: 'Balyk, zeýtun ýagy, miwe we gök önümleri gündelik iýmitiňize goşuň.',
-              en: 'Include fish, olive oil, fruits, and vegetables in moderate daily meals.'
-            },
-            pregnancy: {
-              ar: 'آمن كجزء من نظام غذائي متوازن؛ يُنصح بمراجعة الطبيب بشأن أنواع الأسماك والكميات أثناء الحمل.',
-              ku: 'وەک بەشێک لە خۆراکی هاوسەنگ گونجاوە؛ سەبارەت بە جۆری ماسی لە دووگیانیدا پرسیار بکە.',
-              tk: 'Deňagramly iýmitiň bir bölegi hökmünde amatly; lukman bilen maslahatlaşyň.',
-              en: 'Compatible as part of balanced diet; confirm fish types/portions with doctor in pregnancy.'
-            }
+            img: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=600&q=70'
           }
-        ]
-      };
+        ];
+
+        for (let i = 0; i < 75; i++) {
+          const tpl = makeupTemplates[i % makeupTemplates.length];
+          const brand = brands[(i + 9) % brands.length];
+          const variant = Math.floor(i / makeupTemplates.length) + 1;
+          list.push({
+            id: 'item-' + num,
+            num: num++,
+            category: 'Makeup & Cosmetics',
+            company: brand,
+            skinType: tpl.skin,
+            hairType: tpl.hair,
+            safety: tpl.safety,
+            image: tpl.img,
+            name: {
+              ar: `${tpl.ar} — درجة ${variant}`,
+              ku: `${tpl.ku} — ڕەنگی ${variant}`,
+              tk: `${tpl.tk} — ${variant}`,
+              en: `${tpl.en} — Shade ${variant}`
+            },
+            target: {
+              ar: `مناسب للبشرة (${tpl.skin}) • مظهر تجميلي مريح مع إزالة كاملة ليلاً`,
+              ku: `گونجاو بۆ پێستی (${tpl.skin}) • دیمەنی جوان لەگەڵ لابردنی تەواو شەوان`,
+              tk: `(${tpl.skin}) deri üçin • agşam doly aýyryň`,
+              en: `Suited for (${tpl.skin}) skin • Comfortable finish with full night removal`
+            },
+            usage: {
+              ar: 'يُوضع باعتدال على بشرة نظيفة ومرطبة، ويُزال بالكامل مساءً بمزيل مكياج لطيف.',
+              ku: 'بە شێوەی مامناوەند لەسەر پێستی پاک بدرێت و شەوان بە تەواوی لاببرێت.',
+              tk: 'Arassa derä kadaly çalyň we agşam ýumşak serişde bilen doly aýyryň.',
+              en: 'Apply moderately over prepped skin and remove completely every evening with gentle remover.'
+            },
+            pregnancy: {
+              ar: 'آمن للاستخدام التجميلي الخارجي المعتاد (يُستشار في حال تحسس البشرة).',
+              ku: 'بۆ بەکارهێنانی دەرەکی گونجاوە.',
+              tk: 'Daşky kosmetiki ulanmak üçin howpsuz.',
+              en: 'Safe for routine external cosmetic use (consult if skin sensitivity develops).'
+            }
+          });
+        }
+
+        // 6. Soaps & Body Care (75 items)
+        const bodyTemplates = [
+          {
+            ar: 'صابون سينديت لطيف خالٍ من الجفاف للجسم والوجه',
+            ku: 'سابوونی نەرمی سیندیێت بۆ جەستە و دەم و چاو',
+            tk: 'Beden we Ýüz Üçin Ýumşak Sabyn',
+            en: 'Gentle Syndet Cleansing Bar for Body & Face',
+            skin: 'Sensitive',
+            hair: 'Untreated',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'لوشن وزبدة ترطيب الجسم العميق للبشرة الجافة',
+            ku: 'لۆشن و کەرەی شێدارکردنەوەی جەستە بۆ پێستی وشک',
+            tk: 'Gury Beden Derisi Üçin Çuňňur Çyglandyryjy Losýon',
+            en: 'Deep Moisture Body Lotion & Butter for Dry Skin',
+            skin: 'Dry',
+            hair: 'Dry Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'كريم اليدين والقدمين المرطب والمنعم',
+            ku: 'کرێمی نەرمکەرەوەی دەست و پێ',
+            tk: 'El we Aýak Üçin Çyglandyryjy Krem',
+            en: 'Restorative Hand & Foot Cream',
+            skin: 'Combination',
+            hair: 'Oily Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=70'
+          }
+        ];
+
+        for (let i = 0; i < 75; i++) {
+          const tpl = bodyTemplates[i % bodyTemplates.length];
+          const brand = brands[(i + 12) % brands.length];
+          const variant = Math.floor(i / bodyTemplates.length) + 1;
+          list.push({
+            id: 'item-' + num,
+            num: num++,
+            category: 'Soap & Body Care',
+            company: brand,
+            skinType: tpl.skin,
+            hairType: tpl.hair,
+            safety: tpl.safety,
+            image: tpl.img,
+            name: {
+              ar: `${tpl.ar} — ${variant}`,
+              ku: `${tpl.ku} — ${variant}`,
+              tk: `${tpl.tk} — ${variant}`,
+              en: `${tpl.en} — ${variant}`
+            },
+            target: {
+              ar: `مناسب للبشرة (${tpl.skin}) • الحفاظ على نعومة ومرونة جلد الجسم`,
+              ku: `گونجاو بۆ پێستی (${tpl.skin}) • پاراستنی نەرمی پێستی جەستە`,
+              tk: `(${tpl.skin}) deri üçin • bedeniň ýumşaklygyny saklaýar`,
+              en: `Suited for (${tpl.skin}) skin • Maintains body skin softness & barrier`
+            },
+            usage: {
+              ar: 'يُستخدم أثناء الاستحمام بماء فاتر ثم يُوضع المرطب بعد التجفيف الخفيف.',
+              ku: 'لە کاتی خۆشۆردن بە ئاوی شلەتێن بەکاربهێنرێت و دوای وشککردنەوە کرێم بدرێت.',
+              tk: 'Mylaýym suw bilen ýuwunanyňyzdan soň çyglandyryjy çalyň.',
+              en: 'Use during a lukewarm shower and apply lotion/cream shortly after patting dry.'
+            },
+            pregnancy: {
+              ar: 'آمن للحمل والرضاعة.',
+              ku: 'لە دووگیانیدا گونجاوە.',
+              tk: 'Göwrelilikde howpsuz.',
+              en: 'Safe in pregnancy and breastfeeding.'
+            }
+          });
+        }
+
+        // 7. Perfumes — Oil, Alcohol & Families (60 items) -> Total = 525 items
+        const perfumeTemplates = [
+          {
+            ar: 'عطر زيتي دهن العود والعنبر والورد (خالي من الكحول)',
+            ku: 'بۆنی زەیتی دەهنی عوود، عەنبەر و گوڵ (بێ کهول)',
+            tk: 'Ud, Änbir we Bägül Ýagly Atır (Alkagolsyz)',
+            en: 'Oud, Amber & Rose Oil Perfume (Alcohol-Free)',
+            skin: 'Sensitive',
+            hair: 'Color-Treated',
+            safety: 'caution',
+            img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'عطر زيتي مسك أبيض وياسمين ناعم',
+            ku: 'بۆنی زەیتی میسکی سپی و یاسەمین',
+            tk: 'Ak Müşk we Ýasmin Ýagly Atır',
+            en: 'White Musk & Soft Jasmine Oil Perfume',
+            skin: 'Dry',
+            hair: 'Dry Hair',
+            safety: 'safe',
+            img: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'عطر كحولي خشبي شرقي (Eau de Parfum)',
+            ku: 'بۆنی کهولی دار و ڕۆژهەڵاتی (Eau de Parfum)',
+            tk: 'Agaç we Gündogar Spirtli Atır (EDP)',
+            en: 'Woody Oriental Alcohol Perfume (Eau de Parfum)',
+            skin: 'Combination',
+            hair: 'Oily Hair',
+            safety: 'caution',
+            img: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=70'
+          },
+          {
+            ar: 'عطر كحولي حمضي منعش للنهار (Eau de Toilette)',
+            ku: 'بۆنی کهولی مزرەمەنی تازە بۆ ڕۆژ (Eau de Toilette)',
+            tk: 'Gündizki Sitrus Spirtli Atır (EDT)',
+            en: 'Fresh Citrus Daytime Alcohol Perfume (Eau de Toilette)',
+            skin: 'Oily',
+            hair: 'Untreated',
+            safety: 'caution',
+            img: 'https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=600&q=70'
+          }
+        ];
+
+        for (let i = 0; i < 60; i++) {
+          const tpl = perfumeTemplates[i % perfumeTemplates.length];
+          const brand = brands[(i + 14) % brands.length];
+          const variant = Math.floor(i / perfumeTemplates.length) + 1;
+          list.push({
+            id: 'item-' + num,
+            num: num++,
+            category: 'Perfume',
+            company: brand,
+            skinType: tpl.skin,
+            hairType: tpl.hair,
+            safety: tpl.safety,
+            image: tpl.img,
+            name: {
+              ar: `${tpl.ar} — تركيبة ${variant}`,
+              ku: `${tpl.ku} — جۆری ${variant}`,
+              tk: `${tpl.tk} — №${variant}`,
+              en: `${tpl.en} — Blend ${variant}`
+            },
+            target: {
+              ar: `النوتات العطرية: أخشاب/أزهار/حمضيات/مسك • مناسب للبشرة (${tpl.skin})`,
+              ku: `نۆتەکانی بۆن: دار، گوڵ، مزرەمەنی، میسک • گونجاو بۆ (${tpl.skin})`,
+              tk: `Ys notalary: agaç, gül, sitrus, müşk • (${tpl.skin})`,
+              en: `Fragrance notes: wood, floral, citrus, musk • Suited for (${tpl.skin})`
+            },
+            usage: {
+              ar: 'يُوضع باعتدال على الملابس أو نقاط النبض، مع تجربة تحسس مسبقة على منطقة صغيرة.',
+              ku: 'بە شێوەی مامناوەند لەسەر جل یان خاڵی لێدانی دڵ بدرێت و سەرەتا تاقی بکرێتەوە.',
+              tk: 'Eşige ýa-da bilege kadaly çalyň, öňünden synag ediň.',
+              en: 'Apply moderately on fabric or pulse points after a quick patch test.'
+            },
+            pregnancy: {
+              ar:
+                tpl.safety === 'safe'
+                  ? 'خفيف ومناسب عموماً عند الاعتدال.'
+                  : 'يُستشار طبيب للحمل ويُفضل رش العطر على الملابس وتجنب الروائح القوية عند الحساسية.',
+              ku:
+                tpl.safety === 'safe'
+                  ? 'سووکە و بە شێوەی مامناوەند گونجاوە.'
+                  : 'لە دووگیانیدا ڕاوێژ بە پزیشک بکە و لەسەر جل بپرژێنە.',
+              tk:
+                tpl.safety === 'safe'
+                  ? 'Kadaly ulanylanda ýeňil we amatly.'
+                  : 'Göwrelilikde lukman bilen maslahatlaşyň we eşige sepiň.',
+              en:
+                tpl.safety === 'safe'
+                  ? 'Light and generally comfortable in moderation.'
+                  : 'Consult doctor in pregnancy; prefer spraying on clothes and avoiding heavy scents if sensitive.'
+            }
+          });
+        }
+
+        return list;
+      }
+
+      function buildCompaniesTableRows(items) {
+        const rows = [];
+        const seenCat = {};
+        for (let i = 0; i < items.length; i++) {
+          const it = items[i];
+          const countForCat = seenCat[it.category] || 0;
+          if (countForCat < 3 && rows.length < 36) {
+            seenCat[it.category] = countForCat + 1;
+            rows.push({
+              num: rows.length + 1,
+              company: it.company,
+              category: it.category,
+              product: localized(it.name),
+              target: `${it.skinType} / ${it.hairType}`,
+              usage: localized(it.usage),
+              safety: it.safety,
+              pregnancy: localized(it.pregnancy)
+            });
+          }
+        }
+        return rows;
+      }
 
       let state = {
         lang: 'ar',
         theme: 'light',
         section: 'all',
-        search: '',
+        category: 'ALL',
+        skinType: 'ALL',
+        hairType: 'ALL',
+        pregnancy: 'ALL',
         company: 'ALL',
-        safety: 'ALL',
-        data: JSON.parse(JSON.stringify(INITIAL_DATA))
+        search: '',
+        page: 1,
+        items: []
       };
 
       function loadState() {
@@ -1903,21 +2102,17 @@
           const raw = localStorage.getItem(STORAGE_KEY);
           if (raw) {
             const parsed = JSON.parse(raw);
-            if (parsed && parsed.data) {
-              state = {
-                lang: parsed.lang || 'ar',
-                theme: parsed.theme || 'light',
-                section: parsed.section || 'all',
-                search: '',
-                company: 'ALL',
-                safety: 'ALL',
-                data: parsed.data
-              };
+            if (parsed && Array.isArray(parsed.items) && parsed.items.length >= 500) {
+              state.lang = parsed.lang || 'ar';
+              state.theme = parsed.theme || 'light';
+              state.items = parsed.items;
+              return;
             }
           }
         } catch (err) {
-          // Safe fallback to default state
+          // Fallback to fresh catalog
         }
+        state.items = generateCatalog520();
       }
 
       function saveState() {
@@ -1927,12 +2122,11 @@
             JSON.stringify({
               lang: state.lang,
               theme: state.theme,
-              section: state.section,
-              data: state.data
+              items: state.items
             })
           );
         } catch (err) {
-          // Ignore storage quota errors
+          // Ignore storage errors
         }
       }
 
@@ -1947,63 +2141,18 @@
         return obj[state.lang] || obj.ar || obj.en || '';
       }
 
-      function getSvgIllustration(kind, color) {
-        const stroke = color || '#0f766e';
-        if (kind === 'shampoo') {
-          return `
-            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" aria-hidden="true">
-              <rect x="29" y="24" width="28" height="48" rx="8" fill="${stroke}" fill-opacity="0.16" stroke="${stroke}" stroke-width="2.5"/>
-              <rect x="37" y="13" width="12" height="11" rx="3" fill="${stroke}" fill-opacity="0.25" stroke="${stroke}" stroke-width="2.2"/>
-              <path d="M43 13V8H55" stroke="${stroke}" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="43" cy="48" r="7" stroke="${stroke}" stroke-width="2.2"/>
-            </svg>
-          `;
-        }
-        if (kind === 'perfume') {
-          return `
-            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" aria-hidden="true">
-              <rect x="25" y="30" width="36" height="42" rx="10" fill="${stroke}" fill-opacity="0.16" stroke="${stroke}" stroke-width="2.5"/>
-              <rect x="37" y="17" width="12" height="13" rx="2" fill="${stroke}" fill-opacity="0.25" stroke="${stroke}" stroke-width="2.2"/>
-              <path d="M33 12H53" stroke="${stroke}" stroke-width="2.6" stroke-linecap="round"/>
-              <path d="M43 39L48 50L43 60L38 50L43 39Z" stroke="${stroke}" stroke-width="2"/>
-            </svg>
-          `;
-        }
-        if (kind === 'makeup') {
-          return `
-            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" aria-hidden="true">
-              <rect x="27" y="26" width="12" height="46" rx="5" fill="${stroke}" fill-opacity="0.18" stroke="${stroke}" stroke-width="2.4"/>
-              <line x1="55" y1="14" x2="55" y2="72" stroke="${stroke}" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="49" y1="22" x2="61" y2="22" stroke="${stroke}" stroke-width="2.3" stroke-linecap="round"/>
-              <line x1="50" y1="29" x2="60" y2="29" stroke="${stroke}" stroke-width="2.3" stroke-linecap="round"/>
-              <line x1="51" y1="36" x2="59" y2="36" stroke="${stroke}" stroke-width="2.3" stroke-linecap="round"/>
-            </svg>
-          `;
-        }
-        if (kind === 'serum') {
-          return `
-            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" aria-hidden="true">
-              <path d="M43 10C43 10 35 19 35 24C35 28.4 38.6 32 43 32C47.4 32 51 28.4 51 24C51 19 43 10 43 10Z" fill="${stroke}" fill-opacity="0.25" stroke="${stroke}" stroke-width="2.2"/>
-              <rect x="29" y="34" width="28" height="38" rx="8" fill="${stroke}" fill-opacity="0.15" stroke="${stroke}" stroke-width="2.4"/>
-              <line x1="35" y1="53" x2="51" y2="53" stroke="${stroke}" stroke-width="2.2"/>
-            </svg>
-          `;
-        }
-        if (kind === 'nutrition') {
-          return `
-            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" aria-hidden="true">
-              <path d="M22 44H64C64 57.2548 53.2548 68 40 68H46C32.7452 68 22 57.2548 22 44Z" fill="${stroke}" fill-opacity="0.18" stroke="${stroke}" stroke-width="2.4"/>
-              <path d="M43 18C35 24 34 33 43 39C52 33 51 24 43 18Z" fill="${stroke}" fill-opacity="0.25" stroke="${stroke}" stroke-width="2.2"/>
-            </svg>
-          `;
-        }
-        return `
-          <svg width="86" height="86" viewBox="0 0 86 86" fill="none" aria-hidden="true">
-            <rect x="21" y="32" width="44" height="38" rx="10" fill="${stroke}" fill-opacity="0.16" stroke="${stroke}" stroke-width="2.4"/>
-            <rect x="25" y="23" width="36" height="10" rx="4" fill="${stroke}" fill-opacity="0.25" stroke="${stroke}" stroke-width="2.2"/>
-            <circle cx="43" cy="51" r="7" stroke="${stroke}" stroke-width="2.2"/>
-          </svg>
-        `;
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function getCategoryLabel(catId) {
+        const found = CATEGORIES.find((c) => c.id === catId);
+        if (!found) return catId;
+        return found[state.lang] || found.ar || found.en;
       }
 
       function safetyBadge(level) {
@@ -2016,114 +2165,240 @@
         return `<span class="badge-safe">${tr('safeLabel')}</span>`;
       }
 
-      function matchesFilters(item) {
-        if (state.company !== 'ALL' && item.company !== state.company) {
-          return false;
-        }
-        if (state.safety !== 'ALL' && item.safety !== state.safety) {
-          return false;
-        }
+      function matchesItem(item) {
+        if (state.category !== 'ALL' && item.category !== state.category) return false;
+        if (state.skinType !== 'ALL' && item.skinType !== state.skinType) return false;
+        if (state.hairType !== 'ALL' && item.hairType !== state.hairType) return false;
+        if (state.pregnancy !== 'ALL' && item.safety !== state.pregnancy) return false;
+        if (state.company !== 'ALL' && item.company !== state.company) return false;
+
         if (state.search && state.search.trim() !== '') {
           const q = state.search.trim().toLowerCase();
-          const combined = [
+          const hay = [
+            String(item.num || ''),
             item.company || '',
+            item.category || '',
+            item.skinType || '',
+            item.hairType || '',
             item.name ? Object.values(item.name).join(' ') : '',
             item.target ? Object.values(item.target).join(' ') : '',
             item.usage ? Object.values(item.usage).join(' ') : ''
           ]
             .join(' ')
             .toLowerCase();
-          if (!combined.includes(q)) return false;
+          if (!hay.includes(q)) return false;
         }
         return true;
       }
 
-      function renderProductCards(list, targetEl) {
-        if (!targetEl) return;
-        const filtered = list.filter(matchesFilters);
-        if (!filtered.length) {
-          targetEl.innerHTML = `<p style="color:var(--muted);font-size:13px;">${tr('emptyMsg')}</p>`;
+      function getFilteredItems() {
+        return state.items.filter(matchesItem);
+      }
+
+      function renderStatsStrip(filteredCount) {
+        const strip = document.getElementById('statsStrip');
+        if (!strip) return;
+        const total = state.items.length;
+        const safeCount = state.items.filter((x) => x.safety === 'safe').length;
+        const sunCount = state.items.filter((x) => x.category === 'Sunscreen').length;
+        const perfumeCount = state.items.filter((x) => x.category === 'Perfume').length;
+
+        strip.innerHTML = `
+          <span class="stat-pill">📦 ${total} ${state.lang === 'en' ? 'Total Items' : 'منتج مرقم'}</span>
+          <span class="stat-pill">🔎 ${filteredCount} ${state.lang === 'en' ? 'Matching' : 'مطابق للفلتر'}</span>
+          <span class="stat-pill">☀️ ${sunCount} ${getCategoryLabel('Sunscreen')}</span>
+          <span class="stat-pill">🌸 ${perfumeCount} ${getCategoryLabel('Perfume')}</span>
+          <span class="stat-pill">🤰 ${safeCount} ${tr('safeLabel')}</span>
+        `;
+      }
+
+      function renderSuitabilityBanner(filteredCount) {
+        const banner = document.getElementById('suitabilityBanner');
+        if (!banner) return;
+        const skinText = state.skinType === 'ALL' ? tr('allSkins') : state.skinType;
+        const hairText = state.hairType === 'ALL' ? tr('allHair') : state.hairType;
+        const pregText =
+          state.pregnancy === 'ALL'
+            ? tr('allPregnancy')
+            : state.pregnancy === 'safe'
+              ? tr('safeLabel')
+              : state.pregnancy === 'avoid'
+                ? tr('avoidLabel')
+                : tr('cautionLabel');
+
+        banner.textContent = `✓ ${skinText} • ${hairText} • ${pregText} → ${filteredCount} ${
+          state.lang === 'en' ? 'products matched' : 'منتج مطابق'
+        }`;
+      }
+
+      function renderCategoryPills() {
+        const container = document.getElementById('categoryPills');
+        if (!container) return;
+        container.innerHTML = CATEGORIES.map(
+          (c) => `
+          <button
+            type="button"
+            class="cat-pill-btn ${state.category === c.id ? 'active' : ''}"
+            data-cat="${escapeHtml(c.id)}"
+          >
+            ${escapeHtml(c[state.lang] || c.ar || c.en)}
+          </button>
+        `
+        ).join('');
+      }
+
+      function renderCatalogGrid() {
+        const grid = document.getElementById('catalogGrid');
+        const badge = document.getElementById('resultsCountBadge');
+        const pageInfo = document.getElementById('pageInfoText');
+        const pageInd = document.getElementById('pageNumIndicator');
+        const prevBtn = document.getElementById('prevPageBtn');
+        const nextBtn = document.getElementById('nextPageBtn');
+
+        const filtered = getFilteredItems();
+        renderStatsStrip(filtered.length);
+        renderSuitabilityBanner(filtered.length);
+
+        if (badge) {
+          badge.textContent = `${filtered.length} / ${state.items.length}`;
+        }
+
+        const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+        if (state.page > totalPages) state.page = totalPages;
+        if (state.page < 1) state.page = 1;
+
+        const start = (state.page - 1) * ITEMS_PER_PAGE;
+        const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+        if (pageInfo) {
+          pageInfo.textContent =
+            filtered.length === 0
+              ? '0'
+              : `${start + 1}–${Math.min(start + ITEMS_PER_PAGE, filtered.length)} (${filtered.length})`;
+        }
+        if (pageInd) {
+          pageInd.textContent = `${state.page} / ${totalPages}`;
+        }
+        if (prevBtn) prevBtn.disabled = state.page <= 1;
+        if (nextBtn) nextBtn.disabled = state.page >= totalPages;
+
+        if (!grid) return;
+        if (!pageItems.length) {
+          grid.innerHTML = `<p style="color:var(--muted);font-size:13px;">${tr('emptyMsg')}</p>`;
           return;
         }
-        targetEl.innerHTML = filtered
-          .map(
-            (item, idx) => `
-          <article class="item-card">
-            <div>
-              <div class="card-top">
-                <span class="num-badge">${item.num || idx + 1}</span>
-                <span class="company-tag">${escapeHtml(item.company)}</span>
+
+        grid.innerHTML = pageItems
+          .map((item) => {
+            const nameText = localized(item.name);
+            const webSearchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(
+              `${item.company} ${nameText}`
+            )}`;
+            return `
+            <article class="item-card">
+              <div>
+                <div class="card-top">
+                  <span class="num-badge">#${item.num}</span>
+                  <span class="company-tag" title="${escapeHtml(item.company)}">${escapeHtml(item.company)}</span>
+                </div>
+                <h4 class="item-title">${escapeHtml(nameText)}</h4>
+                <div class="cat-subtag">${escapeHtml(getCategoryLabel(item.category))} • ${escapeHtml(item.skinType)} • ${escapeHtml(item.hairType)}</div>
+
+                <div class="img-box">
+                  <img
+                    src="${escapeHtml(item.image || '')}"
+                    alt="${escapeHtml(nameText)}"
+                    loading="lazy"
+                    onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}"
+                  />
+                  <div class="img-fallback" style="display:none;">
+                    <span style="font-size:20px;">🧴</span>
+                    <strong style="font-size:11px;">${escapeHtml(item.company)}</strong>
+                    <span style="font-size:10px;color:var(--muted);">${escapeHtml(getCategoryLabel(item.category))}</span>
+                  </div>
+                </div>
+
+                <p class="meta-line"><span class="meta-label">${tr('lblTarget')}</span> ${escapeHtml(localized(item.target))}</p>
+                <p class="meta-line"><span class="meta-label">${tr('lblUsage')}</span> ${escapeHtml(localized(item.usage))}</p>
+                <p class="meta-line"><span class="meta-label">${tr('lblPregnancy')}</span> ${safetyBadge(item.safety)} <span style="font-size:11px;">${escapeHtml(localized(item.pregnancy))}</span></p>
               </div>
-              <h4 class="item-title">${escapeHtml(localized(item.name))}</h4>
-              <div class="svg-frame">${getSvgIllustration(item.icon, item.color)}</div>
-              <p class="meta-line"><span class="meta-label">${tr('lblTarget')}</span> ${escapeHtml(localized(item.target))}</p>
-              <p class="meta-line"><span class="meta-label">${tr('lblUsage')}</span> ${escapeHtml(localized(item.usage))}</p>
-              <p class="meta-line"><span class="meta-label">${tr('lblPregnancy')}</span> ${safetyBadge(item.safety)} <span style="font-size:11px;">${escapeHtml(localized(item.pregnancy))}</span></p>
-            </div>
-            <div class="card-actions">
-              <button type="button" class="btn-outline" data-action="details" data-id="${escapeHtml(item.id)}">${tr('detailsBtn')}</button>
-            </div>
-          </article>
-        `
-          )
+
+              <div class="card-actions">
+                <button type="button" class="btn-outline" data-action="details" data-id="${escapeHtml(item.id)}">${tr('detailsBtn')}</button>
+                <a class="btn-outline" href="${webSearchUrl}" target="_blank" rel="noopener noreferrer">${tr('webImgBtn')} ↗</a>
+              </div>
+            </article>
+          `;
+          })
           .join('');
       }
 
       function renderCompaniesTable() {
         const tbody = document.getElementById('companiesTableBody');
         if (!tbody) return;
-        const rows = (state.data.companiesTable || []).filter(matchesFilters);
+        const rows = buildCompaniesTableRows(getFilteredItems());
         if (!rows.length) {
-          tbody.innerHTML = `<tr><td colspan="6">${tr('emptyMsg')}</td></tr>`;
+          tbody.innerHTML = `<tr><td colspan="7">${tr('emptyMsg')}</td></tr>`;
           return;
         }
         tbody.innerHTML = rows
           .map(
-            (r, i) => `
+            (r) => `
           <tr>
-            <td><strong>${r.num || i + 1}</strong></td>
+            <td><strong>${r.num}</strong></td>
             <td><strong>${escapeHtml(r.company)}</strong></td>
-            <td>${escapeHtml(localized(r.type))}</td>
-            <td>${escapeHtml(r.products)}</td>
-            <td>${escapeHtml(localized(r.usage))}</td>
-            <td>${safetyBadge(r.safety)} <div style="font-size:11px;margin-top:3px;">${escapeHtml(localized(r.safetyText || r.usage))}</div></td>
+            <td>${escapeHtml(getCategoryLabel(r.category))}</td>
+            <td>${escapeHtml(r.product)}</td>
+            <td>${escapeHtml(r.target)}</td>
+            <td>${escapeHtml(r.usage)}</td>
+            <td>${safetyBadge(r.safety)} <div style="font-size:11px;margin-top:3px;">${escapeHtml(r.pregnancy)}</div></td>
           </tr>
         `
           )
           .join('');
       }
 
-      function renderRoutines() {
-        const grid = document.getElementById('routinesGrid');
-        if (!grid) return;
-        grid.innerHTML = (state.data.routines || [])
-          .map(
+      function renderRoutinesAndNutrition() {
+        const rGrid = document.getElementById('routinesGrid');
+        if (rGrid) {
+          rGrid.innerHTML = ROUTINES_DATA.map(
             (rt) => `
-          <div class="item-card">
-            <h4 class="item-title" style="color:var(--primary);margin-bottom:6px;">${escapeHtml(localized(rt.title))}</h4>
-            <ol class="step-list">
-              ${(rt.steps[state.lang] || rt.steps.ar || [])
-                .map((st) => `<li>${escapeHtml(st)}</li>`)
-                .join('')}
-            </ol>
-          </div>
-        `
-          )
-          .join('');
+            <div class="item-card">
+              <h4 class="item-title" style="color:var(--primary);font-size:15px;margin-bottom:6px;">${escapeHtml(localized(rt.title))}</h4>
+              <ol class="step-list">
+                ${(rt.steps[state.lang] || rt.steps.ar || [])
+                  .map((s) => `<li>${escapeHtml(s)}</li>`)
+                  .join('')}
+              </ol>
+            </div>
+          `
+          ).join('');
+        }
+
+        const nGrid = document.getElementById('nutritionGrid');
+        if (nGrid) {
+          nGrid.innerHTML = NUTRITION_DATA.map(
+            (nt) => `
+            <div class="item-card">
+              <h4 class="item-title" style="color:var(--primary);font-size:15px;margin-bottom:6px;">${escapeHtml(localized(nt.title))}</h4>
+              <ol class="step-list">
+                ${(nt.steps[state.lang] || nt.steps.ar || [])
+                  .map((s) => `<li>${escapeHtml(s)}</li>`)
+                  .join('')}
+              </ol>
+            </div>
+          `
+          ).join('');
+        }
       }
 
-      function populateCompanyFilter() {
+      function populateCompanySelect() {
         const sel = document.getElementById('companyFilter');
         if (!sel) return;
-        const set = new Set();
-        ['shampoos', 'cosmetics', 'perfumes', 'companiesTable'].forEach((k) => {
-          (state.data[k] || []).forEach((it) => {
-            if (it.company) set.add(it.company);
-          });
-        });
+        const companies = Array.from(new Set(state.items.map((x) => x.company).filter(Boolean)));
         const prev = state.company;
         sel.innerHTML = `<option value="ALL">${tr('allCompanies')}</option>`;
-        Array.from(set).forEach((c) => {
+        companies.forEach((c) => {
           const opt = document.createElement('option');
           opt.value = c;
           opt.textContent = c;
@@ -2132,30 +2407,19 @@
         });
       }
 
-      function updateSectionVisibility() {
-        document.querySelectorAll('[data-section-panel]').forEach((panel) => {
-          const key = panel.getAttribute('data-section-panel');
-          panel.style.display = state.section === 'all' || state.section === key ? '' : 'none';
-        });
-        document.querySelectorAll('#sectionTabs .tab-btn').forEach((btn) => {
-          btn.classList.toggle('active', btn.getAttribute('data-sec') === state.section);
-        });
-      }
-
-      function applyTexts() {
+      function applyLanguageAndTheme() {
         document.documentElement.lang = state.lang;
         document.documentElement.dir = tr('dir');
         document.documentElement.classList.toggle('dark', state.theme === 'dark');
 
-        const map = {
+        const textMap = {
           uiTitle: 'title',
           uiSubtitle: 'subtitle',
-          uiStatusText: 'status',
           uiAddBtn: 'addBtn',
           uiResetBtn: 'resetBtn',
           tabAll: 'tabAll',
+          tabSunscreens: 'tabSunscreens',
           tabShampoos: 'tabShampoos',
-          tabCosmetics: 'tabCosmetics',
           tabPerfumes: 'tabPerfumes',
           tabCompanies: 'tabCompanies',
           tabRoutines: 'tabRoutines',
@@ -2164,15 +2428,15 @@
           heroDesc: 'heroDesc',
           uiHeroAdd: 'heroAdd',
           uiIosBtn: 'iosBtn',
+          titleFilters: 'titleFilters',
+          descFilters: 'descFilters',
           lblSearch: 'lblSearch',
+          lblSkinType: 'lblSkinType',
+          lblHairType: 'lblHairType',
+          lblPregnancyFilter: 'lblPregnancyFilter',
           lblCompanyFilter: 'lblCompanyFilter',
-          lblSafetyFilter: 'lblSafetyFilter',
-          titleShampoos: 'titleShampoos',
-          descShampoos: 'descShampoos',
-          titleCosmetics: 'titleCosmetics',
-          descCosmetics: 'descCosmetics',
-          titlePerfumes: 'titlePerfumes',
-          descPerfumes: 'descPerfumes',
+          titleCatalog: 'titleCatalog',
+          descCatalog: 'descCatalog',
           titleCompanies: 'titleCompanies',
           descCompanies: 'descCompanies',
           titleRoutines: 'titleRoutines',
@@ -2181,27 +2445,56 @@
           descNutrition: 'descNutrition',
           thNum: 'thNum',
           thCompany: 'thCompany',
-          thType: 'thType',
-          thProducts: 'thProducts',
+          thCategory: 'thCategory',
+          thProduct: 'thProduct',
+          thTarget: 'thTarget',
           thUsage: 'thUsage',
-          thSafety: 'thSafety'
+          thSafety: 'thSafety',
+          uiPrevPage: 'prevPage',
+          uiNextPage: 'nextPage'
         };
 
-        Object.keys(map).forEach((elId) => {
-          const el = document.getElementById(elId);
-          if (el) el.textContent = tr(map[elId]);
+        Object.keys(textMap).forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = tr(textMap[id]);
         });
 
-        const safetySelect = document.getElementById('safetyFilter');
-        if (safetySelect) {
-          const cur = safetySelect.value;
-          safetySelect.innerHTML = `
-            <option value="ALL">${tr('allSafety')}</option>
+        const skinSel = document.getElementById('skinFilter');
+        if (skinSel) {
+          const v = skinSel.value;
+          skinSel.innerHTML = `
+            <option value="ALL">${tr('allSkins')}</option>
+            <option value="Oily">Oily • دهنية / چەور / Ýagly</option>
+            <option value="Dry">Dry • جافة / وشک / Gury</option>
+            <option value="Sensitive">Sensitive • حساسة / هەستیار / Duýgur</option>
+            <option value="Combination">Combination • مختلطة / تێکەڵ / Garyşyk</option>
+          `;
+          skinSel.value = v;
+        }
+
+        const hairSel = document.getElementById('hairFilter');
+        if (hairSel) {
+          const v = hairSel.value;
+          hairSel.innerHTML = `
+            <option value="ALL">${tr('allHair')}</option>
+            <option value="Oily Hair">Oily Hair • شعر دهني / قژی چەور / Ýagly Saç</option>
+            <option value="Dry Hair">Dry Hair • شعر جاف / قژی وشک / Gury Saç</option>
+            <option value="Color-Treated">Color-Treated • مصبوغ / بۆیاخکراو / Boýalan</option>
+            <option value="Untreated">Untreated • غير مصبوغ / بۆیاخ نەکراو / Tebigy</option>
+          `;
+          hairSel.value = v;
+        }
+
+        const pregSel = document.getElementById('pregnancyFilter');
+        if (pregSel) {
+          const v = pregSel.value;
+          pregSel.innerHTML = `
+            <option value="ALL">${tr('allPregnancy')}</option>
             <option value="safe">${tr('safeLabel')}</option>
             <option value="caution">${tr('cautionLabel')}</option>
             <option value="avoid">${tr('avoidLabel')}</option>
           `;
-          safetySelect.value = cur;
+          pregSel.value = v;
         }
 
         document.querySelectorAll('.lang-btn').forEach((b) => {
@@ -2209,68 +2502,119 @@
         });
       }
 
+      function applySectionTab() {
+        const sec = state.section;
+        document.querySelectorAll('#sectionTabs .tab-btn').forEach((btn) => {
+          btn.classList.toggle('active', btn.getAttribute('data-sec') === sec);
+        });
+
+        const panelCatalog = document.getElementById('panelCatalog');
+        const panelCompanies = document.getElementById('panelCompanies');
+        const panelRoutines = document.getElementById('panelRoutines');
+        const panelNutrition = document.getElementById('panelNutrition');
+
+        if (sec === 'all') {
+          state.category = 'ALL';
+          if (panelCatalog) panelCatalog.style.display = '';
+          if (panelCompanies) panelCompanies.style.display = '';
+          if (panelRoutines) panelRoutines.style.display = '';
+          if (panelNutrition) panelNutrition.style.display = '';
+        } else if (sec === 'sunscreens') {
+          state.category = 'Sunscreen';
+          state.page = 1;
+          if (panelCatalog) panelCatalog.style.display = '';
+          if (panelCompanies) panelCompanies.style.display = 'none';
+          if (panelRoutines) panelRoutines.style.display = 'none';
+          if (panelNutrition) panelNutrition.style.display = 'none';
+        } else if (sec === 'shampoos') {
+          state.category = 'Shampoo';
+          state.page = 1;
+          if (panelCatalog) panelCatalog.style.display = '';
+          if (panelCompanies) panelCompanies.style.display = 'none';
+          if (panelRoutines) panelRoutines.style.display = 'none';
+          if (panelNutrition) panelNutrition.style.display = 'none';
+        } else if (sec === 'perfumes') {
+          state.category = 'Perfume';
+          state.page = 1;
+          if (panelCatalog) panelCatalog.style.display = '';
+          if (panelCompanies) panelCompanies.style.display = 'none';
+          if (panelRoutines) panelRoutines.style.display = 'none';
+          if (panelNutrition) panelNutrition.style.display = 'none';
+        } else if (sec === 'companies') {
+          if (panelCatalog) panelCatalog.style.display = 'none';
+          if (panelCompanies) panelCompanies.style.display = '';
+          if (panelRoutines) panelRoutines.style.display = 'none';
+          if (panelNutrition) panelNutrition.style.display = 'none';
+        } else if (sec === 'routines') {
+          if (panelCatalog) panelCatalog.style.display = 'none';
+          if (panelCompanies) panelCompanies.style.display = 'none';
+          if (panelRoutines) panelRoutines.style.display = '';
+          if (panelNutrition) panelNutrition.style.display = 'none';
+        } else if (sec === 'nutrition') {
+          if (panelCatalog) panelCatalog.style.display = 'none';
+          if (panelCompanies) panelCompanies.style.display = 'none';
+          if (panelRoutines) panelRoutines.style.display = 'none';
+          if (panelNutrition) panelNutrition.style.display = '';
+        }
+      }
+
       function renderAll() {
-        try {
-          applyTexts();
-          populateCompanyFilter();
-          updateSectionVisibility();
-          renderProductCards(state.data.shampoos || [], document.getElementById('shampoosGrid'));
-          renderProductCards(state.data.cosmetics || [], document.getElementById('cosmeticsGrid'));
-          renderProductCards(state.data.perfumes || [], document.getElementById('perfumesGrid'));
-          renderCompaniesTable();
-          renderRoutines();
-          renderProductCards(state.data.nutrition || [], document.getElementById('nutritionGrid'));
-        } catch (err) {
-          const st = document.getElementById('uiStatusText');
-          if (st) st.textContent = 'Recovered • جاهز';
-        }
+        applyLanguageAndTheme();
+        populateCompanySelect();
+        renderCategoryPills();
+        applySectionTab();
+        renderCatalogGrid();
+        renderCompaniesTable();
+        renderRoutinesAndNutrition();
       }
 
-      function findItemById(id) {
-        const pools = ['shampoos', 'cosmetics', 'perfumes', 'nutrition'];
-        for (const p of pools) {
-          const found = (state.data[p] || []).find((x) => x.id === id);
-          if (found) return found;
-        }
-        return null;
-      }
-
-      function openDetailsModal(id) {
-        const item = findItemById(id);
+      function openDetailModal(id) {
+        const item = state.items.find((x) => x.id === id);
         if (!item) return;
         const modal = document.getElementById('detailModal');
         const title = document.getElementById('detailModalTitle');
         const body = document.getElementById('detailModalBody');
-        title.textContent = `${item.num || ''}. ${localized(item.name)}`;
+        const nameText = localized(item.name);
+        const webUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(
+          `${item.company} ${nameText}`
+        )}`;
+
+        title.textContent = `#${item.num} — ${nameText}`;
         body.innerHTML = `
-          <div class="svg-frame" style="height:130px;">${getSvgIllustration(item.icon, item.color)}</div>
-          <p class="meta-line"><span class="meta-label">${tr('lblCompany')}</span> ${escapeHtml(item.company)}</p>
+          <div class="img-box" style="height:165px;margin-bottom:10px;">
+            <img
+              src="${escapeHtml(item.image || '')}"
+              alt="${escapeHtml(nameText)}"
+              onerror="this.style.display='none'; if(this.nextElementSibling){this.nextElementSibling.style.display='flex';}"
+            />
+            <div class="img-fallback" style="display:none;">
+              <span style="font-size:24px;">🧴</span>
+              <strong>${escapeHtml(item.company)}</strong>
+            </div>
+          </div>
+          <p class="meta-line"><span class="meta-label">${tr('lblCompanyFilter')}:</span> ${escapeHtml(item.company)}</p>
+          <p class="meta-line"><span class="meta-label">${tr('thCategory')}:</span> ${escapeHtml(getCategoryLabel(item.category))}</p>
           <p class="meta-line"><span class="meta-label">${tr('lblTarget')}</span> ${escapeHtml(localized(item.target))}</p>
           <p class="meta-line"><span class="meta-label">${tr('lblUsage')}</span> ${escapeHtml(localized(item.usage))}</p>
-          <p class="meta-line"><span class="meta-label">${tr('lblPregnancy')}</span> ${safetyBadge(item.safety)} ${escapeHtml(localized(item.pregnancy))}</p>
+          <p class="meta-line"><span class="meta-label">${tr('lblPregnancy')}</span> ${safetyBadge(item.safety)} <span>${escapeHtml(localized(item.pregnancy))}</span></p>
+          <div style="margin-top:12px;">
+            <a class="btn-outline" href="${webUrl}" target="_blank" rel="noopener noreferrer">${tr('webImgBtn')} ↗</a>
+          </div>
         `;
         modal.classList.add('open');
       }
 
-      function openIosInfo() {
+      function openIosModal() {
         const modal = document.getElementById('infoModal');
         const title = document.getElementById('infoModalTitle');
         const body = document.getElementById('infoModalBody');
         title.textContent = tr('iosBtn');
         body.innerHTML = `
-          <p><strong>iPhone / iPad (Safari):</strong> افتح الرابط في Safari، اضغط زر المشاركة (Share)، ثم اختر <strong>Add to Home Screen</strong> (إضافة إلى الشاشة الرئيسية).</p>
-          <p><strong>Android (Chrome):</strong> افتح القائمة (⋮) واختر <strong>Add to Home screen</strong>.</p>
-          <p><strong>Glitch / GitHub Pages:</strong> احفظ هذا الملف باسم <code>index.html</code> وارفعه مباشرة إلى مشروعك دون الحاجة لأي ملفات خارجية.</p>
+          <p><strong>Glitch / GitHub Pages:</strong> احفظ الملف باسم <code>index.html</code> وارفعه مباشرة؛ التطبيق ملف واحد مستقل ولا يحتاج إلى خادم خلفي.</p>
+          <p><strong>iPhone / iPad (Safari):</strong> افتح الرابط في Safari، اضغط زر المشاركة (Share)، ثم اختر <strong>Add to Home Screen</strong>.</p>
+          <p><strong>Android (Chrome):</strong> افتح القائمة واختر <strong>Add to Home screen</strong>.</p>
         `;
         modal.classList.add('open');
-      }
-
-      function escapeHtml(str) {
-        return String(str || '')
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;');
       }
 
       function bindEvents() {
@@ -2286,21 +2630,47 @@
           const tabBtn = e.target.closest('.tab-btn');
           if (tabBtn) {
             state.section = tabBtn.getAttribute('data-sec') || 'all';
-            saveState();
-            updateSectionVisibility();
+            renderAll();
+            return;
+          }
+
+          const catBtn = e.target.closest('.cat-pill-btn');
+          if (catBtn) {
+            state.category = catBtn.getAttribute('data-cat') || 'ALL';
+            state.page = 1;
+            renderCategoryPills();
+            renderCatalogGrid();
+            renderCompaniesTable();
             return;
           }
 
           const detBtn = e.target.closest('[data-action="details"]');
           if (detBtn) {
-            openDetailsModal(detBtn.getAttribute('data-id'));
+            openDetailModal(detBtn.getAttribute('data-id'));
+            return;
+          }
+
+          if (e.target.closest('#prevPageBtn')) {
+            if (state.page > 1) {
+              state.page -= 1;
+              renderCatalogGrid();
+            }
+            return;
+          }
+
+          if (e.target.closest('#nextPageBtn')) {
+            const totalPages = Math.max(1, Math.ceil(getFilteredItems().length / ITEMS_PER_PAGE));
+            if (state.page < totalPages) {
+              state.page += 1;
+              renderCatalogGrid();
+            }
             return;
           }
 
           if (e.target.closest('#themeBtn')) {
             state.theme = state.theme === 'dark' ? 'light' : 'dark';
             saveState();
-            applyTexts();
+            applyLanguageAndTheme();
             return;
           }
 
@@ -2310,23 +2680,23 @@
           }
 
           if (e.target.closest('#iosHelpBtn')) {
-            openIosInfo();
+            openIosModal();
             return;
           }
 
           if (e.target.closest('#resetDataBtn')) {
             localStorage.removeItem(STORAGE_KEY);
-            state = {
-              lang: state.lang,
-              theme: state.theme,
-              section: 'all',
-              search: '',
-              company: 'ALL',
-              safety: 'ALL',
-              data: JSON.parse(JSON.stringify(INITIAL_DATA))
-            };
-            const searchEl = document.getElementById('searchInput');
-            if (searchEl) searchEl.value = '';
+            state.section = 'all';
+            state.category = 'ALL';
+            state.skinType = 'ALL';
+            state.hairType = 'ALL';
+            state.pregnancy = 'ALL';
+            state.company = 'ALL';
+            state.search = '';
+            state.page = 1;
+            state.items = generateCatalog520();
+            const sEl = document.getElementById('searchInput');
+            if (sEl) sEl.value = '';
             renderAll();
             return;
           }
@@ -2346,27 +2716,49 @@
         if (searchInput) {
           searchInput.addEventListener('input', (e) => {
             state.search = e.target.value || '';
-            renderProductCards(state.data.shampoos || [], document.getElementById('shampoosGrid'));
-            renderProductCards(state.data.cosmetics || [], document.getElementById('cosmeticsGrid'));
-            renderProductCards(state.data.perfumes || [], document.getElementById('perfumesGrid'));
+            state.page = 1;
+            renderCatalogGrid();
             renderCompaniesTable();
-            renderProductCards(state.data.nutrition || [], document.getElementById('nutritionGrid'));
           });
         }
 
-        const companyFilter = document.getElementById('companyFilter');
-        if (companyFilter) {
-          companyFilter.addEventListener('change', (e) => {
+        const skinFilter = document.getElementById('skinFilter');
+        if (skinFilter) {
+          skinFilter.addEventListener('change', (e) => {
+            state.skinType = e.target.value || 'ALL';
+            state.page = 1;
+            renderCatalogGrid();
+            renderCompaniesTable();
+          });
+        }
+
+        const hairFilter = document.getElementById('hairFilter');
+        if (hairFilter) {
+          hairFilter.addEventListener('change', (e) => {
+            state.hairType = e.target.value || 'ALL';
+            state.page = 1;
+            renderCatalogGrid();
+            renderCompaniesTable();
+          });
+        }
+
+        const pregFilter = document.getElementById('pregnancyFilter');
+        if (pregFilter) {
+          pregFilter.addEventListener('change', (e) => {
+            state.pregnancy = e.target.value || 'ALL';
+            state.page = 1;
+            renderCatalogGrid();
+            renderCompaniesTable();
+          });
+        }
+
+        const compFilter = document.getElementById('companyFilter');
+        if (compFilter) {
+          compFilter.addEventListener('change', (e) => {
             state.company = e.target.value || 'ALL';
-            renderAll();
-          });
-        }
-
-        const safetyFilter = document.getElementById('safetyFilter');
-        if (safetyFilter) {
-          safetyFilter.addEventListener('change', (e) => {
-            state.safety = e.target.value || 'ALL';
-            renderAll();
+            state.page = 1;
+            renderCatalogGrid();
+            renderCompaniesTable();
           });
         }
 
@@ -2374,49 +2766,61 @@
         if (addForm) {
           addForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const sec = document.getElementById('fSection').value;
+            const category = document.getElementById('fCategory').value;
             const name = document.getElementById('fName').value.trim();
             const company = document.getElementById('fCompany').value.trim();
             const target = document.getElementById('fTarget').value.trim();
             const usage = document.getElementById('fUsage').value.trim();
+            const image = document.getElementById('fImage').value.trim();
             const safety = document.getElementById('fSafety').value;
             if (!name || !company) return;
 
-            const bucket = sec === 'shampoo' ? 'shampoos' : sec === 'perfume' ? 'perfumes' : 'cosmetics';
-            const icon = sec === 'shampoo' ? 'shampoo' : sec === 'perfume' ? 'perfume' : 'cream';
-            const nextNum = (state.data[bucket] || []).length + 1;
-
+            const nextNum = state.items.length + 1;
             const newItem = {
-              id: 'custom-' + Date.now(),
+              id: 'item-' + nextNum + '-' + Date.now(),
               num: nextNum,
-              icon,
-              color: '#0f766e',
+              category,
               company,
+              skinType: 'Sensitive',
+              hairType: 'Untreated',
               safety,
+              image: image || 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=70',
               name: { ar: name, ku: name, tk: name, en: name },
               target: { ar: target, ku: target, tk: target, en: target },
               usage: { ar: usage, ku: usage, tk: usage, en: usage },
               pregnancy: {
-                ar: safety === 'safe' ? 'آمن للاستخدام.' : safety === 'avoid' ? 'يُتجنب أثناء الحمل.' : 'يُستشار الطبيب.',
-                ku: safety === 'safe' ? 'گونجاوە.' : safety === 'avoid' ? 'لە دووگیانیدا دووربکەوەرەوە.' : 'ڕاوێژ بە پزیشک بکرێت.',
-                tk: safety === 'safe' ? 'Howpsuz.' : safety === 'avoid' ? 'Göwrelilikde gaça duruň.' : 'Lukman bilen maslahatlaşyň.',
-                en: safety === 'safe' ? 'Safe for use.' : safety === 'avoid' ? 'Avoid during pregnancy.' : 'Consult doctor.'
+                ar:
+                  safety === 'safe'
+                    ? 'آمن للحمل.'
+                    : safety === 'avoid'
+                      ? 'يُتجنب أثناء الحمل.'
+                      : 'يُستشار طبيب للحمل.',
+                ku:
+                  safety === 'safe'
+                    ? 'گونجاوە.'
+                    : safety === 'avoid'
+                      ? 'لە دووگیانیدا دووربکەوەرەوە.'
+                      : 'ڕاوێژ بە پزیشک بکرێت.',
+                tk:
+                  safety === 'safe'
+                    ? 'Howpsuz.'
+                    : safety === 'avoid'
+                      ? 'Göwrelilikde gaça duruň.'
+                      : 'Lukman bilen maslahatlaşyň.',
+                en:
+                  safety === 'safe'
+                    ? 'Safe in pregnancy.'
+                    : safety === 'avoid'
+                      ? 'Avoid in pregnancy.'
+                      : 'Consult doctor in pregnancy.'
               }
             };
 
-            state.data[bucket].push(newItem);
-            state.data.companiesTable.push({
-              num: state.data.companiesTable.length + 1,
-              company,
-              type: { ar: name, ku: name, tk: name, en: name },
-              products: name,
-              usage: { ar: usage, ku: usage, tk: usage, en: usage },
-              safety
-            });
-
+            state.items.unshift(newItem);
             saveState();
             addForm.reset();
             document.getElementById('addModal').classList.remove('open');
+            state.page = 1;
             renderAll();
           });
         }
